@@ -1,13 +1,12 @@
-<h1> **Proposal** </h1>
-_Kin Ka Tse_
+<h1>Proposal</h1>
 
-<h3> **Background** </h3>
+<h3>Background</h3>
 
 This is a motion detection game that runs like PAC-MAN except by using your face. This allows you to be interactive with the obstacles involved in the game. This game would use technologies like Javascript, Canvas, Node.js, HTML, CSS. The motion detection is a variation of algorithms of pixel values of video frames to determine movement in a certain area.
 
 You would center your head in the area of detection and then press start to avoid obstacles (Ghosts) or eat pellets for points. The way to eat pellets would be to turn your head in the direction they come from. For simplicity and time, I would only make the pellets come from left or right. The Ghosts (if I have time to) will be obstacles to avoid which will require the player to move their head out of the motion detection area to dodge.
 
-<h3> **Functionality & MVPs** </h3>
+<h3>Functionality & MVPs</h3>
 
 In FACE-MAN, the app will:
 
@@ -21,7 +20,7 @@ In addition, this project will include:
 1. An About modal describing the rules of the game and how to play
 2. A production README
 
-<h3> **Wireframes** </h3>
+<h3>Wireframes</h3>
 
 ![Image of Yaktocat](https://media.discordapp.net/attachments/597985513701376013/869198239096770570/FACE-MAN_Wireframes.png?width=894&height=670)
 
@@ -32,7 +31,7 @@ In addition, this project will include:
 * Detection Area is where the motion detection is and reads player’s facial movement
 * Ghost Obstacle and Pellets are objects of the game to interact with
 
-<h3> **Technologies, Libraries, & APIs** </h3>
+<h3>Technologies, Libraries, & APIs</h3>
 
 This project will be implemented with the following technologies:
 
@@ -44,7 +43,7 @@ Node.js
 HTML
 CSS to style
 
-<h3> **Implementation Timeline** </h3>
+<h3>Implementation Timeline</h3>
 
 * Monday: Setup project, including getting webpack up and running. Have camera access required for running the site. Learn how to detect movement. Get canvas to show up on the screen, and spend time getting comfortable with the Canvas API.
 * Tuesday: Connect movement detection with Canvas API for interaction with game objects. Implement pellets through Canvas and add score for each one that was successfully eaten. This will require a deeper understanding of motion mechanics and algorithms in order to figure out mouth movement as 'controls' for the game. This may also require some knowledge of collision detections.
