@@ -45,9 +45,6 @@ Maybe More?
  
 * Monday: Setup project, including getting webpack up and running. Have the home page require camera access for running the site. When it is accessible, you can now see the start button and click to start the app, routing you to the face recognition screen. Learn how to use either Face-api.js or Cloudmersive. Page should show the user.
  
-3. Make face recognition for mouth, display animation when mouth is open
-4. Make face recognition for eyes, display animation when eyes are closed
- 
 * Tuesday: Make the detection dynamic so it can tell if there is a user or not. When there is no user, an “no user available for recognition” animation will be played. Animation will likely use the Canvas API. I will spend some time getting comfortable with the Canvas API for animations.
  
 * Wednesday: Use Face-api.js or Cloudmersive to detect open mouth and closed eyes facial action. Have it linked to an animation (Canvas) which plays when the mouth is open or eyes are closed.
