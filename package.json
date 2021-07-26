@@ -1,0 +1,20 @@
+{
+  "name": "FACE-MAN",
+  "version": "1.0.0",
+  "description": "<h1>Proposal</h1>",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kinkatse/FACE-MAN.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kinkatse/FACE-MAN/issues"
+  },
+  "homepage": "https://github.com/kinkatse/FACE-MAN#readme"
+}
