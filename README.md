@@ -1,0 +1,5 @@
+Welcome to FACE-MAN
+
+	This is a motion detection game that runs like PAC-MAN except by using your face. This allows you to be interactive with the obstacles involved in the game. This game would use technologies like Javascript, Canvas, Node.js, HTML, CSS. The motion detection is a variation of algorithms of pixel values of video frames to determine movement in a certain area.
+
+    You would center your head in the area of detection and then press start to avoid obstacles (Ghosts) or eat pellets for points. The way to eat pellets would be to turn your head in the direction they come from. For simplicity and time, I would only make the pellets come from left or right. The Ghosts (if I have time to) will be obstacles to avoid which will require the player to move their head out of the motion detection area to dodge.
