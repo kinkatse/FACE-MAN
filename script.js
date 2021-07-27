@@ -8,7 +8,7 @@ let eyesClosed = false;
 
 const setUpCamera = () => {
     navigator.mediaDevices.getUserMedia({
-        video: {width: 600, height: 400},
+        video: {width: 1000, height: 600},
         audio: false,
     }).then((stream) => {
         video.srcObject = stream;
@@ -16,16 +16,16 @@ const setUpCamera = () => {
 };
 
 const detectFaces = async () => {
-    const prediction = await model.estimateFaces(video, false);
-    if (prediction.length === 0) {
+    const facePrediction = await model.estimateFaces(video, false);
+    if (facePrediction.length === 0) {
         return console.log("Error: no face detected");
     }
-    if (prediction.length > 1) {
+    if (facePrediction.length > 1) {
         return console.log("Error: This app will only handle 1 person at a time");
     }
-    console.log(prediction);
-    context.drawImage(video, 0, 0, 600, 400);
-    prediction.forEach((pred) => {
+    console.log(facePrediction);
+    context.drawImage(video, 0, 0, 1000, 600);
+    facePrediction.forEach((pred) => {
         context.beginPath();
         context.lineWidth = "4";
         context.strokeStyle = "blue";
@@ -50,13 +50,6 @@ const detectFaces = async () => {
         });
     });
 }
-
-// const detectLandmark0 = (newLandmark) => {
-//     let oldLandmark = landmarkArray.shift();
-//     if (oldLandmark) {
-
-//     }
-// }
 
 setUpCamera();
 video.addEventListener("loadeddata", async () => {

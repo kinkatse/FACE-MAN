@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./dist/main.css" />
+    <script src="./dist/main.js"></script>
     <title>Face Detection</title>
 </head>
     <body>
         <h1>Face Detection</h1>
         <video id="video" autoplay style="display: none"></video>
-        <canvas id="canvas" width="600px" height="400px"></canvas>
+        <canvas id="canvas" width="1000px" height="600px"></canvas>
     </body>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
+
+    <!-- <script src="https://unpkg.com/@tensorflow/tfjs-core@2.4.0/dist/tf-core.js"></script>
+    <script src="https://unpkg.com/@tensorflow/tfjs-converter@2.4.0/dist/tf-converter.js"></script>
+    <script src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.4.0/dist/tf-backend-webgl.js"></script>
+    <script src="https://unpkg.com/@tensorflow-models/face-landmarks-detection@0.0.1/dist/face-landmarks-detection.js"></script> -->
 
     <script src="script.js"></script>
 </html>
