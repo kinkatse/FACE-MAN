@@ -74,7 +74,7 @@ function draw() {
         let bottomRight = scaleCoord(face.boundingBox.bottomRight);
         let w = bottomRight.x - topLeft.x;
         let facedia = w;
-        let topfacedia = w / 3;
+        let topfacedia = w / 2;
         let dia = w / 8;
 
         let nose = scaleCoord(face.scaledMesh[5]);
@@ -83,20 +83,20 @@ function draw() {
         stroke("black");
         strokeWeight(3);
         triangle(
-            rightEyeU.x - topfacedia + 10,
-            rightEyeU.y + topfacedia - 120,
-            rightEyeU.x + topfacedia,
-            rightEyeU.y + topfacedia - 120,
+            rightEyeU.x + 30,
+            rightEyeU.y - 80,
             rightEyeU.x,
-            rightEyeU.y - 120
+            rightEyeU.y - 140,
+            rightEyeU.x - 30,
+            rightEyeU.y - 80
         );
         triangle(
-            leftEyeU.x - topfacedia,
-            leftEyeU.y + topfacedia - 120,
-            leftEyeU.x + topfacedia - 10,
-            leftEyeU.y + topfacedia - 120,
+            leftEyeU.x + 30,
+            leftEyeU.y - 80,
             leftEyeU.x,
-            leftEyeU.y - 120
+            leftEyeU.y - 140,
+            leftEyeU.x - 30,
+            leftEyeU.y - 80
         );
 
         fill("yellow");
@@ -108,31 +108,81 @@ function draw() {
         strokeWeight(2);
         ellipse(nose.x, nose.y - 15, dia, [dia + 5]);
 
-        fill(0);
-        noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 40, dia, [dia*3]);
-        ellipse(leftEyeU.x, leftEyeU.y - 40, dia, [dia*3]);
-        // circle(rightEyeU.x, rightEyeU.y, dia);
-        // circle(leftEyeU.x, leftEyeU.y, dia);
+        // Pacman Eye Blinking
+        if (rightEyeL.y - rightEyeU.y > 4 && leftEyeL.y - leftEyeU.y > 4) {
+            fill(0);
+            noStroke();
+            ellipse(rightEyeU.x, rightEyeU.y - 40, dia, [dia*3]);
+            ellipse(leftEyeU.x, leftEyeU.y - 40, dia, [dia*3]);
+            // circle(rightEyeU.x, rightEyeU.y, dia);
+            // circle(leftEyeU.x, leftEyeU.y, dia);
 
-        fill("yellow");
-        noStroke();
-        triangle(
-            rightEyeU.x - 40,
-            rightEyeU.y - 20,
-            rightEyeU.x,
-            rightEyeU.y - 35,
-            rightEyeU.x - 45,
-            rightEyeU.y - 60
-        );
-        triangle(
-            leftEyeU.x + 40,
-            leftEyeU.y - 20,
-            leftEyeU.x,
-            leftEyeU.y - 35,
-            leftEyeU.x + 45,
-            leftEyeU.y - 60
-        );
+            fill("yellow");
+            noStroke();
+            triangle(
+                rightEyeU.x - 40,
+                rightEyeU.y - 20,
+                rightEyeU.x,
+                rightEyeU.y - 35,
+                rightEyeU.x - 45,
+                rightEyeU.y - 60
+            );
+            triangle(
+                leftEyeU.x + 40,
+                leftEyeU.y - 20,
+                leftEyeU.x,
+                leftEyeU.y - 35,
+                leftEyeU.x + 45,
+                leftEyeU.y - 60
+            );
+          } else if (rightEyeL.y - rightEyeU.y <= 4 && leftEyeL.y - leftEyeU.y <= 4) {
+            fill(0);
+            strokeWeight(5);
+            stroke("black");
+            line(rightEyeU.x + 5, rightEyeU.y - 65, rightEyeU.x + 15, rightEyeU.y - 10);
+            line(rightEyeU.x - 15, rightEyeU.y - 20, rightEyeU.x + 15, rightEyeU.y - 10);
+            line(leftEyeU.x + 5, leftEyeU.y - 65, leftEyeU.x - 15, leftEyeU.y - 10);
+            line(leftEyeU.x + 15, leftEyeU.y - 20, leftEyeU.x - 15, leftEyeU.y - 10);
+          } else if (leftEyeL.y - leftEyeU.y <= 4) {
+            fill(0);
+            noStroke();
+            ellipse(rightEyeU.x, rightEyeU.y - 40, dia, [dia*3]);
+            fill("yellow");
+            noStroke();
+            triangle(
+                rightEyeU.x - 40,
+                rightEyeU.y - 20,
+                rightEyeU.x,
+                rightEyeU.y - 35,
+                rightEyeU.x - 45,
+                rightEyeU.y - 60
+            );
+            fill(0);
+            strokeWeight(5);
+            stroke("black");
+            line(leftEyeU.x + 5, leftEyeU.y - 65, leftEyeU.x - 15, leftEyeU.y - 10);
+            line(leftEyeU.x + 15, leftEyeU.y - 20, leftEyeU.x - 15, leftEyeU.y - 10);
+          } else if (rightEyeL.y - rightEyeU.y <= 4) {
+            fill(0);
+            noStroke();
+            ellipse(leftEyeU.x, leftEyeU.y - 40, dia, [dia*3]);
+            fill("yellow");
+            noStroke();
+            triangle(
+                leftEyeU.x + 40,
+                leftEyeU.y - 20,
+                leftEyeU.x,
+                leftEyeU.y - 35,
+                leftEyeU.x + 45,
+                leftEyeU.y - 60
+            );
+            fill(0);
+            strokeWeight(5);
+            stroke("black");
+            line(rightEyeU.x + 5, rightEyeU.y - 65, rightEyeU.x + 15, rightEyeU.y - 10);
+            line(rightEyeU.x - 15, rightEyeU.y - 20, rightEyeU.x + 15, rightEyeU.y - 10);
+          }
+        
 
         let mouth = [];
         for (let pt of face.annotations.lipsUpperInner) {
@@ -157,8 +207,6 @@ function draw() {
         endShape(CLOSE);
     }
 
-    
-
     hitbox = true;
     if (hitbox) {
         fill(255, 255, 255, 0);
@@ -180,22 +228,22 @@ function draw() {
     }
 
     // Mouth Open Close
-    // if (lipsLower.y - lipsUpper.y > 40 ) {
-    //   // console.log(lipsLower.y - lipsUpper.y)
-    //   return console.log("open mouth");
-    // } else {
-    //   // console.log(lipsLower.y - lipsUpper.y)
-    //   return console.log("closed mouth");
-    // }
+    if (lipsLower.y - lipsUpper.y > 30 ) {
+      // console.log(lipsLower.y - lipsUpper.y)
+      console.log("open mouth");
+    } else {
+      // console.log(lipsLower.y - lipsUpper.y)
+      console.log("closed mouth");
+    }
     
     // Right Eye Open Close
-    // if (rightEyeL.y - rightEyeU.y > 5 || leftEyeL.y - leftEyeU.y > 5) {
-    //   // console.log(rightEyeL.y - rightEyeU.y)
-    //   return console.log("open eyes");
-    // } else {
-    //   // console.log(rightEyeL.y - rightEyeU.y)
-    //   return console.log("closed eyes");
-    // }
+    if (rightEyeL.y - rightEyeU.y > 4 || leftEyeL.y - leftEyeU.y > 4) {
+      // console.log(rightEyeL.y - rightEyeU.y)
+      console.log("open eyes");
+    } else {
+      // console.log(rightEyeL.y - rightEyeU.y)
+      console.log("closed eyes");
+    }
   }
 }
 
