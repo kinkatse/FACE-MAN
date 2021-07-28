@@ -2,16 +2,16 @@
  
 <h3>Background</h3>
  
-This is a face recognition app that checks for two key movements, a person’s open mouth and a person’s closed eyes. The app will recognize which of the two specific facial actions you take and display an animation for when your mouth is open or eyes are closed. This game would use technologies like Face-api.js/Cloudmersive, Javascript, Canvas, Node.js, HTML, CSS. The facial movement detection is a variation of algorithms of pixel values of video frames to determine movement in a certain area.
+This is a face recognition app that checks for two key movements, a person’s open mouth and a person’s closed eyes. The app will recognize which of the two specific facial actions you take and display an animation for when your mouth is open or eyes are closed. This game would use technologies like MediaDevices, TensorFlow, Javascript, Canvas, Node.js, HTML, CSS. The facial movement detection is a variation of algorithms of pixel values of video frames to determine movement in a certain area.
  
 <h3>Functionality & MVPs</h3>
  
 In FACE-MAN, the app will:
  
 1. Ask user to access camera, then show user
-2. If no user is in the detection area, then no user animation will play
-3. Make face recognition for mouth, display animation when mouth is open
-4. Make face recognition for eyes, display animation when eyes are closed
+2. Make face recognition for mouth, display animation when mouth is open
+3. Make face recognition for eyes, display animation when eyes are closed
+4. Make a simple filter
  
 In addition, this project will include:
  
@@ -31,8 +31,9 @@ In addition, this project will include:
  
 This project will be implemented with the following technologies:
  
-Face-api.js or Cloudmersive to observe a user’s facial actions
-The Canvas API to render animations for successful actions
+MediaDevices is needed to get user’s video data
+TensorFlow will be used to observe a user’s facial actions
+The P5/Canvas API to render visuals, filter, animations for successful actions
 Webpack and Babel to bundle and transpile the source JavaScript code
 npm to manage project dependencies
 May Use Web Audio API
@@ -43,12 +44,16 @@ Maybe More?
  
 <h3>Implementation Timeline</h3>
  
-* Monday: Setup project, including getting webpack up and running. Have the home page require camera access for running the site. When it is accessible, you can now see the start button and click to start the app, routing you to the face recognition screen. Learn how to use either Face-api.js or Cloudmersive. Page should show the user.
+* Monday: Learn how to use either TensorFlow and other libraries. Get browser to require camera access for running the site. Browser should show user. Make the detection dynamic so it can tell if there is a user or not. Detect open mouth and closed eyes facial action.
  
-* Tuesday: Make the detection dynamic so it can tell if there is a user or not. When there is no user, an “no user available for recognition” animation will be played. Animation will likely use the Canvas API. I will spend some time getting comfortable with the Canvas API for animations.
+* Tuesday: Set up webpack. Create a home page with a start button which then allows you to utilize the app. Make facial recognition restrictions so there cannot be more than one face or the face cannot be too far. Work on some CSS to make the browser look more presentable.
  
-* Wednesday: Use Face-api.js or Cloudmersive to detect open mouth and closed eyes facial action. Have it linked to an animation (Canvas) which plays when the mouth is open or eyes are closed.
+* Wednesday: Animation will likely use the Canvas API. I will spend some time getting comfortable with the Canvas API for animations. Have facial actions linked to an animation (Canvas) which plays when the mouth is open or eyes are closed. When there is no user, an “no user available for recognition” animation will be played. Get filter option to be available.
  
-* Thursday: Buffer time for anything I didn't finish on schedule, this also a debugging allotted time. Work on some CSS and Nav Links/Main Title (Maybe different color schemes if I get to it).
+* Thursday: Buffer time for anything I didn't finish on schedule, this also a debugging allotted time. Work on some CSS and Nav Links/Main Title (Maybe different color schemes if I get to it). If I have time, I can try to incorporate one or two game mechanics between pellets, collision boxes, obstacles, game over, score, leaderboards, mapping facial action detection to controls, etc.
  
 * Friday: Deploy to GitHub pages and Heroku. If there is time, rewrite this proposal as a production README.
+ 
+<h3>Bonus</h3>
+ 
+Making it the game I originally thought of where you use the face detection as controls in a game and dodge obstacles or eat pellets.
