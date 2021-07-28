@@ -4,6 +4,8 @@ let face;
 let firstFace = true;
 let filter = false;
 let htibox = false;
+let facemask = false;
+let facedots = false;
 
 function setup() {
   createCanvas(640, 480);
@@ -32,34 +34,27 @@ function draw() {
       firstFace = false;
     }
 
-    fill(255);
-    noStroke();
-    for (let pt of face.scaledMesh) {
-      pt = scaleCoord(pt);
-      circle(pt.x, pt.y, 3);
+    // facedots = true;
+    if (facedots) {
+        fill("black");
+        noStroke();
+        for (let pt of face.scaledMesh) {
+        pt = scaleCoord(pt);
+        circle(pt.x, pt.y, 3);
+        }
     }
 
-    fill(0, 150, 255, 100);
-    noStroke();
-    beginShape();
-    for (pt of face.annotations.silhouette) {
-      pt = scaleCoord(pt);
-      vertex(pt.x, pt.y);
+    // facemask = true;
+    if (facemask) {
+        fill(0, 150, 255, 100);
+        noStroke();
+        beginShape();
+        for (pt of face.annotations.silhouette) {
+        pt = scaleCoord(pt);
+        vertex(pt.x, pt.y);
+        }
+        endShape(CLOSE);
     }
-    endShape(CLOSE);
-
-    // if (pred.boundingBox.bottomRight[0] - pred.boundingBox.topLeft[0] - 40 < 125 || pred.boundingBox.bottomRight[1] - pred.boundingBox.topLeft[1] + 110 < 200) {
-    //     return console.log("Error: Bring your face closer and keep it straight");
-    // }
-    // if (pred.boundingBox.bottomRight[0] - pred.boundingBox.topLeft[0] - 40 > 225 || pred.boundingBox.bottomRight[1] - pred.boundingBox.topLeft[1] + 110 > 300) {
-    //     return console.log("Error: Back up a bit and keep your head straight");
-    // }
-    // context.rect (
-    //     pred.boundingBox.topLeft[0] + 20,
-    //     pred.boundingBox.topLeft[1] - 100,
-    //     pred.boundingBox.bottomRight[0] - pred.boundingBox.topLeft[0] - 40,
-    //     pred.boundingBox.bottomRight[1] - pred.boundingBox.topLeft[1] + 110
-    // );
 
     let lipsUpper =  scaleCoord(face.annotations.lipsUpperOuter[5]);
     let lipsLower = scaleCoord(face.annotations.lipsLowerOuter[4]);
@@ -74,47 +69,89 @@ function draw() {
     // console.log(lipsLower.y);
 
     filter = true;
-    // debugger
     if (filter) {
         let topLeft = scaleCoord(face.boundingBox.topLeft);
         let bottomRight = scaleCoord(face.boundingBox.bottomRight);
         let w = bottomRight.x - topLeft.x;
         let facedia = w;
-        let dia = w / 18;
+        let topfacedia = w / 3;
+        let dia = w / 8;
 
         let nose = scaleCoord(face.scaledMesh[5]);
 
         fill("yellow");
-        noStroke();
-        circle(nose.x, nose.y, facedia + 20);
-        triangle(rightEyeU.x + 50, rightEyeU.y - 50, rightEyeU.x - 40, rightEyeU.y - 50, rightEyeU.x, rightEyeU.y - 100);
+        stroke("black");
+        strokeWeight(3);
+        triangle(
+            rightEyeU.x - topfacedia + 10,
+            rightEyeU.y + topfacedia - 120,
+            rightEyeU.x + topfacedia,
+            rightEyeU.y + topfacedia - 120,
+            rightEyeU.x,
+            rightEyeU.y - 120
+        );
+        triangle(
+            leftEyeU.x - topfacedia,
+            leftEyeU.y + topfacedia - 120,
+            leftEyeU.x + topfacedia - 10,
+            leftEyeU.y + topfacedia - 120,
+            leftEyeU.x,
+            leftEyeU.y - 120
+        );
 
-        // let nose = scaleCoord(face.scaledMesh[5]);
-        // for (let d=w/6; d>=2; d-=1) {
-        //   fill(255,150,0, map(d, w/6,2, 0,255));
-        //   noStroke();
-        //   circle(nose.x, nose.y, d);
-        // }
+        fill("yellow");
+        noStroke();
+        ellipse(nose.x, nose.y - 20, facedia + 20, facedia + 30);
+
+        fill("yellow")
+        stroke("black");
+        strokeWeight(2);
+        ellipse(nose.x, nose.y - 15, dia, [dia + 5]);
 
         fill(0);
         noStroke();
-        circle(rightEyeU.x, rightEyeU.y, dia);
-        circle(leftEyeU.x, leftEyeU.y, dia);
+        ellipse(rightEyeU.x, rightEyeU.y - 40, dia, [dia*3]);
+        ellipse(leftEyeU.x, leftEyeU.y - 40, dia, [dia*3]);
+        // circle(rightEyeU.x, rightEyeU.y, dia);
+        // circle(leftEyeU.x, leftEyeU.y, dia);
+
+        fill("yellow");
+        noStroke();
+        triangle(
+            rightEyeU.x - 40,
+            rightEyeU.y - 20,
+            rightEyeU.x,
+            rightEyeU.y - 35,
+            rightEyeU.x - 45,
+            rightEyeU.y - 60
+        );
+        triangle(
+            leftEyeU.x + 40,
+            leftEyeU.y - 20,
+            leftEyeU.x,
+            leftEyeU.y - 35,
+            leftEyeU.x + 45,
+            leftEyeU.y - 60
+        );
 
         let mouth = [];
         for (let pt of face.annotations.lipsUpperInner) {
             pt = scaleCoord(pt);
+            pt.y -= 15;
             mouth.push(pt);
         }
         for (let pt of face.annotations.lipsLowerInner) {
             pt = scaleCoord(pt);
+            pt.y -= 15;
             mouth.push(pt);
         }
 
-        fill(60,0,0);
+        fill(80,0,0);
         beginShape();
         for (let pt of mouth) {
-            strokeWeight(200);
+            stroke("black");
+            strokeWeight(2);
+            smooth();
             vertex(pt.x, pt.y);
         }
         endShape(CLOSE);
