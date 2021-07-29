@@ -7,14 +7,58 @@ let firstFace = true;
 let pacmanFilter = false;
 let kirbyFilter = false;
 let hitbox = false;
-let facemask = false;
-let facedots = false;
+let faceMaskDots = false;
 let topLeft;
 let bottomRight;
 let w;
 let facedia;
 let topfacedia;
 let dia;
+let anyFilter = false;
+
+function faceMaskDotsButton() {
+  if (!faceMaskDots && !anyFilter) {
+    faceMaskDots = true;
+    anyFilter = true;
+  } else if (faceMaskDots && anyFilter) {
+    faceMaskDots = false;
+    anyFilter = false;
+  } else {
+    anyFilter = true;
+  }
+}
+
+function hitboxButton() {
+  if (!hitbox) {
+    hitbox = true;
+  } else {
+    hitbox = false;
+  }
+}
+
+function pacmanButton() {
+  if (!pacmanFilter && !anyFilter) {
+    pacmanFilter = true;
+    anyFilter = true;
+  } else if (pacmanFilter && anyFilter) {
+    pacmanFilter = false;
+    anyFilter = false;
+  } else {
+    anyFilter = true;
+  }
+}
+
+function kirbyButton() {
+  if (!kirbyFilter && !anyFilter) {
+    kirbyFilter = true;
+    anyFilter = true;
+  } else if (kirbyFilter && anyFilter) {
+      kirbyFilter = false;
+      anyFilter = false;
+  } else {
+    anyFilter = true;
+  }
+}
 
 function setup() {
   createCanvas(880, 660);
@@ -42,10 +86,12 @@ function draw() {
     image(video, 0, 0, width, height);
 
   if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 < 125 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 < 200) {
-      return console.log("Error: Bring your face closer and keep it straight");
+      console.log("Error: Bring your face closer and keep it straight");
+      // return (<span class="Error">Error: Bring your face closer and keep it straight</span>);
   }
   if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 > 300 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 > 375) {
-      return console.log("Error: Back up a bit and keep your head straight");
+      console.log("Error: Back up a bit and keep your head straight");
+      // return (<span class="Error">Error: Back up a bit and keep your head straight</span>);
   }
 
     if (firstFace) {
@@ -53,27 +99,24 @@ function draw() {
       firstFace = false;
     }
 
-    // facedots = true;
-    // if (facedots) {
-    //     fill("black");
-    //     noStroke();
-    //     for (let pt of face.scaledMesh) {
-    //     pt = scaleCoord(pt);
-    //     circle(pt.x, pt.y, 3);
-    //     }
-    // }
-
-    // facemask = true;
-    // if (facemask) {
-    //     fill(0, 150, 255, 100);
-    //     noStroke();
-    //     beginShape();
-    //     for (pt of face.annotations.silhouette) {
-    //     pt = scaleCoord(pt);
-    //     vertex(pt.x, pt.y);
-    //     }
-    //     endShape(CLOSE);
-    // }
+    if (faceMaskDots) {
+        fill("black");
+        noStroke();
+        for (let pt of face.scaledMesh) {
+        pt = scaleCoord(pt);
+        circle(pt.x, pt.y, 3);
+        }
+    }
+    if (faceMaskDots) {
+        fill(0, 150, 255, 100);
+        noStroke();
+        beginShape();
+        for (pt of face.annotations.silhouette) {
+        pt = scaleCoord(pt);
+        vertex(pt.x, pt.y);
+        }
+        endShape(CLOSE);
+    }
 
     let lipsUpper =  scaleCoord(face.annotations.lipsUpperOuter[5]);
     let lipsLower = scaleCoord(face.annotations.lipsLowerOuter[4]);
@@ -87,7 +130,6 @@ function draw() {
     // console.log(lipsUpper.x);
     // console.log(lipsLower.y);
 
-    pacmanFilter = true;
     if (pacmanFilter) {
         topLeft = scaleCoord(face.boundingBox.topLeft);
         bottomRight = scaleCoord(face.boundingBox.bottomRight);
@@ -220,13 +262,13 @@ function draw() {
         for (let pt of mouth) {
             // stroke("black");
             // strokeWeight(2);
+            noStroke();
             smooth();
             vertex(pt.x, pt.y);
         }
         endShape(CLOSE);
     }
 
-    // kirbyFilter = true;
     if (kirbyFilter) {
         topLeft = scaleCoord(face.boundingBox.topLeft);
         bottomRight = scaleCoord(face.boundingBox.bottomRight);
@@ -339,7 +381,6 @@ function draw() {
         endShape(CLOSE);
     }
 
-    hitbox = true;
     if (hitbox) {
         fill(255, 255, 255, 0);
         strokeWeight(3);
