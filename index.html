@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./dist/main.css" />
-    <script src="./dist/main.js"></script>
+    <link rel="stylesheet" href="./src/reset.css" />
+    <link rel="stylesheet" href="./src/script.css" />
     <title>Face Detection</title>
         <style>
             body {
@@ -21,11 +21,32 @@
         <script src="https://unpkg.com/@tensorflow-models/face-landmarks-detection@0.0.1/dist/face-landmarks-detection.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-        <script src="script.js"></script>
+        <script src="./src/script.js"></script>
     </head>
 
     <body>
-        <h1>Face Detection</h1>
+        <div class="nav-bar">
+            <div class="logo">
+                <!-- <Link to="/">
+                    <img src="https://media.discordapp.net/attachments/865977609330753600/868137469281972254/PaintSocial_Logo_Bigger.png?width=538&height=538"/>
+                </Link> -->
+            </div>
+            <h1 class="title">FACE-MAN</h1>
+            <div class="nav-a">
+                <div class="tooltip">About Me!
+                    <span class="tooltiptext">I am Kin Ka Tse</span>
+                </div>
+                <div class="tooltip">How To Use!
+                    <span class="tooltiptext">Enable your camera, now try opening your mouth, closing your eyes or trying a filter!</span>
+                </div>
+            </div>
+            <a class="nav-a" href="https://github.com/kinkatse">
+                <span class="nav-links"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"/></span>
+            </a>
+            <a class="nav-a" href="https://www.linkedin.com/in/kin-ka-tse/">
+                <span class="nav-links"><img src="https://image.flaticon.com/icons/png/512/174/174857.png"/></span>
+            </a>
+        </div>
         <!-- <video id="video" autoplay ></video>
         <canvas id="canvas" width="1000px" height="600px"></canvas> -->
     </body>

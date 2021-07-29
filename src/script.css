@@ -1,0 +1,95 @@
+body {
+
+  /* background: rgb(238, 237, 229);  */
+  /*  background: rgb(185, 70, 41); 
+   background: rgb(232, 159, 101);  */
+
+  background: linear-gradient(217deg, rgba(60, 60, 60, 1), rgba(45, 45, 45, 1) 70.71%);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+
+  height: 1200px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 2%;
+  margin-right: 68%;
+  font-size: 20px;
+  color: rgb(235, 79, 79);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.video {
+  border: 1px solid lightgrey;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+.nav-bar {
+  /* position: fixed; */
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  padding: 0px 25px;
+
+  border: 1px solid rgb(212, 212, 212);
+  background: rgb(255, 255, 255); 
+  z-index: 5;
+}
+
+.nav-a {
+  display: flex;
+  justify-content: flex-end;
+  /* border: 1px solid red; */
+  margin: 10px;
+  /* align-items: center; */
+}
+
+.nav-links img {
+  height: 30px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  color: rgb(15, 171, 192);
+  border-bottom: 1px solid rgb(15, 171, 192);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 180px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 25px 0;
+  border-radius: 6px;
+ 
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltiptext {
+  margin-left: 20%;
+  margin-right: 20%;
+  position: relative;
+  right: -70%;
+  top: 150%
+}

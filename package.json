@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "watchAndBuild": "webpack --watch --mode=production"
   },
   "browserslist": [
     "defaults"
