@@ -6,6 +6,10 @@ let face;
 let firstFace = true;
 let pacmanFilter = false;
 let kirbyFilter = false;
+let pikachuFilter = false;
+let prettyFilter = false;
+let mustacheFilter = false;
+let glassesFilter = false;
 let hitbox = false;
 let faceMaskDots = false;
 let topLeft;
@@ -15,6 +19,21 @@ let facedia;
 let topfacedia;
 let dia;
 let anyFilter = false;
+let x = 0;
+let y = 650;
+let angle = 0;
+
+function clearButton() {
+  pacmanFilter = false;
+  kirbyFilter = false;
+  pikachuFilter = false;
+  prettyFilter = false;
+  mustacheFilter = false;
+  glassesFilter = false;
+  hitbox = false;
+  faceMaskDots = false;
+  anyFilter = false;
+}
 
 function faceMaskDotsButton() {
   if (!faceMaskDots && !anyFilter) {
@@ -60,11 +79,59 @@ function kirbyButton() {
   }
 }
 
+function pikachuButton() {
+  if (!kirbyFilter && !anyFilter) {
+    kirbyFilter = true;
+    anyFilter = true;
+  } else if (kirbyFilter && anyFilter) {
+      kirbyFilter = false;
+      anyFilter = false;
+  } else {
+    anyFilter = true;
+  }
+}
+
+function prettyButton() {
+  if (!prettyFilter && !anyFilter) {
+    prettyFilter = true;
+    anyFilter = true;
+  } else if (prettyFilter && anyFilter) {
+      prettyFilter = false;
+      anyFilter = false;
+  } else {
+    anyFilter = true;
+  }
+}
+
+function mustacheButton() {
+  if (!mustacheFilter && !anyFilter) {
+    mustacheFilter = true;
+    anyFilter = true;
+  } else if (mustacheFilter && anyFilter) {
+      mustacheFilter = false;
+      anyFilter = false;
+  } else {
+    anyFilter = true;
+  }
+}
+
+function glassesButton() {
+  if (!glassesFilter && !anyFilter) {
+    kirbyFilter = true;
+    anyFilter = true;
+  } else if (kirbyFilter && anyFilter) {
+      kirbyFilter = false;
+      anyFilter = false;
+  } else {
+    anyFilter = true;
+  }
+}
+
 function setup() {
-  createCanvas(880, 660);
+  createCanvas(860, 650);
   // drawingContext.shadowBlur = 3;
   // drawingContext.shadowColor = "black";
-  background(255);
+  background(245);
   video = createCapture(VIDEO);
   video.hide();
   loadFaceModel();
@@ -75,6 +142,28 @@ async function loadFaceModel() {
     model = await faceLandmarksDetection.load(
         faceLandmarksDetection.SupportedPackages.mediapipeFacemesh
     );
+}
+
+function scaleCoord(pt) {
+  let x = map(pt[0], 0,video.width, 0,width);
+  let y = map(pt[1], 0,video.height, 0,height);
+  return createVector(x, y);
+}
+
+async function getFace() {
+  const facePredictions = await model.estimateFaces({
+    input: document.querySelector('video')
+  }); 
+  console.log(facePredictions);
+  if (facePredictions.length === 0) {
+    face = undefined;
+    console.log("Error: no face detected");
+  } else if (facePredictions.length > 1) {
+    face = undefined;
+    console.log("Error: This app will only handle 1 person at a time");
+  } else {
+    face = facePredictions[0];
+  }
 }
 
 function draw() {
@@ -381,6 +470,71 @@ function draw() {
             vertex(pt.x, pt.y);
         }
         endShape(CLOSE);
+
+        if (lipsLower.y - lipsUpper.y > 40 ) {
+          fill("white");
+          noStroke();
+          // ellipse(x, y, 10, 10);
+
+          push();
+          translate(lipsLower.x, lipsLower.y - 50);
+          rotate(angle);
+          // fill(255);
+          noFill();
+          stroke("white");
+          strokeWeight(2);
+          rectMode(CENTER);
+          square(0, 0, 70);
+          pop();
+
+          for (let a=0; a<radians(360); a+=radians(60)) {
+            push();
+            translate(lipsLower.x, lipsLower.y - 50);
+            rotate(a);
+            translate(0, 150);
+            rotate(angle);
+            noFill();
+            stroke("white");
+            strokeWeight(2);
+            rectMode(CENTER);
+            square(0, 0, 150);
+            pop();
+          }
+
+          for (let a=0; a<radians(360); a+=radians(60)) {
+            push();
+            translate(lipsLower.x, lipsLower.y - 50);
+            rotate(a);
+            translate(0, 300);
+            rotate(angle);
+            noFill();
+            stroke("white");
+            strokeWeight(2);
+            rectMode(CENTER);
+            square(0, 0, 300);
+            pop();
+          }
+
+          angle += radians(20)
+          // if (x !== lipsLower.x) {
+          //   x = random(x, lipsLower.x);
+          // }
+          // if (y !== lipsLower.y - 20) {
+          //   y = random(y, lipsLower.y - 20);
+          // }
+          // x = x + 15;
+          // y = y - 15;
+          // if (x < 0) {
+          //   y = height;
+          // }
+          // if (y === lipsLower.y - 20) {
+          //   y = lipsLower.y - 20;
+          // } else if (y > 860 || y < 0) {
+          //   y = lipsLower.y - 20;
+          // }
+        }
+        
+
     }
 
     if (hitbox) {
@@ -412,27 +566,5 @@ function draw() {
     //   // console.log(rightEyeL.y - rightEyeU.y)
     //   console.log("closed eyes");
     // }
-  }
-}
-
-function scaleCoord(pt) {
-  let x = map(pt[0], 0,video.width, 0,width);
-  let y = map(pt[1], 0,video.height, 0,height);
-  return createVector(x, y);
-}
-
-async function getFace() {
-  const facePredictions = await model.estimateFaces({
-    input: document.querySelector('video')
-  }); 
-  console.log(facePredictions);
-  if (facePredictions.length === 0) {
-    face = undefined;
-    console.log("Error: no face detected");
-  } else if (facePredictions.length > 1) {
-    face = undefined;
-    console.log("Error: This app will only handle 1 person at a time");
-  } else {
-    face = facePredictions[0];
   }
 }

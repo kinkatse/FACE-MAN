@@ -17,21 +17,88 @@ body {
   height: 1200px;
 }
 
+.logo {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.logo:hover img {
+  opacity: 65%;
+  /* margin: -1px; */
+  /* height: 32px; */
+  animation-duration: 0.5s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  cursor: wait;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(1deg);
+    height: 50px;
+  }
+  50% {
+    transform: rotate(360deg);
+    height: 55px;
+    margin: -2.5px;
+  }
+  to {
+    transform: rotate(720deg);
+    height: 50px;
+  }
+}
+
 .title {
   display: flex;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  margin-left: 2%;
-  margin-right: 68%;
-  font-size: 20px;
-  color: rgb(235, 79, 79);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin-left: 1.5%;
+  margin-right: 60.5%;
+  font-size: 25px;
+  color: rgb(196, 30, 30);
+  -webkit-text-stroke-width: 0.75px;
+  -webkit-text-stroke-color: #165555;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
-.video {
+.title:hover {
+  opacity: 65%;
+}
+
+.letter1 {
+  color: #85F7EA;
+}
+.letter2 {
+  color: #A0E5E6;
+}
+.letter3 {
+  color: #B9D4E1;
+}
+.letter4 {
+  color: #CCCFE3;
+}
+.letter5 {
+  color: #71AA92;
+}
+.letter6 {
+  color: #FAC47A;
+}
+.letter7 {
+  color: #F7EE89;
+}
+.letter8 {
+  color: #E0F2B8;
+}
+
+/* .video {
   border: 1px solid lightgrey;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
-}
+} */
 
 .nav-bar {
   /* position: fixed; */
@@ -43,7 +110,7 @@ body {
   padding: 0px 25px;
 
   border: 1px solid rgb(212, 212, 212);
-  background: rgb(255, 255, 255); 
+  background: rgb(245, 245, 245); 
   z-index: 5;
 }
 
@@ -59,6 +126,32 @@ body {
   height: 30px;
 }
 
+.nav-links:hover img {
+  opacity: 65%;
+  /* margin: -1px; */
+  /* height: 32px; */
+  animation-duration: 0.75s;
+  animation-name: pop;
+  animation-iteration-count: infinite;
+}
+
+/* animation-duration: 1s;
+animation-name: rotate;
+animation-iteration-count: infinite; */
+
+@keyframes pop {
+  from {
+    height: 30px;
+  }
+  50% {
+    height: 34px;
+    margin: -2px;
+  }
+  to {
+    height: 30px;
+  }
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
@@ -71,11 +164,12 @@ body {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 180px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
+  margin: 15px;
   text-align: center;
-  padding: 25px 0;
-  border-radius: 6px;
+  padding: 10px;
+  border-radius: 3px;
  
   position: absolute;
   z-index: 1;
@@ -93,9 +187,25 @@ body {
   margin-left: 20%;
   margin-right: 20%;
   position: relative;
-  right: -70%;
+  right: -90%;
   top: 150%;
   font-weight: 100;
+}
+
+.tooltip:hover {
+  position: relative;
+  z-index: 5;
+  animation-duration: 1.5s;
+  animation-name: fadein;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
 
 .error {
@@ -114,22 +224,27 @@ body {
   justify-content: space-evenly;
   align-items: center;
   position: relative;
-  left: 20%;
-  width: 60%;
+  left: 25%;
+  width: 50%;
 }
 
 button {
   padding: 5px;
   margin: 5px;
 
-  background-color: rgb(78, 78, 78);
+  background: linear-gradient(220deg, rgba(83, 83, 83, 1), rgba(120, 120, 120, 1) 80%);
   /* background:lightgreen; */
   border-radius: 5px;
-  color: rgb(33, 198, 204);
+  color: rgb(255, 248, 240);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
+  cursor: pointer;
+  animation-duration: 3s;
+  animation-name: fadein;
 }
 
 button:hover {
-  box-shadow: 0 0 3px rgb(94, 180, 152);
+  box-shadow: 0 0 5px rgba(170, 231, 211, 0.7);
+  background: linear-gradient(220deg, rgba(120, 120, 120, 1), rgba(200, 200, 200, 1) 80%);
+  /* opacity: 65%; */
 }
