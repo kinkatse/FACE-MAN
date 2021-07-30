@@ -177,9 +177,34 @@ async function getFace() {
   console.log(facePredictions);
   if (facePredictions.length === 0) {
     face = undefined;
-    console.log("Error: no face detected");
+
+    fill(255, 7, 69, 120);
+    noStroke();
+    rectMode(CENTER);
+    square(340, 325, 1500);
+    textStyle(BOLD);
+    textAlign(CENTER, CENTER);
+    let s = "Error: No face detected";
+    translate(340, 325);
+    textSize(32);
+    fill(245);
+    text(s, 100, 10, 500, 630);
+    console.log("Error: No face detected");
   } else if (facePredictions.length > 1) {
     face = undefined;
+
+    // Weird double error going on??
+    fill(255, 7, 69, 120);
+    noStroke();
+    rectMode(CENTER);
+    square(340, 325, 1500);
+    textStyle(BOLD);
+    textAlign(CENTER, CENTER);
+    let s = "Error: This app will only handle 1 person at a time";
+    translate(340, 340);
+    textSize(32);
+    fill(245);
+    text(s, 100, 10, 1000, 1030);
     console.log("Error: This app will only handle 1 person at a time");
   } else {
     face = facePredictions[0];
@@ -196,10 +221,32 @@ function draw() {
 
     // function error() {
       if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 < 125 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 < 200) {
+          fill(255, 7, 69, 80);
+          noStroke();
+          rectMode(CENTER);
+          square(340, 325, 1500);
+          textStyle(BOLD);
+          textAlign(CENTER, CENTER);
+          let s = "Error: Bring your face closer and keep it straight";
+          translate(340, 325);
+          textSize(32);
+          fill(245);
+          text(s, 100, 10, 500, 630);
           return console.log("Error: Bring your face closer and keep it straight");
           // return (<span class="Error">Error: Bring your face closer and keep it straight</span>);
       }
       if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 > 300 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 > 375) {
+          fill(255, 7, 69, 80);
+          noStroke();
+          rectMode(CENTER);
+          square(340, 325, 1500);
+          textStyle(BOLD);
+          textAlign(CENTER, CENTER);
+          let s = "Error: Back up a bit and keep your head straight";
+          translate(340, 325);
+          textSize(32);
+          fill(245);
+          text(s, 100, 10, 500, 630);
           return console.log("Error: Back up a bit and keep your head straight");
           // return (<span class="Error">Error: Back up a bit and keep your head straight</span>);
       }
@@ -281,7 +328,7 @@ function draw() {
         ellipse(nose.x, nose.y - 15, dia, [dia + 5]);
 
         // Pacman Eye Blinking
-        if (rightEyeL.y - rightEyeU.y > 5 && leftEyeL.y - leftEyeU.y > 55) {
+        if (rightEyeL.y - rightEyeU.y > 5 && leftEyeL.y - leftEyeU.y > 5) {
             fill(0);
             noStroke();
             ellipse(rightEyeU.x, rightEyeU.y - 40, dia, [dia*3]);
@@ -743,8 +790,6 @@ function draw() {
           //   y = lipsLower.y - 20;
           // }
         }
-        
-
     }
 
     if (hitbox) {
