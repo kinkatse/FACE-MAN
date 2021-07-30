@@ -34,7 +34,7 @@ body {
   animation-duration: 0.5s;
   animation-name: rotate;
   animation-iteration-count: infinite;
-  cursor: wait;
+  /* cursor: wait; */
 }
 
 @keyframes rotate {

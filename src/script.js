@@ -21,7 +21,12 @@ let dia;
 let anyFilter = false;
 let x = 0;
 let y = 650;
-let angle = 0;
+// let angle = 0;
+let speedx = 3;
+let speedy = 3;
+
+let points = [];
+let vehicles = [];
 
 function clearButton() {
   pacmanFilter = false;
@@ -135,6 +140,16 @@ function setup() {
   video = createCapture(VIDEO);
   video.hide();
   loadFaceModel();
+
+  // noStroke();
+  // points = [{x, y}, {x, y}];
+
+  // for (let i = 0; i < points.length; i++) {
+  //   let pt = points[i];
+  //   let vehicle = new Vehicle(pt.x, pt.y);
+  //   vehicles.push(vehicle);
+  // }
+
 //   frameRate(2);
 }
 
@@ -471,51 +486,95 @@ function draw() {
         }
         endShape(CLOSE);
 
-        if (lipsLower.y - lipsUpper.y > 40 ) {
+        if (lipsLower.y - lipsUpper.y > 30 ) {
           fill("white");
           noStroke();
           // ellipse(x, y, 10, 10);
 
-          push();
-          translate(lipsLower.x, lipsLower.y - 50);
-          rotate(angle);
+          x = lipsLower.x;
+          y = lipsLower.y - 50;
+
+          noStroke();
+          points = [{x, y}];
+
+          // debugger
+          for (let i = 0; i < points.length; i++) {
+            // debugger
+            let pt = points[i];
+            let vehicle = new Vehicle(pt.x, pt.y);
+            vehicles.push(vehicle);
+            // debugger
+            if (vehicles[0].size < 1) {
+              vehicles.shift(vehicle);
+            }
+          }
+
+          for (let i = 0; i < vehicles.length; i++) {
+            let v = vehicles[i];
+            v.update();
+            v.show();
+            v.behaviors();
+          }
+
+          // x = 340;
+          // y = 325;
+
           // fill(255);
-          noFill();
-          stroke("white");
-          strokeWeight(2);
-          rectMode(CENTER);
-          square(0, 0, 70);
-          pop();
+          // noStroke();
+          // rectMode(CENTER);
+          // square(x, y, 100);
+          // x += speedx;
+          // y += speedy;
 
-          for (let a=0; a<radians(360); a+=radians(60)) {
-            push();
-            translate(lipsLower.x, lipsLower.y - 50);
-            rotate(a);
-            translate(0, 150);
-            rotate(angle);
-            noFill();
-            stroke("white");
-            strokeWeight(2);
-            rectMode(CENTER);
-            square(0, 0, 150);
-            pop();
-          }
+          // if (x < lipsLower.x || x > 340) {
+          //   speedx *= -1;
+          // }
 
-          for (let a=0; a<radians(360); a+=radians(60)) {
-            push();
-            translate(lipsLower.x, lipsLower.y - 50);
-            rotate(a);
-            translate(0, 300);
-            rotate(angle);
-            noFill();
-            stroke("white");
-            strokeWeight(2);
-            rectMode(CENTER);
-            square(0, 0, 300);
-            pop();
-          }
+          // if (y < lipsLower.y - 50 || y > 325) {
+          //   speedy *= -1;
+          // }
 
-          angle += radians(20)
+          // push();
+          // translate(lipsLower.x, lipsLower.y - 50);
+          // rotate(angle);
+          // // fill(255);
+          // noFill();
+          // stroke("white");
+          // strokeWeight(2);
+          // rectMode(CENTER);
+          // square(0, 0, 70);
+          // pop();
+
+          // for (let a=0; a<radians(360); a+=radians(60)) {
+          //   push();
+          //   translate(lipsLower.x, lipsLower.y - 50);
+          //   rotate(a);
+          //   translate(0, 150);
+          //   rotate(angle);
+          //   noFill();
+          //   stroke("white");
+          //   strokeWeight(2);
+          //   rectMode(CENTER);
+          //   square(0, 0, 150);
+          //   pop();
+          // }
+
+          // for (let a=0; a<radians(360); a+=radians(60)) {
+          //   push();
+          //   translate(lipsLower.x, lipsLower.y - 50);
+          //   rotate(a);
+          //   translate(0, 300);
+          //   rotate(angle);
+          //   noFill();
+          //   stroke("white");
+          //   strokeWeight(2);
+          //   rectMode(CENTER);
+          //   square(0, 0, 300);
+          //   pop();
+          // }
+
+          // angle += radians(20)
+
           // if (x !== lipsLower.x) {
           //   x = random(x, lipsLower.x);
           // }
@@ -568,3 +627,23 @@ function draw() {
     // }
   }
 }
+
+
+
+// function Vehicle(x,y) {
+//   this.pos = createVector(x,y);
+//   this.target = createVector(x,y);
+//   this.vel = createVector();
+//   this.acc = createVector();
+// }
+
+// Vehicle.prototype.update = function() {
+//   this.pos.add(this.vel);
+//   this.vel.add(this.acc);
+// }
+
+// Vehicle.prototype.show = function() {
+//   stroke(255);
+//   strokeWeight(5);
+//   point(this.pos.x, this.pos.y);
+// }
