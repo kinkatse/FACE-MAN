@@ -792,13 +792,14 @@ function draw() {
         }
     }
 
+    // Hitbox gets moved when error pops up for some reason
     if (hitbox) {
         fill(255, 255, 255, 0);
         strokeWeight(3);
         stroke("red");
         rect(
-            face.boundingBox.topLeft[0] + 60,
-            face.boundingBox.topLeft[1] + 25,
+            face.boundingBox.topLeft[0] + 20,
+            face.boundingBox.topLeft[1],
             face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] + 100,
             face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 100
         );
