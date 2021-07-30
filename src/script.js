@@ -30,6 +30,9 @@ let vehicles = [];
 let heartpts = [];
 let hearts = [];
 
+let zzzpts = [];
+let zzzs = [];
+
 function clearButton() {
   pacmanFilter = false;
   kirbyFilter = false;
@@ -278,7 +281,7 @@ function draw() {
         ellipse(nose.x, nose.y - 15, dia, [dia + 5]);
 
         // Pacman Eye Blinking
-        if (rightEyeL.y - rightEyeU.y > 4 && leftEyeL.y - leftEyeU.y > 4) {
+        if (rightEyeL.y - rightEyeU.y > 5 && leftEyeL.y - leftEyeU.y > 55) {
             fill(0);
             noStroke();
             ellipse(rightEyeU.x, rightEyeU.y - 40, dia, [dia*3]);
@@ -304,7 +307,7 @@ function draw() {
                 leftEyeU.x + 45,
                 leftEyeU.y - 60
             );
-          } else if (rightEyeL.y - rightEyeU.y <= 4 && leftEyeL.y - leftEyeU.y <= 4) {
+          } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
             fill(0);
             strokeWeight(5);
             stroke("black");
@@ -312,7 +315,7 @@ function draw() {
             line(rightEyeU.x - 15, rightEyeU.y - 20, rightEyeU.x + 15, rightEyeU.y - 10);
             line(leftEyeU.x + 5, leftEyeU.y - 65, leftEyeU.x - 15, leftEyeU.y - 10);
             line(leftEyeU.x + 15, leftEyeU.y - 20, leftEyeU.x - 15, leftEyeU.y - 10);
-          } else if (leftEyeL.y - leftEyeU.y <= 4) {
+          } else if (leftEyeL.y - leftEyeU.y <= 5) {
             fill(0);
             noStroke();
             ellipse(rightEyeU.x, rightEyeU.y - 40, dia, [dia*3]);
@@ -331,7 +334,7 @@ function draw() {
             stroke("black");
             line(leftEyeU.x + 5, leftEyeU.y - 65, leftEyeU.x - 15, leftEyeU.y - 10);
             line(leftEyeU.x + 15, leftEyeU.y - 20, leftEyeU.x - 15, leftEyeU.y - 10);
-          } else if (rightEyeL.y - rightEyeU.y <= 4) {
+          } else if (rightEyeL.y - rightEyeU.y <= 5) {
             fill(0);
             noStroke();
             ellipse(leftEyeU.x, leftEyeU.y - 40, dia, [dia*3]);
@@ -397,7 +400,7 @@ function draw() {
         ellipse(leftEyeU.x + 40, leftEyeU.y + 30, dia*1.7, [dia/2]);
 
         // Kirby Eye Blinking
-        if (rightEyeL.y - rightEyeU.y > 4 && leftEyeL.y - leftEyeU.y > 4) {
+        if (rightEyeL.y - rightEyeU.y > 5 && leftEyeL.y - leftEyeU.y > 5) {
             fill(0);
             noStroke();
             ellipse(rightEyeU.x, rightEyeU.y - 30, dia, [dia*2.5]);
@@ -412,7 +415,7 @@ function draw() {
             // curve(rightEyeU.x, rightEyeU.y, rightEyeU.x - 10, rightEyeU.y - 10, rightEyeU.x - 30, rightEyeU.y - 30, rightEyeU.x - 40, rightEyeU.y + 50);
             fill(252, 197, 219);
             noStroke();
-          } else if (rightEyeL.y - rightEyeU.y <= 4 && leftEyeL.y - leftEyeU.y <= 4) {
+          } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
             noFill();
             strokeWeight(5);
             stroke("black");
@@ -431,7 +434,61 @@ function draw() {
             // line(rightEyeU.x, rightEyeU.y - 35, rightEyeU.x + 5, rightEyeU.y - 65);
             // curve(5, 26, 5, 50, 73, 24, 73, 61);
             // curve(x1, y1, x2, y2, x3, y3, x4, y4);
-          } else if (leftEyeL.y - leftEyeU.y <= 4) {
+
+            let mouth = [];
+            for (let pt of face.annotations.lipsUpperInner) {
+                pt = scaleCoord(pt);
+                pt.y -= 25;
+                mouth.push(pt);
+            }
+            for (let pt of face.annotations.lipsLowerInner) {
+                pt = scaleCoord(pt);
+                pt.y -= 25;
+                mouth.push(pt);
+            }
+
+            fill(247,99,96);
+            beginShape();
+            for (let pt of mouth) {
+                // stroke("black");
+                // strokeWeight(2);
+                noStroke();
+                smooth();
+                vertex(pt.x, pt.y);
+            }
+            endShape(CLOSE);
+            
+            // Kirby Sleep
+
+            x = 500;
+            y = 175;
+
+            noStroke();
+            zzzpts = [{x, y}];
+
+            for (let i = 0; i < zzzpts.length; i++) {
+              let pts = zzzpts[i];
+              let zzz = new Zzz(pts.x, pts.y);
+              zzzs.push(zzz);
+              // if (zzzs.length > 15) {
+              //   zzzs.shift(zzz);
+              // }
+              if (zzzs[0].opacity < 1) {
+                zzzs.shift(zzz);
+              }
+            }
+
+            for (let i = 0; i < zzzs.length; i++) {
+              let z = zzzs[i];
+              z.update();
+              z.show();
+              z.behaviors();
+              // if (zzzs.length > 15) {
+              //   zzzs.shift();
+              // }
+            }
+
+          } else if (leftEyeL.y - leftEyeU.y <= 5) {
             fill(0);
             noStroke();
             ellipse(rightEyeU.x, rightEyeU.y - 30, dia, [dia*2.5]);
@@ -501,7 +558,7 @@ function draw() {
               // }
             }
 
-          } else if (rightEyeL.y - rightEyeU.y <= 4) {
+          } else if (rightEyeL.y - rightEyeU.y <= 5) {
             fill(0);
             noStroke();
             ellipse(leftEyeU.x, leftEyeU.y - 30, dia, [dia*2.5]);
