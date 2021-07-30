@@ -7,7 +7,7 @@ function Vehicle(x,y) {
     this.acc = createVector();
     this.size = 15;
     this.maxSpeed = 150;
-    this.maxForce = 0.8;
+    this.maxForce = 1.8;
     this.history = [this.pos];
   }
   
@@ -68,7 +68,7 @@ function Vehicle(x,y) {
     var dist = desired.mag();
     var speed = this.maxSpeed;
     if (dist < 100) {
-      speed = map(dist, 0, 100, 0, this.maxSpeed);
+      speed = map(dist, 0, 100, this.maxSpeed, 0);
     }
     desired.setMag(speed);
     var steer = p5.Vector.sub(desired, this.vel);

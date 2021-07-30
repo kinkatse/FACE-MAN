@@ -27,6 +27,9 @@ let speedy = 3;
 let points = [];
 let vehicles = [];
 
+let heartpts = [];
+let hearts = [];
+
 function clearButton() {
   pacmanFilter = false;
   kirbyFilter = false;
@@ -393,22 +396,6 @@ function draw() {
         ellipse(rightEyeU.x - 40, rightEyeU.y + 30, dia*1.7, [dia/2]);
         ellipse(leftEyeU.x + 40, leftEyeU.y + 30, dia*1.7, [dia/2]);
 
-        push();
-        translate(leftEyeU.x + 150, leftEyeU.y - 30);
-        rotate(149);
-        fill("red");
-        noStroke();
-        ellipse(0, 0, 50, 30);
-        pop();
-
-        push();
-        translate(leftEyeU.x + 93, leftEyeU.y - 17);
-        rotate(150);
-        fill("red");
-        noStroke();
-        ellipse(0, 0, 50, 30);
-        pop();
-
         // Kirby Eye Blinking
         if (rightEyeL.y - rightEyeU.y > 4 && leftEyeL.y - leftEyeU.y > 4) {
             fill(0);
@@ -460,6 +447,60 @@ function draw() {
               leftEyeU.x - 10, leftEyeU.y - 15,
               leftEyeU.x - 20, leftEyeU.y + 80
             );
+
+            let mouth = [];
+            for (let pt of face.annotations.lipsUpperInner) {
+                pt = scaleCoord(pt);
+                pt.y -= 25;
+                mouth.push(pt);
+            }
+            for (let pt of face.annotations.lipsLowerInner) {
+                pt = scaleCoord(pt);
+                pt.y -= 25;
+                mouth.push(pt);
+            }
+
+            fill(247,99,96);
+            beginShape();
+            for (let pt of mouth) {
+                // stroke("black");
+                // strokeWeight(2);
+                noStroke();
+                smooth();
+                vertex(pt.x, pt.y);
+            }
+            endShape(CLOSE);
+            
+            // Kirby Wink
+
+            x = leftEyeU.x + 108;
+            y = leftEyeU.y - 45;
+
+            noStroke();
+            heartpts = [{x, y}];
+
+            for (let i = 0; i < heartpts.length; i++) {
+              let pts = heartpts[i];
+              let heart = new Heart(pts.x, pts.y);
+              hearts.push(heart);
+              // if (hearts.length > 15) {
+              //   hearts.shift(heart);
+              // }
+              if (hearts[0].opacity < 1) {
+                hearts.shift(heart);
+              }
+            }
+
+            for (let i = 0; i < hearts.length; i++) {
+              let h = hearts[i];
+              h.update();
+              h.show();
+              h.behaviors();
+              // if (hearts.length > 15) {
+              //   hearts.shift();
+              // }
+            }
+
           } else if (rightEyeL.y - rightEyeU.y <= 4) {
             fill(0);
             noStroke();
@@ -476,6 +517,60 @@ function draw() {
               rightEyeU.x - 35, rightEyeU.y - 25,
               rightEyeU.x - 45, rightEyeU.y + 65
             );
+
+            let mouth = [];
+            for (let pt of face.annotations.lipsUpperInner) {
+                pt = scaleCoord(pt);
+                pt.y -= 25;
+                mouth.push(pt);
+            }
+            for (let pt of face.annotations.lipsLowerInner) {
+                pt = scaleCoord(pt);
+                pt.y -= 25;
+                mouth.push(pt);
+            }
+
+            fill(247,99,96);
+            beginShape();
+            for (let pt of mouth) {
+                // stroke("black");
+                // strokeWeight(2);
+                noStroke();
+                smooth();
+                vertex(pt.x, pt.y);
+            }
+            endShape(CLOSE);
+            
+            // Kirby Wink
+
+            x = leftEyeU.x + 108;
+            y = leftEyeU.y - 45;
+
+            noStroke();
+            heartpts = [{x, y}];
+
+            for (let i = 0; i < heartpts.length; i++) {
+              let pts = heartpts[i];
+              let heart = new Heart(pts.x, pts.y);
+              hearts.push(heart);
+              // if (hearts.length > 15) {
+              //   hearts.shift(heart);
+              // }
+              if (hearts[0].opacity < 1) {
+                hearts.shift(heart);
+              }
+            }
+
+            for (let i = 0; i < hearts.length; i++) {
+              let h = hearts[i];
+              h.update();
+              h.show();
+              h.behaviors();
+              // if (hearts.length > 15) {
+              //   hearts.shift();
+              // }
+            }
+
           }
         
 
@@ -511,15 +606,12 @@ function draw() {
           y = lipsLower.y - 50;
 
           noStroke();
-          points = [{x, y}];
+          points = [{x, y}, {x, y}];
 
-          // debugger
           for (let i = 0; i < points.length; i++) {
-            // debugger
             let pt = points[i];
             let vehicle = new Vehicle(pt.x, pt.y);
             vehicles.push(vehicle);
-            // debugger
             if (vehicles[0].size < 1) {
               vehicles.shift(vehicle);
             }
@@ -572,20 +664,6 @@ function draw() {
           //   strokeWeight(2);
           //   rectMode(CENTER);
           //   square(0, 0, 150);
-          //   pop();
-          // }
-
-          // for (let a=0; a<radians(360); a+=radians(60)) {
-          //   push();
-          //   translate(lipsLower.x, lipsLower.y - 50);
-          //   rotate(a);
-          //   translate(0, 300);
-          //   rotate(angle);
-          //   noFill();
-          //   stroke("white");
-          //   strokeWeight(2);
-          //   rectMode(CENTER);
-          //   square(0, 0, 300);
           //   pop();
           // }
 
