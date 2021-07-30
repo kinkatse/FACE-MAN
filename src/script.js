@@ -188,23 +188,34 @@ async function getFace() {
     translate(340, 325);
     textSize(32);
     fill(245);
-    text(s, 100, 10, 500, 630);
+    text(s, 100, 160, 500, 630);
+    textSize(400);
+    fill("yellow");
+    text("!", 100, -50);
     console.log("Error: No face detected");
   } else if (facePredictions.length > 1) {
     face = undefined;
+    // while (facePredictions.length !== 1) {
+    //   facePredictions.pop();
+    // }
 
     // Weird double error going on??
-    fill(255, 7, 69, 120);
+    // debugger
+    fill(255, 7, 69);
     noStroke();
     rectMode(CENTER);
     square(340, 325, 1500);
     textStyle(BOLD);
     textAlign(CENTER, CENTER);
+    // debugger
     let s = "Error: This app will only handle 1 person at a time";
     translate(340, 340);
     textSize(32);
     fill(245);
-    text(s, 100, 10, 1000, 1030);
+    text(s, 100, 160, 1000, 1030);
+    textSize(400);
+    fill("yellow");
+    text("!", 100, -50);
     console.log("Error: This app will only handle 1 person at a time");
   } else {
     face = facePredictions[0];
@@ -231,7 +242,10 @@ function draw() {
           translate(340, 325);
           textSize(32);
           fill(245);
-          text(s, 100, 10, 500, 630);
+          text(s, 100, 160, 500, 630);
+          textSize(400);
+          fill("yellow");
+          text("!", 100, -50);
           return console.log("Error: Bring your face closer and keep it straight");
           // return (<span class="Error">Error: Bring your face closer and keep it straight</span>);
       }
@@ -246,7 +260,10 @@ function draw() {
           translate(340, 325);
           textSize(32);
           fill(245);
-          text(s, 100, 10, 500, 630);
+          text(s, 100, 160, 500, 630);
+          textSize(400);
+          fill("yellow");
+          text("!", 100, -50);
           return console.log("Error: Back up a bit and keep your head straight");
           // return (<span class="Error">Error: Back up a bit and keep your head straight</span>);
       }
