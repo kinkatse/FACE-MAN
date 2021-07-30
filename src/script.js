@@ -21,7 +21,6 @@ let dia;
 let anyFilter = false;
 let x = 0;
 let y = 650;
-// let angle = 0;
 let speedx = 3;
 let speedy = 3;
 
@@ -393,6 +392,23 @@ function draw() {
         noStroke();
         ellipse(rightEyeU.x - 40, rightEyeU.y + 30, dia*1.7, [dia/2]);
         ellipse(leftEyeU.x + 40, leftEyeU.y + 30, dia*1.7, [dia/2]);
+
+        push();
+        translate(leftEyeU.x + 150, leftEyeU.y - 30);
+        rotate(149);
+        fill("red");
+        noStroke();
+        ellipse(0, 0, 50, 30);
+        pop();
+
+        push();
+        translate(leftEyeU.x + 93, leftEyeU.y - 17);
+        rotate(150);
+        fill("red");
+        noStroke();
+        ellipse(0, 0, 50, 30);
+        pop();
+
         // Kirby Eye Blinking
         if (rightEyeL.y - rightEyeU.y > 4 && leftEyeL.y - leftEyeU.y > 4) {
             fill(0);
