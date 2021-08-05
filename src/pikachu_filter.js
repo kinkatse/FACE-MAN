@@ -1,14 +1,23 @@
-function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face) {
-    fill(252, 197, 219);
+function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face) {
+    fill(255, 223, 0);
     noStroke();
     ellipse(nose.x, nose.y - 20, facedia + 20, facedia + 30);
 
-    fill(249, 136, 189);
+    push();
+    fill(50, 223, 100);
     noStroke();
-    ellipse(rightEyeU.x - 40, rightEyeU.y + 30, dia*1.7, [dia/2]);
-    ellipse(leftEyeU.x + 40, leftEyeU.y + 30, dia*1.7, [dia/2]);
+    rotate(-0.4);
+    ellipse(rightEyeU.x - 40, rightEyeU.y - 100, dia, [dia*6]);
+    pop();
+    
+    push();
+    fill(50, 223, 100);
+    noStroke();
+    // rotate(PI/4);
+    ellipse(leftEyeU.x + 40, leftEyeU.y - 100, dia, [dia*6]);
+    pop();
 
-    // Kirby Eye Blinking
+    // Pikachu Eye Blinking
     if (rightEyeL.y - rightEyeU.y > 5 && leftEyeL.y - leftEyeU.y > 5) {
         fill(0);
         noStroke();
@@ -67,7 +76,7 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         }
         endShape(CLOSE);
         
-        // Kirby Sleep
+        // Pikachu Sleep
 
         x = 500;
         y = 175;
@@ -137,7 +146,7 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         }
         endShape(CLOSE);
         
-        // Kirby Wink
+        // Pikachu Wink
 
         x = leftEyeU.x + 108;
         y = leftEyeU.y - 45;
@@ -207,7 +216,7 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         }
         endShape(CLOSE);
         
-        // Kirby Wink
+        // Pikachu Wink
 
         x = leftEyeU.x + 108;
         y = leftEyeU.y - 45;

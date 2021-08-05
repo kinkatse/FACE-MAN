@@ -25,7 +25,7 @@ let speedx = 3;
 let speedy = 3;
 
 let points = [];
-let vehicles = [];
+let dusts = [];
 
 let heartpts = [];
 let hearts = [];
@@ -90,11 +90,11 @@ function kirbyButton() {
 }
 
 function pikachuButton() {
-  if (!kirbyFilter && !anyFilter) {
-    kirbyFilter = true;
+  if (!pikachuFilter && !anyFilter) {
+    pikachuFilter = true;
     anyFilter = true;
-  } else if (kirbyFilter && anyFilter) {
-      kirbyFilter = false;
+  } else if (pikachuFilter && anyFilter) {
+      pikachuFilter = false;
       anyFilter = false;
   } else {
     anyFilter = true;
@@ -127,10 +127,10 @@ function mustacheButton() {
 
 function glassesButton() {
   if (!glassesFilter && !anyFilter) {
-    kirbyFilter = true;
+    glassesFilter = true;
     anyFilter = true;
-  } else if (kirbyFilter && anyFilter) {
-      kirbyFilter = false;
+  } else if (glassesFilter && anyFilter) {
+      glassesFilter = false;
       anyFilter = false;
   } else {
     anyFilter = true;
@@ -151,8 +151,8 @@ function setup() {
 
   // for (let i = 0; i < points.length; i++) {
   //   let pt = points[i];
-  //   let vehicle = new Vehicle(pt.x, pt.y);
-  //   vehicles.push(vehicle);
+  //   let dust = new Dust(pt.x, pt.y);
+  //   dusts.push(dust);
   // }
 
 //   frameRate(2);
@@ -317,6 +317,11 @@ function draw() {
     if (kirbyFilter) {
       new Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face)
     }
+
+    if (pikachuFilter) {
+      new Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face)
+    }
+
 
     // Hitbox gets moved when error pops up for some reason
     if (hitbox) {

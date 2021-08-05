@@ -1,6 +1,6 @@
 let angle = 0;
 
-function Vehicle(x,y) {
+function Dust(x,y) {
     this.pos = createVector(random(width), random(height));
     this.target = createVector(x,y);
     this.vel = p5.Vector.random2D();
@@ -11,7 +11,7 @@ function Vehicle(x,y) {
     this.history = [this.pos];
   }
   
-  Vehicle.prototype.update = function() {
+  Dust.prototype.update = function() {
     this.pos.add(this.vel);
     this.vel.add(this.acc);
     this.acc.mult(0);
@@ -19,7 +19,7 @@ function Vehicle(x,y) {
     this.history.push(this.pos);
   }
   
-  Vehicle.prototype.show = function() {
+  Dust.prototype.show = function() {
     push();
     translate(this.pos.x, this.pos.y);
     // stroke(255);
@@ -54,16 +54,16 @@ function Vehicle(x,y) {
     // }
   }
 
-  Vehicle.prototype.behaviors = function() {
+  Dust.prototype.behaviors = function() {
     let arrive = this.arrive(this.target);
     this.applyForce(arrive);
   }
 
-  Vehicle.prototype.applyForce = function(f) {
+  Dust.prototype.applyForce = function(f) {
     this.acc.add(f);
   }
 
-  Vehicle.prototype.arrive = function(target) {
+  Dust.prototype.arrive = function(target) {
     var desired = p5.Vector.sub(target, this.pos);
     var dist = desired.mag();
     var speed = this.maxSpeed;
@@ -76,7 +76,7 @@ function Vehicle(x,y) {
     return steer;
   };
 
-//   Vehicle.prototype.seek = function(target) {
+//   Dust.prototype.seek = function(target) {
 //     let desired = p5.Vector.sub(target, this.pos);
 //     desired.setMag(this.maxSpeed);
 //     let steer = p5.Vector.sub(desired, this.vel);
