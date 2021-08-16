@@ -322,6 +322,19 @@ function draw() {
       new Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face)
     }
 
+    let center = scaleCoord(face.scaledMesh[5]);
+
+    if (prettyFilter) {
+      new Pretty(center, face)
+    }
+
+    if (mustacheFilter) {
+      new Mustache(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, face)
+    }
+
+    if (glassesFilter) {
+      new Glasses(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, face)
+    }
 
     // Hitbox gets moved when error pops up for some reason
     if (hitbox) {

@@ -25,6 +25,9 @@ body {
 
 .logo img {
   height: 50px;
+  animation-duration: 3s;
+  animation-name: colorrotate;
+  animation-iteration-count: infinite;
 }
 
 .logo:hover img {
@@ -37,17 +40,29 @@ body {
   /* cursor: wait; */
 }
 
+@keyframes colorrotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
 @keyframes rotate {
   from {
+    filter: hue-rotate(0deg);
     transform: rotate(1deg);
     height: 50px;
   }
   50% {
+    filter: hue-rotate(360deg);
     transform: rotate(360deg);
     height: 55px;
     margin: -2.5px;
   }
   to {
+    filter: hue-rotate(720deg);
     transform: rotate(720deg);
     height: 50px;
   }
