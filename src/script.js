@@ -302,6 +302,9 @@ function draw() {
     let leftEyeU = scaleCoord(face.annotations.leftEyeUpper0[3]);
     let leftEyeL = scaleCoord(face.annotations.leftEyeLower0[4]);
 
+    let leftCheek = scaleCoord(face.annotations.leftCheek[0]);
+    let rightCheek = scaleCoord(face.annotations.rightCheek[0]);
+
     topLeft = scaleCoord(face.boundingBox.topLeft);
     bottomRight = scaleCoord(face.boundingBox.bottomRight);
     w = bottomRight.x - topLeft.x;
@@ -322,10 +325,9 @@ function draw() {
       new Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face)
     }
 
-    let center = scaleCoord(face.scaledMesh[5]);
-
     if (prettyFilter) {
-      new Pretty(center, face)
+      // debugger
+      new Pretty(leftCheek, rightCheek, face)
     }
 
     if (mustacheFilter) {
