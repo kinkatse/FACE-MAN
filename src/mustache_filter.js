@@ -26,14 +26,14 @@ function Mustache(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, 
     fill("yellow")
     stroke("black");
     strokeWeight(2);
-    ellipse(nose.x, nose.y - 15, dia, [dia + 5]);
+    ellipse(nose.x, nose.y - 15, dia, (dia + 5));
 
     // Mustache Eye Blinking
     if (rightEyeL.y - rightEyeU.y > 5 && leftEyeL.y - leftEyeU.y > 5) {
         fill(0);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 40, dia, [dia*3]);
-        ellipse(leftEyeU.x, leftEyeU.y - 40, dia, [dia*3]);
+        ellipse(rightEyeU.x, rightEyeU.y - 40, dia, (dia*3));
+        ellipse(leftEyeU.x, leftEyeU.y - 40, dia, (dia*3));
         // circle(rightEyeU.x, rightEyeU.y, dia);
         // circle(leftEyeU.x, leftEyeU.y, dia);
 
@@ -66,7 +66,7 @@ function Mustache(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, 
     } else if (leftEyeL.y - leftEyeU.y <= 5) {
         fill(0);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 40, dia, [dia*3]);
+        ellipse(rightEyeU.x, rightEyeU.y - 40, dia, (dia*3));
         fill("yellow");
         noStroke();
         triangle(
@@ -85,7 +85,7 @@ function Mustache(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, 
     } else if (rightEyeL.y - rightEyeU.y <= 5) {
         fill(0);
         noStroke();
-        ellipse(leftEyeU.x, leftEyeU.y - 40, dia, [dia*3]);
+        ellipse(leftEyeU.x, leftEyeU.y - 40, dia, (dia*3));
         fill("yellow");
         noStroke();
         triangle(

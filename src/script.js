@@ -174,7 +174,7 @@ async function getFace() {
   const facePredictions = await model.estimateFaces({
     input: document.querySelector('video')
   }); 
-  console.log(facePredictions);
+  // console.log(facePredictions);
   if (facePredictions.length === 0) {
     face = undefined;
 
@@ -194,7 +194,7 @@ async function getFace() {
     fill("yellow");
     text("!", 100, -50);
     pop();
-    console.log("Error: No face detected");
+    // console.log("Error: No face detected");
   } else if (facePredictions.length > 1) {
     face = undefined;
     push();
@@ -213,7 +213,7 @@ async function getFace() {
     fill("yellow");
     text("!", 100, -50);
     pop();
-    console.log("Error: This app will only handle 1 person at a time");
+    // console.log("Error: This app will only handle 1 person at a time");
   } else {
     face = facePredictions[0];
   }
@@ -244,7 +244,8 @@ function draw() {
           fill("yellow");
           text("!", 100, -50);
           pop();
-          return console.log("Error: Bring your face closer and keep it straight");
+          return;
+          // return console.log("Error: Bring your face closer and keep it straight");
       }
       if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 > 300 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 > 375) {
           push();  
@@ -263,11 +264,12 @@ function draw() {
           fill("yellow");
           text("!", 100, -50);
           pop();
-          return console.log("Error: Back up a bit and keep your head straight");
+          return;
+          // return console.log("Error: Back up a bit and keep your head straight");
       }
 
     if (firstFace) {
-      console.log(face);
+      // console.log(face);
       firstFace = false;
     }
 

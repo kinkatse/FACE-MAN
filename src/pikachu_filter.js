@@ -7,26 +7,26 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
     fill(50, 223, 100);
     noStroke();
     rotate(-0.4);
-    ellipse(rightEyeU.x - 40, rightEyeU.y - 100, dia, [dia*6]);
+    ellipse(rightEyeU.x - 40, rightEyeU.y - 100, dia, (dia*6));
     pop();
     
     push();
     fill(50, 223, 100);
     noStroke();
     // rotate(PI/4);
-    ellipse(leftEyeU.x + 40, leftEyeU.y - 100, dia, [dia*6]);
+    ellipse(leftEyeU.x + 40, leftEyeU.y - 100, dia, (dia*6));
     pop();
 
     // Pikachu Eye Blinking
     if (rightEyeL.y - rightEyeU.y > 5 && leftEyeL.y - leftEyeU.y > 5) {
         fill(0);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 30, dia, [dia*2.5]);
-        ellipse(leftEyeU.x, leftEyeU.y - 30, dia, [dia*2.5]);
+        ellipse(rightEyeU.x, rightEyeU.y - 30, dia, (dia*2.5));
+        ellipse(leftEyeU.x, leftEyeU.y - 30, dia, (dia*2.5));
         fill(255);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 50, dia/1.75, [dia]);
-        ellipse(leftEyeU.x, leftEyeU.y - 50, dia/1.75, [dia]);
+        ellipse(rightEyeU.x, rightEyeU.y - 50, dia/1.75, (dia));
+        ellipse(leftEyeU.x, leftEyeU.y - 50, dia/1.75, (dia));
         // circle(rightEyeU.x, rightEyeU.y, dia);
         // circle(leftEyeU.x, leftEyeU.y, dia);
         stroke("black");
@@ -109,10 +109,10 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         } else if (leftEyeL.y - leftEyeU.y <= 5) {
         fill(0);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 30, dia, [dia*2.5]);
+        ellipse(rightEyeU.x, rightEyeU.y - 30, dia, (dia*2.5));
         fill(255);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 50, dia/1.75, [dia]);
+        ellipse(rightEyeU.x, rightEyeU.y - 50, dia/1.75, (dia));
         noFill();
         strokeWeight(5);
         stroke("black");
@@ -179,10 +179,10 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         } else if (rightEyeL.y - rightEyeU.y <= 5) {
         fill(0);
         noStroke();
-        ellipse(leftEyeU.x, leftEyeU.y - 30, dia, [dia*2.5]);
+        ellipse(leftEyeU.x, leftEyeU.y - 30, dia, (dia*2.5));
         fill(255);
         noStroke();
-        ellipse(leftEyeU.x, leftEyeU.y - 50, dia/1.75, [dia]);
+        ellipse(leftEyeU.x, leftEyeU.y - 50, dia/1.75, (dia));
         noFill();
         strokeWeight(5);
         stroke("black");
