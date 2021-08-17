@@ -178,6 +178,7 @@ async function getFace() {
   if (facePredictions.length === 0) {
     face = undefined;
 
+    push();
     fill(255, 7, 69, 120);
     noStroke();
     rectMode(CENTER);
@@ -192,22 +193,17 @@ async function getFace() {
     textSize(400);
     fill("yellow");
     text("!", 100, -50);
+    pop();
     console.log("Error: No face detected");
   } else if (facePredictions.length > 1) {
     face = undefined;
-    // while (facePredictions.length !== 1) {
-    //   facePredictions.pop();
-    // }
-
-    // Weird double error going on??
-    // debugger
+    push();
     fill(255, 7, 69);
     noStroke();
     rectMode(CENTER);
     square(340, 325, 1500);
     textStyle(BOLD);
     textAlign(CENTER, CENTER);
-    // debugger
     let s = "Error: This app will only handle 1 person at a time";
     translate(340, 340);
     textSize(32);
@@ -216,6 +212,7 @@ async function getFace() {
     textSize(400);
     fill("yellow");
     text("!", 100, -50);
+    pop();
     console.log("Error: This app will only handle 1 person at a time");
   } else {
     face = facePredictions[0];
@@ -230,8 +227,8 @@ function draw() {
   if (face !== undefined) {
     image(video, 0, 0, width, height);
 
-    // function error() {
-      if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 < 125 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 < 200) {
+      if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 < 100 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 < 175) {
+          push();
           fill(255, 7, 69, 80);
           noStroke();
           rectMode(CENTER);
@@ -246,10 +243,11 @@ function draw() {
           textSize(400);
           fill("yellow");
           text("!", 100, -50);
+          pop();
           return console.log("Error: Bring your face closer and keep it straight");
-          // return (<span class="Error">Error: Bring your face closer and keep it straight</span>);
       }
       if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 > 300 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 > 375) {
+          push();  
           fill(255, 7, 69, 80);
           noStroke();
           rectMode(CENTER);
@@ -264,10 +262,9 @@ function draw() {
           textSize(400);
           fill("yellow");
           text("!", 100, -50);
+          pop();
           return console.log("Error: Back up a bit and keep your head straight");
-          // return (<span class="Error">Error: Back up a bit and keep your head straight</span>);
       }
-    // }
 
     if (firstFace) {
       console.log(face);
@@ -326,7 +323,6 @@ function draw() {
     }
 
     if (prettyFilter) {
-      // debugger
       new Pretty(leftCheek, rightCheek, face)
     }
 
@@ -338,14 +334,13 @@ function draw() {
       new Glasses(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, face)
     }
 
-    // Hitbox gets moved when error pops up for some reason
     if (hitbox) {
         fill(255, 255, 255, 0);
         strokeWeight(3);
         stroke("red");
         rect(
-            face.boundingBox.topLeft[0] + 20,
-            face.boundingBox.topLeft[1],
+            face.boundingBox.topLeft[0] + 50,
+            face.boundingBox.topLeft[1] + 20,
             face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] + 100,
             face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 100
         );
