@@ -50,7 +50,7 @@ body {
   /*  background: rgb(185, 70, 41); 
    background: rgb(232, 159, 101);  */
 
-  background: linear-gradient(217deg, rgba(60, 60, 60, 1), rgba(45, 45, 45, 1) 70.71%);
+  background: linear-gradient(217deg, rgba(50, 50, 50, 1), rgb(32, 32, 32) 70.71%);
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -170,14 +170,14 @@ body {
   position: relative;
   display: inline-block;
   margin: 10px;
-  color: rgb(15, 171, 192);
-  border-bottom: 1px solid rgb(15, 171, 192);
+  color: rgb(9, 147, 189);
+  border-bottom: 1px solid rgb(9, 147, 189);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 180px;
+  width: 160px;
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   margin: 15px;
@@ -201,7 +201,7 @@ body {
   margin-left: 20%;
   margin-right: 20%;
   position: relative;
-  right: -90%;
+  right: -87%;
   top: 150%;
   font-weight: 100;
 }
@@ -237,8 +237,10 @@ button {
   padding: 5px;
   margin: 5px;
 
-  background: linear-gradient(220deg, rgba(83, 83, 83, 1), rgba(120, 120, 120, 1) 80%);
+  /* background: linear-gradient(220deg, rgba(83, 83, 83, 1), rgba(120, 120, 120, 1) 80%); */
   /* background:lightgreen; */
+  background-color: rgba(0,0,0,0);
+  border: 3px solid white;
   border-radius: 5px;
   color: rgb(255, 248, 240);
   font-size: 14px;
@@ -249,7 +251,7 @@ button {
 }
 
 button:hover {
-  box-shadow: 0 0 5px rgba(170, 231, 211, 0.7);
-  background: linear-gradient(220deg, rgba(120, 120, 120, 1), rgba(200, 200, 200, 1) 80%);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  background: linear-gradient(220deg, rgba(120, 120, 120, 1), rgba(200, 200, 200, 0.5) 80%);
   /* opacity: 65%; */
 }
