@@ -2,30 +2,33 @@
  
 <h3>Background</h3>
  
-This is a face recognition app that checks for two key movements, a person’s open mouth and a person’s closed eyes. The app will recognize which of the two specific facial actions you take and display an animation for when your mouth is open or eyes are closed. This game would use technologies like MediaDevices, TensorFlow, Javascript, Canvas, Node.js, HTML, CSS. The facial movement detection is a variation of algorithms of pixel values of video frames to determine movement in a certain area.
+This is a face recognition app that checks for two key movements, a person’s open mouth and a person’s closed eyes. The app will recognize which of the two specific facial actions you take and display an animation for when your mouth is open or eyes are closed. This game would use technologies like MediaDevices, TensorFlow, Javascript, Canvas, Node.js, HTML, CSS. The video stream is a loop of video frames captured through the live feed of your camera. The facial movement detection will use algorithms utilizing TensorFlow's ability to acertain points of interest on the face and react to any large movements of the mouth or eyes.
  
 <h3>Functionality & MVPs</h3>
  
 In FACE-MAN, the app will:
  
-1. Ask user to access camera, then show user
-2. Make face recognition for mouth, display animation when mouth is open
-3. Make face recognition for eyes, display animation when eyes are closed
-4. Make a simple filter
+1. Ask user to access camera, then stream video feed to user
+2. Make filters including a hitbox, a scanmask and some other creative filters
+3. Make face recognition for mouth, display animation when mouth is open
+4. Make face recognition for eyes, display animation when eyes are closed
  
 In addition, this project will include:
  
-1. An About modal describing how to interact with the app
-2. A production README
+1. An About Me drop down describing who I am and what technologies I used
+2. A How to Use drop down describing how to interact with the app
+3. A production README
  
 <h3>Wireframes</h3>
  
 ![Image of Wireframe](https://cdn.discordapp.com/attachments/597985513701376013/877251764527710259/FACE-MAN_Revision_Wireframes_2_png.png)
  
-* Nav links include links to this project's Github repo, my LinkedIn, How to Play and About modal.
+* Nav links include links to this project's Github repo, my LinkedIn
+* Nest to Nav Links are How to Use and About Me.
 * Main Title is on the top right of the navigation bar.
-* Top right under the navigation bar, we can change color schemes if I find time to implement this.
-* Detection Area is where the motion detection is and reads player’s facial movement
+* Center of page is the live video feed from your camera.
+* Above the live video feed is where you can select/deselect filters.
+* Face Filter represents your face and will read the player’s facial movement to determine mouth or eyes animation.
  
 <h3>Technologies, Libraries, & APIs</h3>
  
@@ -36,11 +39,9 @@ TensorFlow will be used to observe a user’s facial actions
 The P5/Canvas API to render visuals, filter, animations for successful actions
 Webpack and Babel to bundle and transpile the source JavaScript code
 npm to manage project dependencies
-May Use Web Audio API
 Node.js
 HTML
 CSS to style
-Maybe More?
  
 <h3>Implementation Timeline</h3>
  
