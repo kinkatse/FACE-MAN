@@ -20,7 +20,7 @@ In addition, this project will include:
  
 <h3>Wireframes</h3>
  
-![Image of Yaktocat](https://media.discordapp.net/attachments/597985513701376013/869229086076203078/FACE-MAN_Revision_Wireframes.png?width=894&height=670)
+![Image of Wireframe](https://cdn.discordapp.com/attachments/597985513701376013/877251764527710259/FACE-MAN_Revision_Wireframes_2_png.png)
  
 * Nav links include links to this project's Github repo, my LinkedIn, How to Play and About modal.
 * Main Title is on the top right of the navigation bar.
