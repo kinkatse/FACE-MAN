@@ -1,3 +1,49 @@
+@keyframes colorrotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    filter: hue-rotate(0deg);
+    transform: scale(1.0) rotate(1deg);
+    /* height: 50px; */
+  }
+  50% {
+    filter: hue-rotate(360deg);
+    transform: scale(1.1) rotate(360deg);
+    /* height: 55px;
+    margin: -2.5px; */
+  }
+  to {
+    filter: hue-rotate(720deg);
+    transform: scale(1.0) rotate(720deg);
+    /* height: 50px; */
+  }
+}
+
+@keyframes pop {
+  from, to {
+    transform: scale(1.0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-10deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 body {
 
   /* background: rgb(238, 237, 229);  */
@@ -38,43 +84,6 @@ body {
   animation-name: rotate;
   animation-iteration-count: infinite;
   /* cursor: wait; */
-}
-
-@keyframes colorrotate {
-  from {
-    filter: hue-rotate(0deg);
-  }
-  to {
-    filter: hue-rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  from {
-    filter: hue-rotate(0deg);
-    transform: scale(1.0) rotate(1deg);
-    /* height: 50px; */
-  }
-  50% {
-    filter: hue-rotate(360deg);
-    transform: scale(1.1) rotate(360deg);
-    /* height: 55px;
-    margin: -2.5px; */
-  }
-  to {
-    filter: hue-rotate(720deg);
-    transform: scale(1.0) rotate(720deg);
-    /* height: 50px; */
-  }
-}
-
-@keyframes pop {
-  from, to {
-    transform: scale(1.0) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.1) rotate(-10deg);
-  }
 }
 
 .title {
@@ -202,15 +211,6 @@ body {
   z-index: 5;
   animation-duration: 1.5s;
   animation-name: fadein;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0%;
-  }
-  to {
-    opacity: 100%;
-  }
 }
 
 .error {
