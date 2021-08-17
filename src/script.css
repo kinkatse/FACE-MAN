@@ -52,19 +52,28 @@ body {
 @keyframes rotate {
   from {
     filter: hue-rotate(0deg);
-    transform: rotate(1deg);
-    height: 50px;
+    transform: scale(1.0) rotate(1deg);
+    /* height: 50px; */
   }
   50% {
     filter: hue-rotate(360deg);
-    transform: rotate(360deg);
-    height: 55px;
-    margin: -2.5px;
+    transform: scale(1.1) rotate(360deg);
+    /* height: 55px;
+    margin: -2.5px; */
   }
   to {
     filter: hue-rotate(720deg);
-    transform: rotate(720deg);
-    height: 50px;
+    transform: scale(1.0) rotate(720deg);
+    /* height: 50px; */
+  }
+}
+
+@keyframes pop {
+  from, to {
+    transform: scale(1.0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-10deg);
   }
 }
 
@@ -143,28 +152,9 @@ body {
 
 .nav-links:hover img {
   opacity: 65%;
-  /* margin: -1px; */
-  /* height: 32px; */
   animation-duration: 0.75s;
   animation-name: pop;
   animation-iteration-count: infinite;
-}
-
-/* animation-duration: 1s;
-animation-name: rotate;
-animation-iteration-count: infinite; */
-
-@keyframes pop {
-  from {
-    height: 30px;
-  }
-  50% {
-    height: 34px;
-    margin: -2px;
-  }
-  to {
-    height: 30px;
-  }
 }
 
 .tooltip {
