@@ -1,4 +1,7 @@
 function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, face) {
+    img = loadImage('shadowattempt.png');
+    image(img, 0, 0);
+
     fill("yellow");
     stroke("black");
     strokeWeight(3);

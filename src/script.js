@@ -3,6 +3,7 @@
 let video;
 let model;
 let face;
+let img;
 let firstFace = true;
 let pacmanFilter = false;
 let kirbyFilter = false;
@@ -137,6 +138,10 @@ function glassesButton() {
   }
 }
 
+// function preload() {
+//   img = loadImage('shadowattempt.png');
+// }
+
 function setup() {
   createCanvas(860, 650);
   // drawingContext.shadowBlur = 3;
@@ -220,6 +225,8 @@ async function getFace() {
 }
 
 function draw() {
+  // image(img, 0, 0);
+
   if (video.loadedmetadata && model !== undefined) {
     getFace();
   }
