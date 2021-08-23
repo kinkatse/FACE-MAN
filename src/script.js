@@ -138,9 +138,9 @@ function glassesButton() {
   }
 }
 
-// function preload() {
-//   img = loadImage('shadowattempt.png');
-// }
+function preload() {
+  img = loadImage('shadowattempt.png');
+}
 
 function setup() {
   createCanvas(860, 650);
@@ -225,7 +225,7 @@ async function getFace() {
 }
 
 function draw() {
-  // image(img, 0, 0);
+  image(img, 0, 0);
 
   if (video.loadedmetadata && model !== undefined) {
     getFace();
