@@ -139,7 +139,7 @@ function glassesButton() {
 }
 
 function preload() {
-  img = loadImage('shadowattempt.png');
+  img = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801944250671205/Ghost_Shadow.png')
 }
 
 function setup() {
@@ -225,7 +225,6 @@ async function getFace() {
 }
 
 function draw() {
-  image(img, 0, 0);
 
   if (video.loadedmetadata && model !== undefined) {
     getFace();
@@ -354,5 +353,11 @@ function draw() {
             face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 100
         );
     }
+
+    push();
+    imageMode(CENTER)
+    image(img, width / 2, height / 2)
+    pop();
+
   }
 }
