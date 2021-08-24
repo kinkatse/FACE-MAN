@@ -152,7 +152,7 @@ function preload() {
   speedy = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801983974920282/Ghost_Speedy.png');
   pokey = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801971815641118/Ghost_Pokey.png');
   mustacheImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879841681552318524/Mustache_3.png?width=670&height=670');
-  glassesImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801971815641118/Ghost_Pokey.png');
+  glassesImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879848065735999488/Glasses_4.png?width=670&height=670');
 }
 
 function setup() {
@@ -288,6 +288,7 @@ function draw() {
       }
 
     if (firstFace) {
+      // debugger
       // console.log(face);
       firstFace = false;
     }
@@ -319,6 +320,8 @@ function draw() {
 
     let leftEyeU = scaleCoord(face.annotations.leftEyeUpper0[3]);
     let leftEyeL = scaleCoord(face.annotations.leftEyeLower0[4]);
+
+    let betweenEyes = scaleCoord(face.annotations.midwayBetweenEyes[0]);
 
     let leftCheek = scaleCoord(face.annotations.leftCheek[0]);
     let rightCheek = scaleCoord(face.annotations.rightCheek[0]);
@@ -352,7 +355,7 @@ function draw() {
     }
 
     if (glassesFilter) {
-      new Glasses(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, face)
+      new Glasses(betweenEyes)
     }
 
     if (hitbox) {
