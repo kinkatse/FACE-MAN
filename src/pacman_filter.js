@@ -127,4 +127,6 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
         vertex(pt.x, pt.y);
     }
     endShape(CLOSE);
+
+    new Ghosts();
 }

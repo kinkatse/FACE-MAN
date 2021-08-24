@@ -153,7 +153,7 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
             //   hearts.shift(heart);
             // }
             if (hearts[0].opacity < 1) {
-            hearts.shift(heart);
+                hearts.shift(heart);
             }
         }
 

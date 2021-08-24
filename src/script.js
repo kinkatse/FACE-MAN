@@ -3,8 +3,8 @@
 let video;
 let model;
 let face;
-let img;
 let firstFace = true;
+
 let pacmanFilter = false;
 let kirbyFilter = false;
 let pikachuFilter = false;
@@ -13,6 +13,12 @@ let mustacheFilter = false;
 let glassesFilter = false;
 let hitbox = false;
 let faceMaskDots = false;
+
+let shadow;
+let bashful;
+let speedy;
+let pokey;
+
 let topLeft;
 let bottomRight;
 let w;
@@ -22,8 +28,8 @@ let dia;
 let anyFilter = false;
 let x = 0;
 let y = 650;
-let speedx = 3;
-let speedy = 3;
+// let speedx = 3;
+// let speedy = 3;
 
 let points = [];
 let dusts = [];
@@ -139,7 +145,10 @@ function glassesButton() {
 }
 
 function preload() {
-  img = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801944250671205/Ghost_Shadow.png')
+  shadow = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801944250671205/Ghost_Shadow.png');
+  bashful = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801959450828850/Ghost_Bashful.png');
+  speedy = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801983974920282/Ghost_Speedy.png');
+  pokey = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801971815641118/Ghost_Pokey.png');
 }
 
 function setup() {
@@ -353,11 +362,6 @@ function draw() {
             face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 100
         );
     }
-
-    push();
-    imageMode(CENTER)
-    image(img, width / 2, height / 2)
-    pop();
 
   }
 }
