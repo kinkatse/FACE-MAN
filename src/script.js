@@ -111,38 +111,26 @@ function pikachuButton() {
 }
 
 function prettyButton() {
-  if (!prettyFilter && !anyFilter) {
+  if (!prettyFilter) {
     prettyFilter = true;
-    anyFilter = true;
-  } else if (prettyFilter && anyFilter) {
-      prettyFilter = false;
-      anyFilter = false;
   } else {
-    anyFilter = true;
+    prettyFilter = false;
   }
 }
 
 function mustacheButton() {
-  if (!mustacheFilter && !anyFilter) {
+  if (!mustacheFilter) {
     mustacheFilter = true;
-    anyFilter = true;
-  } else if (mustacheFilter && anyFilter) {
-      mustacheFilter = false;
-      anyFilter = false;
   } else {
-    anyFilter = true;
+    mustacheFilter = false;
   }
 }
 
 function glassesButton() {
-  if (!glassesFilter && !anyFilter) {
+  if (!glassesFilter) {
     glassesFilter = true;
-    anyFilter = true;
-  } else if (glassesFilter && anyFilter) {
-      glassesFilter = false;
-      anyFilter = false;
   } else {
-    anyFilter = true;
+    glassesFilter = false;
   }
 }
 

@@ -5,19 +5,19 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
 
     fill(249, 136, 189);
     noStroke();
-    ellipse(rightEyeU.x - 40, rightEyeU.y + 30, dia*1.7, (dia/2));
-    ellipse(leftEyeU.x + 40, leftEyeU.y + 30, dia*1.7, (dia/2));
+    ellipse(rightEyeU.x - 40, rightEyeU.y + 35, dia*1.7, (dia/2));
+    ellipse(leftEyeU.x + 40, leftEyeU.y + 35, dia*1.7, (dia/2));
 
     // Kirby Eye Blinking
     if (rightEyeL.y - rightEyeU.y > 5 && leftEyeL.y - leftEyeU.y > 5) {
         fill(0);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 30, dia, (dia*2.5));
-        ellipse(leftEyeU.x, leftEyeU.y - 30, dia, (dia*2.5));
+        ellipse(rightEyeU.x, rightEyeU.y - 25, dia, (dia*2.5));
+        ellipse(leftEyeU.x, leftEyeU.y - 25, dia, (dia*2.5));
         fill(255);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 50, dia/1.75, (dia));
-        ellipse(leftEyeU.x, leftEyeU.y - 50, dia/1.75, (dia));
+        ellipse(rightEyeU.x, rightEyeU.y - 45, dia/1.75, (dia));
+        ellipse(leftEyeU.x, leftEyeU.y - 45, dia/1.75, (dia));
         // circle(rightEyeU.x, rightEyeU.y, dia);
         // circle(leftEyeU.x, leftEyeU.y, dia);
         stroke("black");
@@ -29,16 +29,16 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         strokeWeight(5);
         stroke("black");
         curve(
-            rightEyeU.x + 15, rightEyeU.y + 80,
-            rightEyeU.x + 15, rightEyeU.y - 15,
-            rightEyeU.x - 35, rightEyeU.y - 25,
-            rightEyeU.x - 45, rightEyeU.y + 65
+            rightEyeU.x + 15, rightEyeU.y + 85,
+            rightEyeU.x + 15, rightEyeU.y - 10,
+            rightEyeU.x - 35, rightEyeU.y - 20,
+            rightEyeU.x - 45, rightEyeU.y + 70
         );
         curve(
-            leftEyeU.x + 40, leftEyeU.y + 65,
-            leftEyeU.x + 40, leftEyeU.y - 25,
-            leftEyeU.x - 10, leftEyeU.y - 15,
-            leftEyeU.x - 20, leftEyeU.y + 80
+            leftEyeU.x + 40, leftEyeU.y + 70,
+            leftEyeU.x + 40, leftEyeU.y - 20,
+            leftEyeU.x - 10, leftEyeU.y - 10,
+            leftEyeU.x - 20, leftEyeU.y + 85
         );
         // line(rightEyeU.x, rightEyeU.y - 35, rightEyeU.x + 5, rightEyeU.y - 65);
         // curve(5, 26, 5, 50, 73, 24, 73, 61);
@@ -47,12 +47,12 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         let mouth = [];
         for (let pt of face.annotations.lipsUpperInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 10;
             mouth.push(pt);
         }
         for (let pt of face.annotations.lipsLowerInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 10;
             mouth.push(pt);
         }
 
@@ -100,29 +100,29 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         } else if (leftEyeL.y - leftEyeU.y <= 5) {
         fill(0);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 30, dia, (dia*2.5));
+        ellipse(rightEyeU.x, rightEyeU.y - 25, dia, (dia*2.5));
         fill(255);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 50, dia/1.75, (dia));
+        ellipse(rightEyeU.x, rightEyeU.y - 45, dia/1.75, (dia));
         noFill();
         strokeWeight(5);
         stroke("black");
         curve(
-            leftEyeU.x + 40, leftEyeU.y + 65,
-            leftEyeU.x + 40, leftEyeU.y - 25,
-            leftEyeU.x - 10, leftEyeU.y - 15,
-            leftEyeU.x - 20, leftEyeU.y + 80
+            leftEyeU.x + 40, leftEyeU.y + 70,
+            leftEyeU.x + 40, leftEyeU.y - 20,
+            leftEyeU.x - 10, leftEyeU.y - 10,
+            leftEyeU.x - 20, leftEyeU.y + 85
         );
 
         let mouth = [];
         for (let pt of face.annotations.lipsUpperInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 10;
             mouth.push(pt);
         }
         for (let pt of face.annotations.lipsLowerInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 10;
             mouth.push(pt);
         }
 
@@ -140,7 +140,7 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         // Kirby Wink
 
         x = leftEyeU.x + 108;
-        y = leftEyeU.y - 45;
+        y = leftEyeU.y - 40;
 
         noStroke();
         heartpts = [{x, y}];
@@ -170,29 +170,29 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         } else if (rightEyeL.y - rightEyeU.y <= 5) {
         fill(0);
         noStroke();
-        ellipse(leftEyeU.x, leftEyeU.y - 30, dia, (dia*2.5));
+        ellipse(leftEyeU.x, leftEyeU.y - 25, dia, (dia*2.5));
         fill(255);
         noStroke();
-        ellipse(leftEyeU.x, leftEyeU.y - 50, dia/1.75, (dia));
+        ellipse(leftEyeU.x, leftEyeU.y - 45, dia/1.75, (dia));
         noFill();
         strokeWeight(5);
         stroke("black");
         curve(
-            rightEyeU.x + 15, rightEyeU.y + 80,
-            rightEyeU.x + 15, rightEyeU.y - 15,
-            rightEyeU.x - 35, rightEyeU.y - 25,
-            rightEyeU.x - 45, rightEyeU.y + 65
+            rightEyeU.x + 15, rightEyeU.y + 85,
+            rightEyeU.x + 15, rightEyeU.y - 10,
+            rightEyeU.x - 35, rightEyeU.y - 20,
+            rightEyeU.x - 45, rightEyeU.y + 70
         );
 
         let mouth = [];
         for (let pt of face.annotations.lipsUpperInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 10;
             mouth.push(pt);
         }
         for (let pt of face.annotations.lipsLowerInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 10;
             mouth.push(pt);
         }
 
@@ -210,7 +210,7 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         // Kirby Wink
 
         x = leftEyeU.x + 108;
-        y = leftEyeU.y - 45;
+        y = leftEyeU.y - 40;
 
         noStroke();
         heartpts = [{x, y}];
@@ -243,12 +243,12 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
     let mouth = [];
     for (let pt of face.annotations.lipsUpperInner) {
         pt = scaleCoord(pt);
-        pt.y -= 25;
+        pt.y -= 10;
         mouth.push(pt);
     }
     for (let pt of face.annotations.lipsLowerInner) {
         pt = scaleCoord(pt);
-        pt.y -= 25;
+        pt.y -= 10;
         mouth.push(pt);
     }
 
