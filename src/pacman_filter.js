@@ -57,6 +57,7 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
             leftEyeU.y - 60
         );
     } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
+        new Ghosts();
         fill(0);
         strokeWeight(5);
         stroke("black");
@@ -128,5 +129,4 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
     }
     endShape(CLOSE);
 
-    new Ghosts();
 }
