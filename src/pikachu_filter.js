@@ -12,7 +12,19 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
     push();
     fill(253, 220, 0);
     noStroke();
-    ellipse(nose.x, nose.y - 30, facedia + 20, facedia);
+    ellipse(nose.x, nose.y - 30, facedia + 15, facedia);
+    pop();
+
+    push();
+    fill(236, 28, 36);
+    noStroke();
+    ellipse(rightEyeU.x - 50, rightEyeU.y + 20, dia*1.8 - 10, dia*1.8 - 10);
+    ellipse(leftEyeU.x + 50, leftEyeU.y + 20, dia*1.8 - 10, dia*1.8 - 10);
+    pop();
+
+    push();
+    imageMode(CENTER);
+    image(pikanose, nose.x, nose.y - 20, facedia/8, facedia/8);
     pop();
 
     // Pikachu Eye Blinking

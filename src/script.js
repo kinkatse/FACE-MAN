@@ -22,6 +22,7 @@ let mustacheImg;
 let glassesImg;
 let pikaleftear;
 let pikarightear;
+let pikanose;
 
 let topLeft;
 let bottomRight;
@@ -145,6 +146,7 @@ function preload() {
   glassesImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879848065735999488/Glasses_4.png?width=670&height=670');
   pikaleftear = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896831193149491/Pikachu_Right_Ear.png');
   pikarightear = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896827556683826/Pikachu_Left_Ear.png');
+  pikanose = loadImage('https://media.discordapp.net/attachments/597985513701376013/879917035738529832/Pika_nose.png');
 }
 
 function setup() {
