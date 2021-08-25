@@ -1,5 +1,6 @@
 function Mustache(nose) {
     push();
-    image(mustacheImg, nose.x - 75, nose.y - 45, 150, 150);
+    imageMode(CENTER);
+    image(mustacheImg, nose.x, nose.y + 30, 150, 150);
     pop();
 }

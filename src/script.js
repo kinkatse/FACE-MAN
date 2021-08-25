@@ -20,6 +20,8 @@ let speedy;
 let pokey;
 let mustacheImg;
 let glassesImg;
+let pikaleftear;
+let pikarightear;
 
 let topLeft;
 let bottomRight;
@@ -141,6 +143,8 @@ function preload() {
   pokey = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801971815641118/Ghost_Pokey.png');
   mustacheImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879841681552318524/Mustache_3.png?width=670&height=670');
   glassesImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879848065735999488/Glasses_4.png?width=670&height=670');
+  pikaleftear = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896831193149491/Pikachu_Right_Ear.png');
+  pikarightear = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896827556683826/Pikachu_Left_Ear.png');
 }
 
 function setup() {
