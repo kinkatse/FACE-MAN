@@ -1,16 +1,16 @@
 function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face) {
     push();
     imageMode(CENTER);
-    image(pikarightear, rightEyeU.x - 60, rightEyeU.y - 125, facedia/2.5 + 15, facedia/2.5 + 15);
+    image(pikarightear, rightEyeU.x - 60, rightEyeU.y - 125, facedia/2.5 + 15, facedia/2.5 + 50);
     pop();
 
     push();
     imageMode(CENTER);
-    image(pikaleftear, leftEyeU.x + 60, leftEyeU.y - 125, facedia/2.5 + 15, facedia/2.5 + 15);
+    image(pikaleftear, leftEyeU.x + 60, leftEyeU.y - 125, facedia/2.5 + 15, facedia/2.5 + 50);
     pop();
 
     push();
-    fill(255, 223, 0);
+    fill(253, 220, 0);
     noStroke();
     ellipse(nose.x, nose.y - 30, facedia + 20, facedia);
     pop();
@@ -19,12 +19,12 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
     if (rightEyeL.y - rightEyeU.y > 5 && leftEyeL.y - leftEyeU.y > 5) {
         fill(0);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 30, dia, (dia*2.5));
-        ellipse(leftEyeU.x, leftEyeU.y - 30, dia, (dia*2.5));
+        ellipse(rightEyeU.x - 15, rightEyeU.y - 30, dia*1.7 - 10, dia*2 - 10);
+        ellipse(leftEyeU.x + 15, leftEyeU.y - 30, dia*1.7 - 10, dia*2 - 10);
         fill(255);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 50, dia/1.75, (dia));
-        ellipse(leftEyeU.x, leftEyeU.y - 50, dia/1.75, (dia));
+        ellipse(rightEyeU.x - 12, rightEyeU.y - 44, dia - 10, dia - 10);
+        ellipse(leftEyeU.x + 18, leftEyeU.y - 44, dia - 10, dia - 10);
         // circle(rightEyeU.x, rightEyeU.y, dia);
         // circle(leftEyeU.x, leftEyeU.y, dia);
         stroke("black");
@@ -54,12 +54,12 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         let mouth = [];
         for (let pt of face.annotations.lipsUpperInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 35;
             mouth.push(pt);
         }
         for (let pt of face.annotations.lipsLowerInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 35;
             mouth.push(pt);
         }
 
@@ -107,10 +107,11 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         } else if (leftEyeL.y - leftEyeU.y <= 5) {
         fill(0);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 30, dia, (dia*2.5));
+        ellipse(rightEyeU.x - 15, rightEyeU.y - 30, dia*1.7 - 10, dia*2 - 10);
         fill(255);
         noStroke();
-        ellipse(rightEyeU.x, rightEyeU.y - 50, dia/1.75, (dia));
+        ellipse(rightEyeU.x - 12, rightEyeU.y - 44, dia - 10, dia - 10);
+
         noFill();
         strokeWeight(5);
         stroke("black");
@@ -124,12 +125,12 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         let mouth = [];
         for (let pt of face.annotations.lipsUpperInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 35;
             mouth.push(pt);
         }
         for (let pt of face.annotations.lipsLowerInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 35;
             mouth.push(pt);
         }
 
@@ -177,10 +178,11 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         } else if (rightEyeL.y - rightEyeU.y <= 5) {
         fill(0);
         noStroke();
-        ellipse(leftEyeU.x, leftEyeU.y - 30, dia, (dia*2.5));
+        ellipse(leftEyeU.x + 15, leftEyeU.y - 30, dia*1.7 - 10, dia*2 - 10);
         fill(255);
         noStroke();
-        ellipse(leftEyeU.x, leftEyeU.y - 50, dia/1.75, (dia));
+        ellipse(leftEyeU.x + 18, leftEyeU.y - 44, dia - 10, dia - 10);
+
         noFill();
         strokeWeight(5);
         stroke("black");
@@ -194,12 +196,12 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         let mouth = [];
         for (let pt of face.annotations.lipsUpperInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 35;
             mouth.push(pt);
         }
         for (let pt of face.annotations.lipsLowerInner) {
             pt = scaleCoord(pt);
-            pt.y -= 25;
+            pt.y -= 35;
             mouth.push(pt);
         }
 
@@ -250,12 +252,12 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
     let mouth = [];
     for (let pt of face.annotations.lipsUpperInner) {
         pt = scaleCoord(pt);
-        pt.y -= 25;
+        pt.y -= 35;
         mouth.push(pt);
     }
     for (let pt of face.annotations.lipsLowerInner) {
         pt = scaleCoord(pt);
-        pt.y -= 25;
+        pt.y -= 35;
         mouth.push(pt);
     }
 
