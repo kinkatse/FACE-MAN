@@ -14,9 +14,18 @@ function Shadow(x,y) {
   }
   
   Shadow.prototype.show = function() {
-    push();
-    image(shadow, this.pos.x, this.pos.y, 140, 140)
-    pop();
+    if (this.vel.x >= 0) {
+        push();
+        imageMode(CENTER);
+        image(shadow, this.pos.x, this.pos.y, 140, 140)
+        pop();
+    } else if (this.vel.x < 0) {
+        push();
+        imageMode(CENTER);
+        scale(-1, 1)
+        image(shadow, -this.pos.x, this.pos.y, 140, 140)
+        pop();
+    }
   }
 
   Shadow.prototype.behaviors = function() {
@@ -29,14 +38,14 @@ function Shadow(x,y) {
   }
 
   Shadow.prototype.arrive = function(target) {
-    var desired = p5.Vector.sub(target, this.pos);
-    var dist = desired.mag();
-    var speed = this.maxSpeed;
+    let desired = p5.Vector.sub(target, this.pos);
+    let dist = desired.mag();
+    let speed = this.maxSpeed;
     if (dist < 100) {
       speed = map(dist, 0, 100, this.maxSpeed, 0);
     }
     desired.setMag(speed);
-    var steer = p5.Vector.sub(desired, this.vel);
+    let steer = p5.Vector.sub(desired, this.vel);
     steer.limit(this.maxForce);
     return steer;
   };
