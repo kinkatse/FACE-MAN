@@ -8,18 +8,22 @@ function Heart(x,y) {
     this.opacity = 255;
     this.maxSpeed = 30;
     this.maxForce = 0.5;
+    // debugger
   }
   
   Heart.prototype.update = function() {
+    // debugger
     this.pos.add(this.vel);
     this.vel.add(this.acc);
     this.acc.mult(0);
     // this.width /= 1.2;
     // this.height /= 1.2;
     // this.opacity -= 10;
+    // debugger
   }
   
   Heart.prototype.show = function() {
+    // debugger
     translate(this.pos.x, this.pos.y);
     fill(255, 7, 69, this.opacity);
     noStroke();

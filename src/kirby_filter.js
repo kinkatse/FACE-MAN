@@ -146,14 +146,15 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         heartpts = [{x, y}];
 
         for (let i = 0; i < heartpts.length; i++) {
+            // debugger
             let pts = heartpts[i];
             let heart = new Heart(pts.x, pts.y);
             hearts.push(heart);
-            // if (hearts.length > 15) {
-            //   hearts.shift(heart);
+            // if (hearts[0].opacity < 1) {
+            //     hearts.shift(heart);
             // }
-            if (hearts[0].opacity < 1) {
-                hearts.shift(heart);
+            if (hearts.length > 15) {
+                hearts.pop(heart);
             }
         }
 
