@@ -98,11 +98,11 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
             let pts = zzzpts[i];
             let zzz = new Zzz(pts.x, pts.y);
             zzzs.push(zzz);
-            // if (zzzs.length > 15) {
-            //   zzzs.shift(zzz);
+            // if (zzzs[0].opacity < 1) {
+            //     zzzs.shift(zzz);
             // }
-            if (zzzs[0].opacity < 1) {
-            zzzs.shift(zzz);
+            if (zzzs.length > 50) {
+                zzzs.pop(zzz);
             }
         }
 
