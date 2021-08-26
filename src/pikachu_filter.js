@@ -27,6 +27,29 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
     image(pikanose, nose.x, nose.y - 20, facedia/8, facedia/8);
     pop();
 
+    let mouth = [];
+    for (let pt of face.annotations.lipsUpperInner) {
+        pt = scaleCoord(pt);
+        pt.y -= 35;
+        mouth.push(pt);
+    }
+    for (let pt of face.annotations.lipsLowerInner) {
+        pt = scaleCoord(pt);
+        pt.y -= 35;
+        mouth.push(pt);
+    }
+
+    fill(247,99,96);
+    beginShape();
+    for (let pt of mouth) {
+        // stroke("black");
+        // strokeWeight(2);
+        noStroke();
+        smooth();
+        vertex(pt.x, pt.y);
+    }
+    endShape(CLOSE);
+
     // Pikachu Eye Blinking
     if (rightEyeL.y - rightEyeU.y > 5 && leftEyeL.y - leftEyeU.y > 5) {
         fill(0);
@@ -62,29 +85,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         // line(rightEyeU.x, rightEyeU.y - 35, rightEyeU.x + 5, rightEyeU.y - 65);
         // curve(5, 26, 5, 50, 73, 24, 73, 61);
         // curve(x1, y1, x2, y2, x3, y3, x4, y4);
-
-        let mouth = [];
-        for (let pt of face.annotations.lipsUpperInner) {
-            pt = scaleCoord(pt);
-            pt.y -= 35;
-            mouth.push(pt);
-        }
-        for (let pt of face.annotations.lipsLowerInner) {
-            pt = scaleCoord(pt);
-            pt.y -= 35;
-            mouth.push(pt);
-        }
-
-        fill(247,99,96);
-        beginShape();
-        for (let pt of mouth) {
-            // stroke("black");
-            // strokeWeight(2);
-            noStroke();
-            smooth();
-            vertex(pt.x, pt.y);
-        }
-        endShape(CLOSE);
         
         // Pikachu Sleep
 
@@ -133,29 +133,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
             leftEyeU.x - 10, leftEyeU.y - 15,
             leftEyeU.x - 20, leftEyeU.y + 80
         );
-
-        let mouth = [];
-        for (let pt of face.annotations.lipsUpperInner) {
-            pt = scaleCoord(pt);
-            pt.y -= 35;
-            mouth.push(pt);
-        }
-        for (let pt of face.annotations.lipsLowerInner) {
-            pt = scaleCoord(pt);
-            pt.y -= 35;
-            mouth.push(pt);
-        }
-
-        fill(247,99,96);
-        beginShape();
-        for (let pt of mouth) {
-            // stroke("black");
-            // strokeWeight(2);
-            noStroke();
-            smooth();
-            vertex(pt.x, pt.y);
-        }
-        endShape(CLOSE);
         
         // Pikachu Wink
 
@@ -204,29 +181,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
             rightEyeU.x - 35, rightEyeU.y - 25,
             rightEyeU.x - 45, rightEyeU.y + 65
         );
-
-        let mouth = [];
-        for (let pt of face.annotations.lipsUpperInner) {
-            pt = scaleCoord(pt);
-            pt.y -= 35;
-            mouth.push(pt);
-        }
-        for (let pt of face.annotations.lipsLowerInner) {
-            pt = scaleCoord(pt);
-            pt.y -= 35;
-            mouth.push(pt);
-        }
-
-        fill(247,99,96);
-        beginShape();
-        for (let pt of mouth) {
-            // stroke("black");
-            // strokeWeight(2);
-            noStroke();
-            smooth();
-            vertex(pt.x, pt.y);
-        }
-        endShape(CLOSE);
         
         // Pikachu Wink
 
@@ -257,32 +211,7 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
             //   hearts.shift();
             // }
         }
-
         }
-    
-
-    let mouth = [];
-    for (let pt of face.annotations.lipsUpperInner) {
-        pt = scaleCoord(pt);
-        pt.y -= 35;
-        mouth.push(pt);
-    }
-    for (let pt of face.annotations.lipsLowerInner) {
-        pt = scaleCoord(pt);
-        pt.y -= 35;
-        mouth.push(pt);
-    }
-
-    fill(247,99,96);
-    beginShape();
-    for (let pt of mouth) {
-        // stroke("black");
-        // strokeWeight(2);
-        noStroke();
-        smooth();
-        vertex(pt.x, pt.y);
-    }
-    endShape(CLOSE);
 
     if (lipsLower.y - lipsUpper.y > 30 ) {
         fill("white");
