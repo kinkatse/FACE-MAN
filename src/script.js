@@ -45,6 +45,9 @@ let hearts = [];
 let zzzpts = [];
 let zzzs = [];
 
+let bashfulpts = [];
+let bashfuls = [];
+
 function clearButton() {
   pacmanFilter = false;
   kirbyFilter = false;

@@ -57,7 +57,28 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
             leftEyeU.y - 60
         );
     } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
-        new Ghosts();
+        x = 120;
+        y = 100;
+        
+        noStroke();
+        bashfulpts = [{x, y}];
+
+        for (let i = 0; i < bashfulpts.length; i++) {
+            let pts = bashfulpts[i];
+            let bashful = new Bashful(pts.x, pts.y);
+            bashfuls.push(bashful);
+            if (bashfuls.length > 1) {
+                bashfuls.pop(bashful);
+            }
+        }
+
+        for (let i = 0; i < bashfuls.length; i++) {
+            let h = bashfuls[i];
+            h.update();
+            h.show();
+            h.behaviors();
+        }
+
         fill(0);
         strokeWeight(5);
         stroke("black");
