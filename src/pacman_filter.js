@@ -56,6 +56,29 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
             leftEyeU.x + 45,
             leftEyeU.y - 60
         );
+
+        let mouth = [];
+        for (let pt of face.annotations.lipsUpperInner) {
+            pt = scaleCoord(pt);
+            pt.y -= 15;
+            mouth.push(pt);
+        }
+        for (let pt of face.annotations.lipsLowerInner) {
+            pt = scaleCoord(pt);
+            pt.y -= 15;
+            mouth.push(pt);
+        }
+
+        fill(80,0,0);
+        beginShape();
+        for (let pt of mouth) {
+            // stroke("black");
+            // strokeWeight(2);
+            noStroke();
+            smooth();
+            vertex(pt.x, pt.y);
+        }
+        endShape(CLOSE);
     } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
         fill(0);
         strokeWeight(5);
@@ -65,6 +88,29 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
         line(leftEyeU.x + 5, leftEyeU.y - 65, leftEyeU.x - 15, leftEyeU.y - 10);
         line(leftEyeU.x + 15, leftEyeU.y - 20, leftEyeU.x - 15, leftEyeU.y - 10);
         
+        let mouth = [];
+        for (let pt of face.annotations.lipsUpperInner) {
+            pt = scaleCoord(pt);
+            pt.y -= 15;
+            mouth.push(pt);
+        }
+        for (let pt of face.annotations.lipsLowerInner) {
+            pt = scaleCoord(pt);
+            pt.y -= 15;
+            mouth.push(pt);
+        }
+
+        fill(80,0,0);
+        beginShape();
+        for (let pt of mouth) {
+            // stroke("black");
+            // strokeWeight(2);
+            noStroke();
+            smooth();
+            vertex(pt.x, pt.y);
+        }
+        endShape(CLOSE);
+
         x = 120;
         y = 100;
         
@@ -290,28 +336,5 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
         }
 
     }
-    
-    let mouth = [];
-    for (let pt of face.annotations.lipsUpperInner) {
-        pt = scaleCoord(pt);
-        pt.y -= 15;
-        mouth.push(pt);
-    }
-    for (let pt of face.annotations.lipsLowerInner) {
-        pt = scaleCoord(pt);
-        pt.y -= 15;
-        mouth.push(pt);
-    }
-
-    fill(80,0,0);
-    beginShape();
-    for (let pt of mouth) {
-        // stroke("black");
-        // strokeWeight(2);
-        noStroke();
-        smooth();
-        vertex(pt.x, pt.y);
-    }
-    endShape(CLOSE);
 
 }
