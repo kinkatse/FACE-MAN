@@ -57,6 +57,14 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
             leftEyeU.y - 60
         );
     } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
+        fill(0);
+        strokeWeight(5);
+        stroke("black");
+        line(rightEyeU.x + 5, rightEyeU.y - 65, rightEyeU.x + 15, rightEyeU.y - 10);
+        line(rightEyeU.x - 15, rightEyeU.y - 20, rightEyeU.x + 15, rightEyeU.y - 10);
+        line(leftEyeU.x + 5, leftEyeU.y - 65, leftEyeU.x - 15, leftEyeU.y - 10);
+        line(leftEyeU.x + 15, leftEyeU.y - 20, leftEyeU.x - 15, leftEyeU.y - 10);
+        
         x = 120;
         y = 100;
         
@@ -79,13 +87,72 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
             h.behaviors();
         }
 
-        fill(0);
-        strokeWeight(5);
-        stroke("black");
-        line(rightEyeU.x + 5, rightEyeU.y - 65, rightEyeU.x + 15, rightEyeU.y - 10);
-        line(rightEyeU.x - 15, rightEyeU.y - 20, rightEyeU.x + 15, rightEyeU.y - 10);
-        line(leftEyeU.x + 5, leftEyeU.y - 65, leftEyeU.x - 15, leftEyeU.y - 10);
-        line(leftEyeU.x + 15, leftEyeU.y - 20, leftEyeU.x - 15, leftEyeU.y - 10);
+        x = 650;
+        y = 100;
+        
+        noStroke();
+        pokeypts = [{x, y}];
+
+        for (let i = 0; i < pokeypts.length; i++) {
+            let pts = pokeypts[i];
+            let pokey = new Pokey(pts.x, pts.y);
+            pokeys.push(pokey);
+            if (pokeys.length > 1) {
+                pokeys.pop(pokey);
+            }
+        }
+
+        for (let i = 0; i < pokeys.length; i++) {
+            let h = pokeys[i];
+            h.update();
+            h.show();
+            h.behaviors();
+        }
+
+        x = 100;
+        y = 400;
+        
+        noStroke();
+        shadowpts = [{x, y}];
+
+        for (let i = 0; i < shadowpts.length; i++) {
+            let pts = shadowpts[i];
+            let shadow = new Shadow(pts.x, pts.y);
+            shadows.push(shadow);
+            if (shadows.length > 1) {
+                shadows.pop(shadow);
+            }
+        }
+
+        for (let i = 0; i < shadows.length; i++) {
+            let h = shadows[i];
+            h.update();
+            h.show();
+            h.behaviors();
+        }
+
+        x = 650;
+        y = 400;
+        
+        noStroke();
+        speedypts = [{x, y}];
+
+        for (let i = 0; i < speedypts.length; i++) {
+            let pts = speedypts[i];
+            let speedy = new Speedy(pts.x, pts.y);
+            speedys.push(speedy);
+            if (speedys.length > 1) {
+                speedys.pop(speedy);
+            }
+        }
+
+        for (let i = 0; i < speedys.length; i++) {
+            let h = speedys[i];
+            h.update();
+            h.show();
+            h.behaviors();
+        }
+        
     } else if (leftEyeL.y - leftEyeU.y <= 5) {
         fill(0);
         noStroke();

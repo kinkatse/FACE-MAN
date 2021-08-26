@@ -48,6 +48,15 @@ let zzzs = [];
 let bashfulpts = [];
 let bashfuls = [];
 
+let pokeypts = [];
+let pokeys = [];
+
+let shadowpts = [];
+let shadows = [];
+
+let speedypts = [];
+let speedys = [];
+
 function clearButton() {
   pacmanFilter = false;
   kirbyFilter = false;
