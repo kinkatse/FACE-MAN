@@ -150,10 +150,10 @@ function glassesButton() {
 }
 
 function preload() {
-  shadow = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801944250671205/Ghost_Shadow.png');
-  bashful = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801959450828850/Ghost_Bashful.png');
-  speedy = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801983974920282/Ghost_Speedy.png');
-  pokey = loadImage('https://media.discordapp.net/attachments/597985513701376013/879801971815641118/Ghost_Pokey.png');
+  shadow = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534561879105546/Ghost_Shadow.png');
+  bashful = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534557860966450/Ghost_Bashful.png');
+  speedy = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534565360402462/Ghost_Speedy.png');
+  pokey = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534561015095396/Ghost_Pokey.png');
   mustacheImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879841681552318524/Mustache_3.png?width=670&height=670');
   glassesImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879848065735999488/Glasses_4.png?width=670&height=670');
   pikaleftear = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896831193149491/Pikachu_Right_Ear.png');
