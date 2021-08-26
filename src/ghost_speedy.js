@@ -15,7 +15,7 @@ function Speedy(x,y) {
   
   Speedy.prototype.show = function() {
     push();
-    image(speedy, this.pos.x, this.pos.y, 106, 152)
+    image(speedy, this.pos.x, this.pos.y, 140, 140)
     pop();
   }
 

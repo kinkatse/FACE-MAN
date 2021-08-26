@@ -15,7 +15,7 @@ function Pokey(x,y) {
   
   Pokey.prototype.show = function() {
     push();
-    image(pokey, this.pos.x, this.pos.y, 106, 152)
+    image(pokey, this.pos.x, this.pos.y, 140, 140)
     pop();
   }
 

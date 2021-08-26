@@ -15,7 +15,7 @@ function Bashful(x,y) {
   
   Bashful.prototype.show = function() {
     push();
-    image(bashful, this.pos.x, this.pos.y, 106, 152)
+    image(bashful, this.pos.x, this.pos.y, 140, 140)
     pop();
   }
 

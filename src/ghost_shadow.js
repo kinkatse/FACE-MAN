@@ -15,7 +15,7 @@ function Shadow(x,y) {
   
   Shadow.prototype.show = function() {
     push();
-    image(shadow, this.pos.x, this.pos.y, 106, 152)
+    image(shadow, this.pos.x, this.pos.y, 140, 140)
     pop();
   }
 
