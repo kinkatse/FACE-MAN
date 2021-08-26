@@ -85,6 +85,29 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
         line(leftEyeU.x + 5, leftEyeU.y - 65, leftEyeU.x - 15, leftEyeU.y - 10);
         line(leftEyeU.x + 15, leftEyeU.y - 20, leftEyeU.x - 15, leftEyeU.y - 10);
 
+        let mouth = [];
+        for (let pt of face.annotations.lipsUpperInner) {
+            pt = scaleCoord(pt);
+            pt.y -= 15;
+            mouth.push(pt);
+        }
+        for (let pt of face.annotations.lipsLowerInner) {
+            pt = scaleCoord(pt);
+            pt.y -= 15;
+            mouth.push(pt);
+        }
+
+        fill(80,0,0);
+        beginShape();
+        for (let pt of mouth) {
+            // stroke("black");
+            // strokeWeight(2);
+            noStroke();
+            smooth();
+            vertex(pt.x, pt.y);
+        }
+        endShape(CLOSE);
+
         noStroke();
         heartpts = [{x, y}];
 
@@ -129,7 +152,30 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
         stroke("black");
         line(rightEyeU.x + 5, rightEyeU.y - 65, rightEyeU.x + 15, rightEyeU.y - 10);
         line(rightEyeU.x - 15, rightEyeU.y - 20, rightEyeU.x + 15, rightEyeU.y - 10);
-        
+
+        let mouth = [];
+        for (let pt of face.annotations.lipsUpperInner) {
+            pt = scaleCoord(pt);
+            pt.y -= 15;
+            mouth.push(pt);
+        }
+        for (let pt of face.annotations.lipsLowerInner) {
+            pt = scaleCoord(pt);
+            pt.y -= 15;
+            mouth.push(pt);
+        }
+
+        fill(80,0,0);
+        beginShape();
+        for (let pt of mouth) {
+            // stroke("black");
+            // strokeWeight(2);
+            noStroke();
+            smooth();
+            vertex(pt.x, pt.y);
+        }
+        endShape(CLOSE);
+
         noStroke();
         heartpts = [{x, y}];
 
@@ -137,11 +183,11 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
             let pts = heartpts[i];
             let heart = new Heart(pts.x, pts.y);
             hearts.push(heart);
-            // if (hearts.length > 15) {
-            //   hearts.shift(heart);
+            // if (hearts[0].opacity < 1) {
+            //     hearts.shift(heart);
             // }
-            if (hearts[0].opacity < 1) {
-                hearts.shift(heart);
+            if (hearts.length > 15) {
+                hearts.pop(heart);
             }
         }
 
@@ -157,7 +203,6 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
 
     }
     
-
     let mouth = [];
     for (let pt of face.annotations.lipsUpperInner) {
         pt = scaleCoord(pt);
