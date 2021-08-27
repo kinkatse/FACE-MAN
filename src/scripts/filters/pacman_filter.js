@@ -283,7 +283,7 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         let pt = pelletpts[i];
         let pellet = new Pellet(pt.x, pt.y);
         pellets.push(pellet);
-        if (pellets[0].pos.x < lipsLower.x + 50) {
+        if (pellets[0].pos.x < pellets[0].target.x + 50) {
             pellets.shift(pellet);
         }
         }
@@ -292,7 +292,7 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         let v = pellets[i];
         v.update();
         v.show();
-        v.behaviors();
+        // v.behaviors();
         }
     }
 

@@ -1,20 +1,20 @@
 // let angle = 0;
 
 function Pellet(x,y) {
-    this.pos = createVector(x + 600,y);
+    this.pos = createVector(x + 800,y);
     this.target = createVector(x,y);
-    this.vel = p5.Vector.random2D();
-    this.acc = createVector();
-    this.maxSpeed = 150;
-    this.maxForce = 1.8;
-    this.history = [this.pos];
+    this.vel = createVector(-25,0);
+    // this.acc = createVector();
+    // this.maxSpeed = 150;
+    // this.maxForce = 1.8;
+    // this.history = [this.pos];
   }
   
   Pellet.prototype.update = function() {
     this.pos.add(this.vel);
-    this.vel.add(this.acc);
-    this.acc.mult(0);
-    this.history.push(this.pos);
+    // this.vel.add(this.acc);
+    // this.acc.mult(0);
+    // this.history.push(this.pos);
   }
   
   Pellet.prototype.show = function() {
@@ -53,27 +53,27 @@ function Pellet(x,y) {
     // }
   }
 
-  Pellet.prototype.behaviors = function() {
-    let arrive = this.arrive(this.target);
-    this.applyForce(arrive);
-  }
+//   Pellet.prototype.behaviors = function() {
+//     let arrive = this.arrive(this.target);
+//     this.applyForce(arrive);
+//   }
 
-  Pellet.prototype.applyForce = function(f) {
-    this.acc.add(f);
-  }
+//   Pellet.prototype.applyForce = function(f) {
+//     this.acc.add(f);
+//   }
 
-  Pellet.prototype.arrive = function(target) {
-    let desired = p5.Vector.sub(target, this.pos);
-    let dist = desired.mag();
-    let speed = this.maxSpeed;
-    if (dist < 100) {
-      speed = map(dist, 0, 100, this.maxSpeed, 0);
-    }
-    desired.setMag(speed);
-    let steer = p5.Vector.sub(desired, this.vel);
-    steer.limit(this.maxForce);
-    return steer;
-  };
+//   Pellet.prototype.arrive = function(target) {
+//     let desired = p5.Vector.sub(target, this.pos);
+//     let dist = desired.mag();
+//     let speed = this.maxSpeed;
+//     if (dist < 100) {
+//       speed = map(dist, 0, 100, this.maxSpeed, 0);
+//     }
+//     desired.setMag(speed);
+//     let steer = p5.Vector.sub(desired, this.vel);
+//     steer.limit(this.maxForce);
+//     return steer;
+//   };
 
 //   Pellet.prototype.seek = function(target) {
 //     let desired = p5.Vector.sub(target, this.pos);
