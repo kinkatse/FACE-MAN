@@ -19,13 +19,13 @@ function Speedy(x,y) {
       imageMode(CENTER);
       image(speedy, this.pos.x, this.pos.y, 140, 140)
       pop();
-  } else if (this.vel.x < 0) {
-      push();
-      imageMode(CENTER);
-      scale(-1, 1)
-      image(speedy, -this.pos.x, this.pos.y, 140, 140)
-      pop();
-  }
+    } else if (this.vel.x < 0) {
+        push();
+        imageMode(CENTER);
+        scale(-1, 1)
+        image(speedy, -this.pos.x, this.pos.y, 140, 140)
+        pop();
+    }
   }
 
   Speedy.prototype.behaviors = function() {
