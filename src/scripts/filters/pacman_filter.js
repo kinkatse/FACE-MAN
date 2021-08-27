@@ -272,25 +272,24 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         fill("white");
         noStroke();
 
-        x = lipsLower.x;
+        // debugger
+        // When program loops code again because of draw(), we need count to keep
+        // track of the distance in between pellets but also reset so that the
+        // pellets don't disappear
+        if (count > 900) {
+            // debugger
+            count = 0;
+        }
+
+        x = lipsLower.x + count;
         y = lipsLower.y - 50;
-
-        noStroke();
         pelletpts = [{x, y}, {x, y}];
-        // debugger
-
+        
         for (let i = 0; i < pelletpts.length; i++) {
-        let pt = pelletpts[i];
-        // debugger
-            if (i === 0) {
-                let pellet = new Pellet(pt.x, pt.y);
-                pellets.push(pellet);
-                // debugger
-            } else {
-                let blank = new Blank(pt.x+10, pt.y+10);
-                pellets.push(blank);
-                // debugger
-            }
+            let pt = pelletpts[i];
+            let pellet = new Pellet(pt.x, pt.y);
+            pellets.push(pellet);
+            count += 15;
             if (pellets[0].pos.x < pellets[0].target.x + 50) {
                 pellets.shift();
             }

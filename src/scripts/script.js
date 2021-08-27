@@ -36,6 +36,8 @@ let y = 650;
 // let speedx = 3;
 // let speedy = 3;
 
+let count = 0;
+
 let dustpts = [];
 let dusts = [];
 
