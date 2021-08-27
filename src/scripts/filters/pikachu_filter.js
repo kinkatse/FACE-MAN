@@ -222,10 +222,10 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         y = lipsLower.y - 50;
 
         noStroke();
-        points = [{x, y}, {x, y}];
+        dustpts = [{x, y}, {x, y}];
 
-        for (let i = 0; i < points.length; i++) {
-        let pt = points[i];
+        for (let i = 0; i < dustpts.length; i++) {
+        let pt = dustpts[i];
         let dust = new Dust(pt.x, pt.y);
         dusts.push(dust);
         if (dusts[0].size < 1) {

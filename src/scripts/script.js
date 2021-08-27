@@ -36,7 +36,7 @@ let y = 650;
 // let speedx = 3;
 // let speedy = 3;
 
-let points = [];
+let dustpts = [];
 let dusts = [];
 
 let heartpts = [];
@@ -44,6 +44,9 @@ let hearts = [];
 
 let zzzpts = [];
 let zzzs = [];
+
+let pelletpts = [];
+let pellets = [];
 
 let bashfulpts = [];
 let bashfuls = [];
@@ -171,10 +174,10 @@ function setup() {
   loadFaceModel();
 
   // noStroke();
-  // points = [{x, y}, {x, y}];
+  // dustpts = [{x, y}, {x, y}];
 
-  // for (let i = 0; i < points.length; i++) {
-  //   let pt = points[i];
+  // for (let i = 0; i < dustpts.length; i++) {
+  //   let pt = dustpts[i];
   //   let dust = new Dust(pt.x, pt.y);
   //   dusts.push(dust);
   // }
@@ -341,7 +344,7 @@ function draw() {
     let nose = scaleCoord(face.scaledMesh[5]);
 
     if (pacmanFilter) {
-      new Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, face)
+      new Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face)
     }
 
     if (kirbyFilter) {

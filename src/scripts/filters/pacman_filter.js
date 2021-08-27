@@ -1,4 +1,4 @@
-function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, face) {
+function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face) {
 
     fill("yellow");
     stroke("black");
@@ -266,6 +266,34 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, fa
             // }
         }
 
+    }
+
+    if (lipsLower.y - lipsUpper.y > 30 ) {
+        fill("white");
+        noStroke();
+        // ellipse(x, y, 10, 10);
+
+        x = lipsLower.x;
+        y = lipsLower.y - 50;
+
+        noStroke();
+        pelletpts = [{x, y}, {x, y}];
+
+        for (let i = 0; i < pelletpts.length; i++) {
+        let pt = pelletpts[i];
+        let pellet = new Pellet(pt.x, pt.y);
+        pellets.push(pellet);
+        if (pellets[0].pos.x < lipsLower.x + 50) {
+            pellets.shift(pellet);
+        }
+        }
+
+        for (let i = 0; i < pellets.length; i++) {
+        let v = pellets[i];
+        v.update();
+        v.show();
+        v.behaviors();
+        }
     }
 
 }
