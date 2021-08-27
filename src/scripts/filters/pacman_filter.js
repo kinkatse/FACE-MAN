@@ -271,32 +271,24 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
     if (lipsLower.y - lipsUpper.y > 30 ) {
         fill("white");
         noStroke();
-        // ellipse(x, y, 10, 10);
 
         x = lipsLower.x;
         y = lipsLower.y - 50;
-        // y2 = lipsLower.y - 100;
-        // y3 = lipsLower.y - 150;
-        // y4 = lipsLower.y - 200;
-        // y5 = lipsLower.y - 250;
 
         noStroke();
         pelletpts = [{x, y}, {x, y}];
         // debugger
-        let count = 5
 
         for (let i = 0; i < pelletpts.length; i++) {
         let pt = pelletpts[i];
         // debugger
-            if (count % 5 === 0) {
+            if (i === 0) {
                 let pellet = new Pellet(pt.x, pt.y);
                 pellets.push(pellet);
-                count += 1
                 // debugger
             } else {
-                let blank = new Blank(pt.x, pt.y);
+                let blank = new Blank(pt.x+10, pt.y+10);
                 pellets.push(blank);
-                count += 1
                 // debugger
             }
             if (pellets[0].pos.x < pellets[0].target.x + 50) {
@@ -305,16 +297,9 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         }
 
         for (let i = 0; i < pellets.length; i++) {
-            // if (i % 100 === 0) {
-                let v = pellets[i];
-                v.update();
-                v.show();
-            //     // v.behaviors();
-            // } else {
-            //     let v = pellets[i];
-            //     v.update();
-            //     v.show();
-            // }
+            let v = pellets[i];
+            v.update();
+            v.show();
         }
     }
 

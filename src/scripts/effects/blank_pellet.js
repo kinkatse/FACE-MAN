@@ -11,10 +11,10 @@ Blank.prototype.update = function() {
 Blank.prototype.show = function() {
     push();
     translate(this.pos.x, this.pos.y);
-    fill('rgba(0, 0, 0, 0)');
+    fill('yellow');
     strokeWeight(5);
     stroke('rgba(0, 0, 0, 0)');
     ellipseMode(CENTER);
-    ellipse(0, 0, 15, 15);
+    ellipse(0, 0, 50, 15);
     pop();
 }
