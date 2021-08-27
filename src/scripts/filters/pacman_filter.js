@@ -275,24 +275,46 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
 
         x = lipsLower.x;
         y = lipsLower.y - 50;
+        // y2 = lipsLower.y - 100;
+        // y3 = lipsLower.y - 150;
+        // y4 = lipsLower.y - 200;
+        // y5 = lipsLower.y - 250;
 
         noStroke();
         pelletpts = [{x, y}, {x, y}];
+        // debugger
+        let count = 5
 
         for (let i = 0; i < pelletpts.length; i++) {
         let pt = pelletpts[i];
-        let pellet = new Pellet(pt.x, pt.y);
-        pellets.push(pellet);
-        if (pellets[0].pos.x < pellets[0].target.x + 50) {
-            pellets.shift(pellet);
-        }
+        // debugger
+            if (count % 5 === 0) {
+                let pellet = new Pellet(pt.x, pt.y);
+                pellets.push(pellet);
+                count += 1
+                // debugger
+            } else {
+                let blank = new Blank(pt.x, pt.y);
+                pellets.push(blank);
+                count += 1
+                // debugger
+            }
+            if (pellets[0].pos.x < pellets[0].target.x + 50) {
+                pellets.shift();
+            }
         }
 
         for (let i = 0; i < pellets.length; i++) {
-        let v = pellets[i];
-        v.update();
-        v.show();
-        // v.behaviors();
+            // if (i % 100 === 0) {
+                let v = pellets[i];
+                v.update();
+                v.show();
+            //     // v.behaviors();
+            // } else {
+            //     let v = pellets[i];
+            //     v.update();
+            //     v.show();
+            // }
         }
     }
 

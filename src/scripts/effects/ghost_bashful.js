@@ -1,51 +1,51 @@
 function Bashful(x,y) {
-    this.pos = createVector(random(width), random(height));
-    this.target = createVector(x,y);
-    this.vel = p5.Vector.random2D();
-    this.acc = createVector();
-    this.maxSpeed = 10;
-    this.maxForce = 0.5;
-  }
-  
-  Bashful.prototype.update = function() {
-    this.pos.add(this.vel);
-    this.vel.add(this.acc);
-    this.acc.mult(0);
-  }
-  
-  Bashful.prototype.show = function() {
-    if (this.vel.x >= 0) {
-        push();
-        imageMode(CENTER);
-        image(bashful, this.pos.x, this.pos.y, 140, 140)
-        pop();
-    } else if (this.vel.x < 0) {
-        push();
-        imageMode(CENTER);
-        scale(-1, 1)
-        image(bashful, -this.pos.x, this.pos.y, 140, 140)
-        pop();
-    }
-  }
+  this.pos = createVector(random(width), random(height));
+  this.target = createVector(x,y);
+  this.vel = p5.Vector.random2D();
+  this.acc = createVector();
+  this.maxSpeed = 10;
+  this.maxForce = 0.5;
+}
 
-  Bashful.prototype.behaviors = function() {
-    let arrive = this.arrive(this.target);
-    this.applyForce(arrive);
-  }
+Bashful.prototype.update = function() {
+  this.pos.add(this.vel);
+  this.vel.add(this.acc);
+  this.acc.mult(0);
+}
 
-  Bashful.prototype.applyForce = function(f) {
-    this.acc.add(f);
+Bashful.prototype.show = function() {
+  if (this.vel.x >= 0) {
+      push();
+      imageMode(CENTER);
+      image(bashful, this.pos.x, this.pos.y, 140, 140)
+      pop();
+  } else if (this.vel.x < 0) {
+      push();
+      imageMode(CENTER);
+      scale(-1, 1)
+      image(bashful, -this.pos.x, this.pos.y, 140, 140)
+      pop();
   }
+}
 
-  Bashful.prototype.arrive = function(target) {
-    let desired = p5.Vector.sub(target, this.pos);
-    let dist = desired.mag();
-    let speed = this.maxSpeed;
-    if (dist < 100) {
-      speed = map(dist, 0, 100, this.maxSpeed, 0);
-    }
-    desired.setMag(speed);
-    let steer = p5.Vector.sub(desired, this.vel);
-    steer.limit(this.maxForce);
-    return steer;
-  };
+Bashful.prototype.behaviors = function() {
+  let arrive = this.arrive(this.target);
+  this.applyForce(arrive);
+}
+
+Bashful.prototype.applyForce = function(f) {
+  this.acc.add(f);
+}
+
+Bashful.prototype.arrive = function(target) {
+  let desired = p5.Vector.sub(target, this.pos);
+  let dist = desired.mag();
+  let speed = this.maxSpeed;
+  if (dist < 100) {
+    speed = map(dist, 0, 100, this.maxSpeed, 0);
+  }
+  desired.setMag(speed);
+  let steer = p5.Vector.sub(desired, this.vel);
+  steer.limit(this.maxForce);
+  return steer;
+};

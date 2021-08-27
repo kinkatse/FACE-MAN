@@ -1,19 +1,19 @@
-function Pellet(x,y) {
+function Blank(x,y) {
     this.pos = createVector(x + 800,y);
     this.target = createVector(x,y);
     this.vel = createVector(-15,0);
 }
   
-Pellet.prototype.update = function() {
+Blank.prototype.update = function() {
     this.pos.add(this.vel);
 }
   
-Pellet.prototype.show = function() {
+Blank.prototype.show = function() {
     push();
     translate(this.pos.x, this.pos.y);
-    fill(251, 254, 171);
-    strokeWeight(2);
-    stroke('rgba(0, 0, 0, 0.5)');
+    fill('rgba(0, 0, 0, 0)');
+    strokeWeight(5);
+    stroke('rgba(0, 0, 0, 0)');
     ellipseMode(CENTER);
     ellipse(0, 0, 15, 15);
     pop();
