@@ -1,5 +1,5 @@
 function Pellet(x,y) {
-    this.pos = createVector(x + 800,y);
+    this.pos = createVector(x + count + 800,y);
     this.target = createVector(x,y);
     this.vel = createVector(-15,0);
 }
