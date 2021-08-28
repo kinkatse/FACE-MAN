@@ -282,16 +282,15 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
             pellets.push(pellet);
             // pellet_dist adds distance between each pellet
             pellet_dist += 25;
-            if (pellets[0].pos.x < pellets[0].target.x + 50) {
-                pellets.shift();
+            // if (pellets[0].pos.x < pellets[0].target.x + 50) {
+            //     pellets.shift();
+            // }
+            for (let j = 0; j < pellets.length; j++) {
+                if (pellets[j].pos.x < pellets[pellets.length-1].target.x + 50) {
+                    pellets.shift();
+                }
             }
         }
-
-        // for (let j = 0; j < pellets.length; j++) {
-        //     if (pellets[j].pos.x < pellets[j].target.x + 50) {
-        //         pellets.shift();
-        //     }
-        // }
 
         for (let i = 0; i < pellets.length; i++) {
             let v = pellets[i];
