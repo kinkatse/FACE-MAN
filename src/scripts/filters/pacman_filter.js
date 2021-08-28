@@ -286,6 +286,8 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
             //     pellets.shift();
             // }
             for (let j = 0; j < pellets.length; j++) {
+                // Needs to remove all pellets past the new target point,
+                // new being the latest added in the array
                 if (pellets[j].pos.x < pellets[pellets.length-1].target.x + 50) {
                     pellets.shift();
                 }

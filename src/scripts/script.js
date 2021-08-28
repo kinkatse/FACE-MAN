@@ -23,6 +23,8 @@ let glassesImg;
 let pikaleftear;
 let pikarightear;
 let pikanose;
+let thunder1;
+let thunder2;
 
 let topLeft;
 let bottomRight;
@@ -36,8 +38,6 @@ let y = 650;
 // let speedx = 3;
 // let speedy = 3;
 
-let pellet_dist = 0;
-
 let dustpts = [];
 let dusts = [];
 
@@ -47,8 +47,12 @@ let hearts = [];
 let zzzpts = [];
 let zzzs = [];
 
+let pellet_dist = 0;
 let pelletpts = [];
 let pellets = [];
+
+let thunderpts = [];
+let thunders = [];
 
 let bashfulpts = [];
 let bashfuls = [];
@@ -164,6 +168,8 @@ function preload() {
   pikaleftear = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896831193149491/Pikachu_Right_Ear.png');
   pikarightear = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896827556683826/Pikachu_Left_Ear.png');
   pikanose = loadImage('https://media.discordapp.net/attachments/597985513701376013/879917035738529832/Pika_nose.png');
+  // thunder1 = loadImage('');
+  // thunder2 = loadImage('');
 }
 
 function setup() {
