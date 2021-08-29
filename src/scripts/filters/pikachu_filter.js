@@ -92,29 +92,48 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         y = 175;
 
         noStroke();
-        zzzpts = [{x, y}];
+        thunderpts = [{x, y}];
 
-        for (let i = 0; i < zzzpts.length; i++) {
-            let pts = zzzpts[i];
-            let zzz = new Zzz(pts.x, pts.y);
-            zzzs.push(zzz);
-            // if (zzzs[0].opacity < 1) {
-            //     zzzs.shift(zzz);
-            // }
-            if (zzzs.length > 50) {
-                zzzs.pop(zzz);
+        for (let i = 0; i < thunderpts.length; i++) {
+            let pts = thunderpts[i];
+            let thunder = new Thunder(pts.x, pts.y);
+            thunders.push(thunder);
+            if (thunders.length > 50) {
+                thunders.pop(thunder);
             }
         }
 
-        for (let i = 0; i < zzzs.length; i++) {
-            let z = zzzs[i];
-            z.update();
-            z.show();
-            z.behaviors();
-            // if (zzzs.length > 15) {
-            //   zzzs.shift();
-            // }
+        for (let i = 0; i < thunders.length; i++) {
+            let t = thunders[i];
+            // t.update();
+            t.show();
+            // t.behaviors();
         }
+
+        // noStroke();
+        // zzzpts = [{x, y}];
+
+        // for (let i = 0; i < zzzpts.length; i++) {
+        //     let pts = zzzpts[i];
+        //     let zzz = new Zzz(pts.x, pts.y);
+        //     zzzs.push(zzz);
+        //     // if (zzzs[0].opacity < 1) {
+        //     //     zzzs.shift(zzz);
+        //     // }
+        //     if (zzzs.length > 50) {
+        //         zzzs.pop(zzz);
+        //     }
+        // }
+
+        // for (let i = 0; i < zzzs.length; i++) {
+        //     let z = zzzs[i];
+        //     z.update();
+        //     z.show();
+        //     z.behaviors();
+        //     // if (zzzs.length > 15) {
+        //     //   zzzs.shift();
+        //     // }
+        // }
 
         } else if (leftEyeL.y - leftEyeU.y <= 5) {
         fill(0);
