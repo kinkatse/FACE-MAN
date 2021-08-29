@@ -108,12 +108,12 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
             let pts = heartpts[i];
             let heart = new Heart(pts.x, pts.y);
             hearts.push(heart);
-            // if (hearts[0].opacity < 1) {
-            //     hearts.shift(heart);
-            // }
-            if (hearts.length > 15) {
-                hearts.pop(heart);
+            if (hearts[0].opacity < 6) {
+                hearts.shift(heart);
             }
+            // if (hearts.length > 15) {
+            //     hearts.pop(heart);
+            // }
         }
 
         for (let i = 0; i < hearts.length; i++) {
@@ -155,12 +155,12 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
             let pts = heartpts[i];
             let heart = new Heart(pts.x, pts.y);
             hearts.push(heart);
-            // if (hearts[0].opacity < 1) {
-            //     hearts.shift(heart);
-            // }
-            if (hearts.length > 15) {
-                hearts.pop(heart);
+            if (hearts[0].opacity < 6) {
+                hearts.shift(heart);
             }
+            // if (hearts.length > 15) {
+            //     hearts.pop(heart);
+            // }
         }
 
         for (let i = 0; i < hearts.length; i++) {

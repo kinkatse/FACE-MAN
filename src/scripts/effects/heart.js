@@ -14,6 +14,7 @@ Heart.prototype.update = function() {
   this.pos.add(this.vel);
   this.vel.add(this.acc);
   this.acc.mult(0);
+  this.opacity -= 10;
 }
 
 Heart.prototype.show = function() {
