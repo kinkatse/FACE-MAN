@@ -204,7 +204,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
     if (lipsLower.y - lipsUpper.y > 30 ) {
         fill("white");
         noStroke();
-        // ellipse(x, y, 10, 10);
 
         x = lipsLower.x + 300;
         y = lipsLower.y - 100;
@@ -223,7 +222,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
 
         for (let i = 0; i < ketchups.length; i++) {
             let k = ketchups[i];
-            // k.update();
             k.show();
         }
     }
