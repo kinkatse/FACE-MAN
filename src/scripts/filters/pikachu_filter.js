@@ -210,19 +210,21 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         y = lipsLower.y - 100;
 
         noStroke();
-        ketchuppts = [{x, y}, {x, y}];
+        ketchuppts = [{x, y}];
 
-        // let pt = ketchuppts[i];
-        let ketchup = new Ketchup(ketchuppts.x, ketchuppts.y);
-        ketchups.push(ketchup);
-        // if (ketchups.length < 1) {
-        //     ketchups.shift(ketchup);
-        // }
+        for (let i = 0; i < ketchuppts.length; i++) {
+            let pt = ketchuppts[i];
+            let ketchup = new Ketchup(pt.x, pt.y);
+            ketchups.push(ketchup);
+            if (ketchups.length > 1) {
+                ketchups.shift(ketchup);
+            }
+        }
 
-        // for (let i = 0; i < ketchups.length; i++) {
-        //     let k = ketchups[i];
-        //     k.update();
-            ketchups[0].show();
-        // }
+        for (let i = 0; i < ketchups.length; i++) {
+            let k = ketchups[i];
+            // k.update();
+            k.show();
+        }
     }
 }
