@@ -1,23 +1,18 @@
+let m_dist;
+
 function Mustache(nose) {
     if (pikachuFilter) {
-        push();
-        imageMode(CENTER);
-        image(mustacheImg, nose.x, nose.y + 5, 150, 150);
-        pop();
+        m_dist = 5;
     } else if (kirbyFilter) {
-        push();
-        imageMode(CENTER);
-        image(mustacheImg, nose.x, nose.y + 15, 150, 150);
-        pop();
+        m_dist = 15;
     } else if (pacmanFilter) {
-        push();
-        imageMode(CENTER);
-        image(mustacheImg, nose.x, nose.y + 15, 150, 150);
-        pop();
+        m_dist = 15;
     } else {
-        push();
-        imageMode(CENTER);
-        image(mustacheImg, nose.x, nose.y + 35, 150, 150);
-        pop();
+        m_dist = 35;
     }
+
+    push();
+    imageMode(CENTER);
+    image(mustacheImg, nose.x, nose.y + m_dist, 150, 150);
+    pop();
 }

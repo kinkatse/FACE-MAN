@@ -1,23 +1,18 @@
+let g_dist;
+
 function Glasses(betweenEyes) {
     if (pikachuFilter) {
-        push();
-        imageMode(CENTER);
-        image(glassesImg, betweenEyes.x, betweenEyes.y - 30, 250, 250);
-        pop();
+        g_dist = 30;
     } else if (kirbyFilter) {
-        push();
-        imageMode(CENTER);
-        image(glassesImg, betweenEyes.x, betweenEyes.y - 20, 250, 250);
-        pop();
+        g_dist = 20;
     } else if (pacmanFilter) {
-        push();
-        imageMode(CENTER);
-        image(glassesImg, betweenEyes.x, betweenEyes.y - 25, 250, 250);
-        pop();
+        g_dist = 25;
     } else {
-        push();
-        imageMode(CENTER);
-        image(glassesImg, betweenEyes.x, betweenEyes.y - 5, 250, 250);
-        pop();
+        g_dist = 5;
     }
+
+    push();
+    imageMode(CENTER);
+    image(glassesImg, betweenEyes.x, betweenEyes.y - g_dist, 250, 250);
+    pop();
 }

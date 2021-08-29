@@ -1,56 +1,37 @@
+let p_w;
+let p_color;
+let p_dist;
+
 function Pretty(leftCheek, rightCheek, face) {
 
     if (pikachuFilter) {
-        // left cheek
-        for (let d = w/6; d >= 2; d -= 1) {
-            fill(4, 211, 255, map(d, w/6, 2, 0, 25));
-            noStroke();
-            circle(leftCheek.x + 35, leftCheek.y - 35, d);
-        }
-        // right cheek
-        for (let d = w/6; d >= 2; d -= 1) {
-            fill(4, 211, 255, map(d, w/6, 2, 0, 25));
-            noStroke();
-            circle(rightCheek.x - 35, rightCheek.y - 35, d);
-        }
+        p_w = 6;
+        p_color = [4, 211, 255];
+        p_dist = 35;
     } else if (kirbyFilter) {
-        // left cheek
-        for (let d = w/3; d >= 2; d -= 1) {
-            fill(255, 99, 107, map(d, w/3, 2, 0, 25));
-            noStroke();
-            circle(leftCheek.x + 25, leftCheek.y - 25, d);
-        }
-        // right cheek
-        for (let d = w/3; d >= 2; d -= 1) {
-            fill(255, 99, 107, map(d, w/3, 2, 0, 25));
-            noStroke();
-            circle(rightCheek.x - 25, rightCheek.y - 25, d);
-        }
+        p_w = 3;
+        p_color = [255, 99, 107];
+        p_dist = 25;
     } else if (pacmanFilter) {
-        // left cheek
-        for (let d = w/4; d >= 2; d -= 1) {
-            fill(255, 99, 107, map(d, w/4, 2, 0, 25));
-            noStroke();
-            circle(leftCheek.x + 30, leftCheek.y - 30, d);
-        }
-        // right cheek
-        for (let d = w/4; d >= 2; d -= 1) {
-            fill(255, 99, 107, map(d, w/4, 2, 0, 25));
-            noStroke();
-            circle(rightCheek.x - 30, rightCheek.y - 30, d);
-        }
+        p_w = 4;
+        p_color = [255, 99, 107];
+        p_dist = 30;
     } else {
-        // left cheek
-        for (let d = w/6; d >= 2; d -= 1) {
-            fill(255, 99, 107, map(d, w/6, 2, 0, 25));
-            noStroke();
-            circle(leftCheek.x + 15, leftCheek.y - 15, d);
-        }
-        // right cheek
-        for (let d = w/6; d >= 2; d -= 1) {
-            fill(255, 99, 107, map(d, w/6, 2, 0, 25));
-            noStroke();
-            circle(rightCheek.x - 15, rightCheek.y - 15, d);
-        }
+        p_w = 6;
+        p_color = [255, 99, 107];
+        p_dist = 15;
+    }
+
+    // left cheek
+    for (let d = w/p_w; d >= 2; d -= 1) {
+        fill(p_color[0], p_color[1], p_color[2], map(d, w/p_w, 2, 0, 25));
+        noStroke();
+        circle(leftCheek.x + p_dist, leftCheek.y - p_dist, d);
+    }
+    // right cheek
+    for (let d = w/p_w; d >= 2; d -= 1) {
+        fill(p_color[0], p_color[1], p_color[2], map(d, w/p_w, 2, 0, 25));
+        noStroke();
+        circle(rightCheek.x - p_dist, rightCheek.y - p_dist, d);
     }
 }
