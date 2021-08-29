@@ -11,12 +11,12 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
     let mouth = [];
     for (let pt of face.annotations.lipsUpperInner) {
         pt = scaleCoord(pt);
-        pt.y -= 10;
+        pt.y -= 20;
         mouth.push(pt);
     }
     for (let pt of face.annotations.lipsLowerInner) {
         pt = scaleCoord(pt);
-        pt.y -= 10;
+        pt.y -= 20;
         mouth.push(pt);
     }
 
