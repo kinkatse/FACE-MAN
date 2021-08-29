@@ -50,7 +50,6 @@ let pellet_dist = 0;
 let pelletpts = [];
 let pellets = [];
 
-let thunderpts = [];
 let thunders = [];
 
 let bashfulpts = [];

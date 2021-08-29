@@ -66,6 +66,9 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         // curve(rightEyeU.x, rightEyeU.y, rightEyeU.x - 10, rightEyeU.y - 10, rightEyeU.x - 30, rightEyeU.y - 30, rightEyeU.x - 40, rightEyeU.y + 50);
         fill(252, 197, 219);
         noStroke();
+
+        // Removes old thunder if open eyes
+        thunders.shift();
         } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
         noFill();
         strokeWeight(5);
@@ -86,54 +89,14 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         // curve(5, 26, 5, 50, 73, 24, 73, 61);
         // curve(x1, y1, x2, y2, x3, y3, x4, y4);
         
-        // Pikachu Sleep
+        // Pikachu Thunder
 
-        x = 500;
-        y = 175;
-
-        noStroke();
-        thunderpts = [{x, y}];
-
-        for (let i = 0; i < thunderpts.length; i++) {
-            let pts = thunderpts[i];
-            let thunder = new Thunder(pts.x, pts.y);
-            thunders.push(thunder);
-            if (thunders.length > 50) {
-                thunders.pop(thunder);
+            let thunder = new Thunder();
+            if (thunders.length === 0) {
+                thunders.push(thunder);
             }
-        }
+            thunders[0].show();
 
-        for (let i = 0; i < thunders.length; i++) {
-            let t = thunders[i];
-            // t.update();
-            t.show();
-            // t.behaviors();
-        }
-
-        // noStroke();
-        // zzzpts = [{x, y}];
-
-        // for (let i = 0; i < zzzpts.length; i++) {
-        //     let pts = zzzpts[i];
-        //     let zzz = new Zzz(pts.x, pts.y);
-        //     zzzs.push(zzz);
-        //     // if (zzzs[0].opacity < 1) {
-        //     //     zzzs.shift(zzz);
-        //     // }
-        //     if (zzzs.length > 50) {
-        //         zzzs.pop(zzz);
-        //     }
-        // }
-
-        // for (let i = 0; i < zzzs.length; i++) {
-        //     let z = zzzs[i];
-        //     z.update();
-        //     z.show();
-        //     z.behaviors();
-        //     // if (zzzs.length > 15) {
-        //     //   zzzs.shift();
-        //     // }
-        // }
 
         } else if (leftEyeL.y - leftEyeU.y <= 5) {
         fill(0);
@@ -183,6 +146,9 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
             // }
         }
 
+        // Removes old thunder if open eyes
+        thunders.shift();
+
         } else if (rightEyeL.y - rightEyeU.y <= 5) {
         fill(0);
         noStroke();
@@ -230,6 +196,9 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
             //   hearts.shift();
             // }
         }
+
+        // Removes old thunder if open eyes
+        thunders.shift();
         }
 
     if (lipsLower.y - lipsUpper.y > 30 ) {
