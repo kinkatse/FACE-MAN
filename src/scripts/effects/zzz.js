@@ -7,7 +7,7 @@ function Zzz(x,y) {
   this.height = 53;
   this.opacity = 255;
   this.maxSpeed = 5;
-  this.maxForce = 0.1;
+  this.maxForce = 0.2;
 }
 
 Zzz.prototype.update = function() {
@@ -20,6 +20,7 @@ Zzz.prototype.update = function() {
 }
 
 Zzz.prototype.show = function() {
+  push();
   translate(this.pos.x, this.pos.y);
   // fill(255, 7, 69, this.opacity);
   // noStroke();
@@ -46,6 +47,7 @@ Zzz.prototype.show = function() {
   line(0, 5, 30, 5);
   line(0, 5, 30, -50);
   line(0, -50, 30, -50);
+  pop();
 }
 
 Zzz.prototype.behaviors = function() {

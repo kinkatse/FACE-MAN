@@ -69,33 +69,42 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         
         // Kirby Sleep
 
-        x = 500;
-        y = 175;
-
-        noStroke();
-        zzzpts = [{x, y}];
-
-        for (let i = 0; i < zzzpts.length; i++) {
-            let pts = zzzpts[i];
-            let zzz = new Zzz(pts.x, pts.y);
-            zzzs.push(zzz);
-            // if (zzzs[0].opacity < 1) {
-            //     zzzs.shift(zzz);
-            // }
-            if (zzzs.length > 50) {
-                zzzs.pop(zzz);
-            }
+        x = rightEyeU.x + 150;
+        y = rightEyeU.y - 150;
+        if (zzzs.length === 0) {
+            zzzs.push(new Zzz(x,y));
         }
+        zzzs[0].show();
+        zzzs[0].update();
+        zzzs[0].behaviors();
 
-        for (let i = 0; i < zzzs.length; i++) {
-            let z = zzzs[i];
-            z.update();
-            z.show();
-            z.behaviors();
-            // if (zzzs.length > 15) {
-            //   zzzs.shift();
-            // }
-        }
+        // x = 500;
+        // y = 175;
+
+        // noStroke();
+        // zzzpts = [{x, y}];
+
+        // for (let i = 0; i < zzzpts.length; i++) {
+        //     let pts = zzzpts[i];
+        //     let zzz = new Zzz(pts.x, pts.y);
+        //     zzzs.push(zzz);
+        //     // if (zzzs[0].opacity < 1) {
+        //     //     zzzs.shift(zzz);
+        //     // }
+        //     if (zzzs.length > 50) {
+        //         zzzs.pop(zzz);
+        //     }
+        // }
+
+        // for (let i = 0; i < zzzs.length; i++) {
+        //     let z = zzzs[i];
+        //     z.update();
+        //     z.show();
+        //     z.behaviors();
+        //     // if (zzzs.length > 15) {
+        //     //   zzzs.shift();
+        //     // }
+        // }
 
         } else if (leftEyeL.y - leftEyeU.y <= 5) {
         fill(0);
