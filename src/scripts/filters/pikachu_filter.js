@@ -205,8 +205,8 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         fill("white");
         noStroke();
 
-        x = lipsLower.x + 300;
-        y = lipsLower.y - 100;
+        x = lipsLower.x + 250;
+        y = lipsLower.y - 150;
 
         noStroke();
         ketchuppts = [{x, y}];
