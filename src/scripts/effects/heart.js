@@ -1,5 +1,5 @@
 function Heart(x,y) {
-  this.pos = createVector(random(width), random(height));
+  this.pos = createVector(random(width + 500), random(height + 500));
   this.target = createVector(x,y);
   this.vel = p5.Vector.random2D();
   this.acc = createVector();
@@ -7,23 +7,17 @@ function Heart(x,y) {
   this.height = 53;
   this.opacity = 255;
   this.maxSpeed = 30;
-  this.maxForce = 0.5;
-  // debugger
+  this.maxForce = 1;
 }
 
 Heart.prototype.update = function() {
-  // debugger
   this.pos.add(this.vel);
   this.vel.add(this.acc);
   this.acc.mult(0);
-  // this.width /= 1.2;
-  // this.height /= 1.2;
-  // this.opacity -= 10;
-  // debugger
 }
 
 Heart.prototype.show = function() {
-  // debugger
+  push();
   translate(this.pos.x, this.pos.y);
   fill(255, 7, 69, this.opacity);
   noStroke();
@@ -32,6 +26,7 @@ Heart.prototype.show = function() {
       ellipse(0, 20, this.width, this.height);
       rotate(PI/4.2);
   }
+  pop();
 }
 
 Heart.prototype.behaviors = function() {

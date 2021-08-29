@@ -14,21 +14,11 @@ Zzz.prototype.update = function() {
   this.pos.add(this.vel);
   this.vel.add(this.acc);
   this.acc.mult(0);
-  // this.width /= 1.2;
-  // this.height /= 1.2;
-  // this.opacity -= 10;
 }
 
 Zzz.prototype.show = function() {
   push();
   translate(this.pos.x, this.pos.y);
-  // fill(255, 7, 69, this.opacity);
-  // noStroke();
-  // rotate(9.7);
-  // for (let i = 0; i < 2; i ++) {
-  //     ellipse(0, 20, this.width, this.height);
-  //     rotate(PI/4.2);
-  // }
   translate(0, 0);
   stroke("black");
   strokeWeight(15);
