@@ -24,6 +24,7 @@ let pikaleftear;
 let pikarightear;
 let pikanose;
 let thunder;
+let ketchup;
 
 let topLeft;
 let bottomRight;
@@ -51,6 +52,9 @@ let pelletpts = [];
 let pellets = [];
 
 let thunders = [];
+
+let ketchuppts = [];
+let ketchups = [];
 
 let bashfulpts = [];
 let bashfuls = [];
@@ -167,6 +171,7 @@ function preload() {
   pikarightear = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896827556683826/Pikachu_Left_Ear.png');
   pikanose = loadImage('https://media.discordapp.net/attachments/597985513701376013/879917035738529832/Pika_nose.png');
   thunder = loadImage('https://media.discordapp.net/attachments/597985513701376013/881556169913663488/Thunder_Test_2.gif');
+  ketchup = loadImage('https://media.discordapp.net/attachments/597985513701376013/881575642716590161/Ketchup.png');
 }
 
 function setup() {

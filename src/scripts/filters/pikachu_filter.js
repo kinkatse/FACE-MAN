@@ -91,11 +91,11 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         
         // Pikachu Thunder
 
-            let thunder = new Thunder();
-            if (thunders.length === 0) {
-                thunders.push(thunder);
-            }
-            thunders[0].show();
+        let thunder = new Thunder();
+        if (thunders.length === 0) {
+            thunders.push(thunder);
+        }
+        thunders[0].show();
 
 
         } else if (leftEyeL.y - leftEyeU.y <= 5) {
@@ -206,26 +206,23 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         noStroke();
         // ellipse(x, y, 10, 10);
 
-        x = lipsLower.x;
-        y = lipsLower.y - 50;
+        x = lipsLower.x + 300;
+        y = lipsLower.y - 100;
 
         noStroke();
-        dustpts = [{x, y}, {x, y}];
+        ketchuppts = [{x, y}, {x, y}];
 
-        for (let i = 0; i < dustpts.length; i++) {
-        let pt = dustpts[i];
-        let dust = new Dust(pt.x, pt.y);
-        dusts.push(dust);
-        if (dusts[0].size < 1) {
-            dusts.shift(dust);
-        }
-        }
+        // let pt = ketchuppts[i];
+        let ketchup = new Ketchup(ketchuppts.x, ketchuppts.y);
+        ketchups.push(ketchup);
+        // if (ketchups.length < 1) {
+        //     ketchups.shift(ketchup);
+        // }
 
-        for (let i = 0; i < dusts.length; i++) {
-        let v = dusts[i];
-        v.update();
-        v.show();
-        v.behaviors();
-        }
+        // for (let i = 0; i < ketchups.length; i++) {
+        //     let k = ketchups[i];
+        //     k.update();
+            ketchups[0].show();
+        // }
     }
 }
