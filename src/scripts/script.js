@@ -38,6 +38,8 @@ let y = 650;
 // let speedx = 3;
 // let speedy = 3;
 
+let winks = [];
+
 let dustpts = [];
 let dusts = [];
 

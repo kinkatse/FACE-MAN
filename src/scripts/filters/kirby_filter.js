@@ -79,100 +79,108 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         zzzs[0].behaviors();
 
         } else if (leftEyeL.y - leftEyeU.y <= 5) {
+
         fill(0);
         noStroke();
         ellipse(rightEyeU.x, rightEyeU.y - 25, dia, (dia*2.5));
         fill(255);
         noStroke();
         ellipse(rightEyeU.x, rightEyeU.y - 45, dia/1.75, (dia));
-        noFill();
-        strokeWeight(5);
-        stroke("black");
-        curve(
-            leftEyeU.x + 40, leftEyeU.y + 70,
-            leftEyeU.x + 40, leftEyeU.y - 20,
-            leftEyeU.x - 10, leftEyeU.y - 10,
-            leftEyeU.x - 20, leftEyeU.y + 85
-        );
+        
+        new Wink(leftEyeU, rightEyeU, false);
 
-        // Kirby Wink
+        // noFill();
+        // strokeWeight(5);
+        // stroke("black");
+        // curve(
+        //     leftEyeU.x + 40, leftEyeU.y + 70,
+        //     leftEyeU.x + 40, leftEyeU.y - 20,
+        //     leftEyeU.x - 10, leftEyeU.y - 10,
+        //     leftEyeU.x - 20, leftEyeU.y + 85
+        // );
 
-        x = leftEyeU.x + 108;
-        y = leftEyeU.y - 40;
+        // // Kirby Wink
 
-        noStroke();
-        heartpts = [{x, y}];
+        // x = leftEyeU.x + 108;
+        // y = leftEyeU.y - 40;
 
-        for (let i = 0; i < heartpts.length; i++) {
-            // debugger
-            let pts = heartpts[i];
-            let heart = new Heart(pts.x, pts.y);
-            hearts.push(heart);
-            if (hearts[0].opacity < 6) {
-                hearts.shift(heart);
-            }
-            // if (hearts.length > 15) {
-            //     hearts.pop(heart);
-            // }
-        }
+        // noStroke();
+        // heartpts = [{x, y}];
 
-        for (let i = 0; i < hearts.length; i++) {
-            let h = hearts[i];
-            h.update();
-            h.show();
-            h.behaviors();
-            // if (hearts.length > 15) {
-            //   hearts.shift();
-            // }
-        }
+        // for (let i = 0; i < heartpts.length; i++) {
+        //     // debugger
+        //     let pts = heartpts[i];
+        //     let heart = new Heart(pts.x, pts.y);
+        //     hearts.push(heart);
+        //     if (hearts[0].opacity < 6) {
+        //         hearts.shift(heart);
+        //     }
+        //     // if (hearts.length > 15) {
+        //     //     hearts.pop(heart);
+        //     // }
+        // }
+
+        // for (let i = 0; i < hearts.length; i++) {
+        //     let h = hearts[i];
+        //     h.update();
+        //     h.show();
+        //     h.behaviors();
+        //     // if (hearts.length > 15) {
+        //     //   hearts.shift();
+        //     // }
+        // }
 
         } else if (rightEyeL.y - rightEyeU.y <= 5) {
+
         fill(0);
         noStroke();
         ellipse(leftEyeU.x, leftEyeU.y - 25, dia, (dia*2.5));
         fill(255);
         noStroke();
         ellipse(leftEyeU.x, leftEyeU.y - 45, dia/1.75, (dia));
-        noFill();
-        strokeWeight(5);
-        stroke("black");
-        curve(
-            rightEyeU.x + 15, rightEyeU.y + 85,
-            rightEyeU.x + 15, rightEyeU.y - 10,
-            rightEyeU.x - 35, rightEyeU.y - 20,
-            rightEyeU.x - 45, rightEyeU.y + 70
-        );
+
+        new Wink(leftEyeU, rightEyeU, true);
+
+        // noFill();
+        // strokeWeight(5);
+        // stroke("black");
+        // curve(
+        //     rightEyeU.x + 15, rightEyeU.y + 85,
+        //     rightEyeU.x + 15, rightEyeU.y - 10,
+        //     rightEyeU.x - 35, rightEyeU.y - 20,
+        //     rightEyeU.x - 45, rightEyeU.y + 70
+        // );
         
-        // Kirby Wink
+        // // Kirby Wink
 
-        x = leftEyeU.x + 108;
-        y = leftEyeU.y - 40;
+        // x = leftEyeU.x + 108;
+        // y = leftEyeU.y - 40;
 
-        noStroke();
-        heartpts = [{x, y}];
+        // noStroke();
+        // heartpts = [{x, y}];
 
-        for (let i = 0; i < heartpts.length; i++) {
-            let pts = heartpts[i];
-            let heart = new Heart(pts.x, pts.y);
-            hearts.push(heart);
-            if (hearts[0].opacity < 6) {
-                hearts.shift(heart);
-            }
-            // if (hearts.length > 15) {
-            //     hearts.pop(heart);
-            // }
-        }
+        // for (let i = 0; i < heartpts.length; i++) {
+        //     let pts = heartpts[i];
+        //     let heart = new Heart(pts.x, pts.y);
+        //     hearts.push(heart);
+        //     if (hearts[0].opacity < 6) {
+        //         hearts.shift(heart);
+        //     }
+        //     // if (hearts.length > 15) {
+        //     //     hearts.pop(heart);
+        //     // }
+        // }
 
-        for (let i = 0; i < hearts.length; i++) {
-            let h = hearts[i];
-            h.update();
-            h.show();
-            h.behaviors();
-            // if (hearts.length > 15) {
-            //   hearts.shift();
-            // }
-        }
-        }
+        // for (let i = 0; i < hearts.length; i++) {
+        //     let h = hearts[i];
+        //     h.update();
+        //     h.show();
+        //     h.behaviors();
+        //     // if (hearts.length > 15) {
+        //     //   hearts.shift();
+        //     // }
+        // }
+    }
 
     if (lipsLower.y - lipsUpper.y > 30 ) {
         fill("white");
