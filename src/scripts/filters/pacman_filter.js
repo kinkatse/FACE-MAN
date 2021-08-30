@@ -177,6 +177,7 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         }
         
     } else if (leftEyeL.y - leftEyeU.y <= 5) {
+        
         fill(0);
         noStroke();
         ellipse(rightEyeU.x, rightEyeU.y - 40, dia, (dia*3));
@@ -190,38 +191,11 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
             rightEyeU.x - 45,
             rightEyeU.y - 60
         );
-        fill(0);
-        strokeWeight(5);
-        stroke("black");
-        line(leftEyeU.x + 5, leftEyeU.y - 65, leftEyeU.x - 15, leftEyeU.y - 10);
-        line(leftEyeU.x + 15, leftEyeU.y - 20, leftEyeU.x - 15, leftEyeU.y - 10);
 
-        noStroke();
-        heartpts = [{x, y}];
-
-        for (let i = 0; i < heartpts.length; i++) {
-            let pts = heartpts[i];
-            let heart = new Heart(pts.x, pts.y);
-            hearts.push(heart);
-            if (hearts[0].opacity < 6) {
-                hearts.shift(heart);
-            }
-            // if (hearts.length > 15) {
-            //     hearts.pop(heart);
-            // }
-        }
-
-        for (let i = 0; i < hearts.length; i++) {
-            let h = hearts[i];
-            h.update();
-            h.show();
-            h.behaviors();
-            // if (hearts.length > 15) {
-            //   hearts.shift();
-            // }
-        }
+        new Wink(leftEyeU, rightEyeU, false);
 
     } else if (rightEyeL.y - rightEyeU.y <= 5) {
+
         fill(0);
         noStroke();
         ellipse(leftEyeU.x, leftEyeU.y - 40, dia, (dia*3));
@@ -235,37 +209,8 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
             leftEyeU.x + 45,
             leftEyeU.y - 60
         );
-        fill(0);
-        strokeWeight(5);
-        stroke("black");
-        line(rightEyeU.x + 5, rightEyeU.y - 65, rightEyeU.x + 15, rightEyeU.y - 10);
-        line(rightEyeU.x - 15, rightEyeU.y - 20, rightEyeU.x + 15, rightEyeU.y - 10);
 
-        noStroke();
-        heartpts = [{x, y}];
-
-        for (let i = 0; i < heartpts.length; i++) {
-            let pts = heartpts[i];
-            let heart = new Heart(pts.x, pts.y);
-            hearts.push(heart);
-            if (hearts[0].opacity < 6) {
-                hearts.shift(heart);
-            }
-            // if (hearts.length > 15) {
-            //     hearts.pop(heart);
-            // }
-        }
-
-        for (let i = 0; i < hearts.length; i++) {
-            let h = hearts[i];
-            h.update();
-            h.show();
-            h.behaviors();
-            // if (hearts.length > 15) {
-            //   hearts.shift();
-            // }
-        }
-
+        new Wink(leftEyeU, rightEyeU, true);
     }
 
     if (lipsLower.y - lipsUpper.y > 30 ) {

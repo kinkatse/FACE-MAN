@@ -86,49 +86,8 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         fill(255);
         noStroke();
         ellipse(rightEyeU.x, rightEyeU.y - 45, dia/1.75, (dia));
-        
+
         new Wink(leftEyeU, rightEyeU, false);
-
-        // noFill();
-        // strokeWeight(5);
-        // stroke("black");
-        // curve(
-        //     leftEyeU.x + 40, leftEyeU.y + 70,
-        //     leftEyeU.x + 40, leftEyeU.y - 20,
-        //     leftEyeU.x - 10, leftEyeU.y - 10,
-        //     leftEyeU.x - 20, leftEyeU.y + 85
-        // );
-
-        // // Kirby Wink
-
-        // x = leftEyeU.x + 108;
-        // y = leftEyeU.y - 40;
-
-        // noStroke();
-        // heartpts = [{x, y}];
-
-        // for (let i = 0; i < heartpts.length; i++) {
-        //     // debugger
-        //     let pts = heartpts[i];
-        //     let heart = new Heart(pts.x, pts.y);
-        //     hearts.push(heart);
-        //     if (hearts[0].opacity < 6) {
-        //         hearts.shift(heart);
-        //     }
-        //     // if (hearts.length > 15) {
-        //     //     hearts.pop(heart);
-        //     // }
-        // }
-
-        // for (let i = 0; i < hearts.length; i++) {
-        //     let h = hearts[i];
-        //     h.update();
-        //     h.show();
-        //     h.behaviors();
-        //     // if (hearts.length > 15) {
-        //     //   hearts.shift();
-        //     // }
-        // }
 
         } else if (rightEyeL.y - rightEyeU.y <= 5) {
 
@@ -141,45 +100,6 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
 
         new Wink(leftEyeU, rightEyeU, true);
 
-        // noFill();
-        // strokeWeight(5);
-        // stroke("black");
-        // curve(
-        //     rightEyeU.x + 15, rightEyeU.y + 85,
-        //     rightEyeU.x + 15, rightEyeU.y - 10,
-        //     rightEyeU.x - 35, rightEyeU.y - 20,
-        //     rightEyeU.x - 45, rightEyeU.y + 70
-        // );
-        
-        // // Kirby Wink
-
-        // x = leftEyeU.x + 108;
-        // y = leftEyeU.y - 40;
-
-        // noStroke();
-        // heartpts = [{x, y}];
-
-        // for (let i = 0; i < heartpts.length; i++) {
-        //     let pts = heartpts[i];
-        //     let heart = new Heart(pts.x, pts.y);
-        //     hearts.push(heart);
-        //     if (hearts[0].opacity < 6) {
-        //         hearts.shift(heart);
-        //     }
-        //     // if (hearts.length > 15) {
-        //     //     hearts.pop(heart);
-        //     // }
-        // }
-
-        // for (let i = 0; i < hearts.length; i++) {
-        //     let h = hearts[i];
-        //     h.update();
-        //     h.show();
-        //     h.behaviors();
-        //     // if (hearts.length > 15) {
-        //     //   hearts.shift();
-        //     // }
-        // }
     }
 
     if (lipsLower.y - lipsUpper.y > 30 ) {

@@ -109,46 +109,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
 
         new Wink(leftEyeU, rightEyeU, false);
 
-        // noFill();
-        // strokeWeight(5);
-        // stroke("black");
-        // curve(
-        //     leftEyeU.x + 40, leftEyeU.y + 65,
-        //     leftEyeU.x + 40, leftEyeU.y - 25,
-        //     leftEyeU.x - 10, leftEyeU.y - 15,
-        //     leftEyeU.x - 20, leftEyeU.y + 80
-        // );
-        
-        // // Pikachu Wink
-
-        // x = leftEyeU.x + 108;
-        // y = leftEyeU.y - 45;
-
-        // noStroke();
-        // heartpts = [{x, y}];
-
-        // for (let i = 0; i < heartpts.length; i++) {
-        //     let pts = heartpts[i];
-        //     let heart = new Heart(pts.x, pts.y);
-        //     hearts.push(heart);
-        //     if (hearts[0].opacity < 6) {
-        //         hearts.shift(heart);
-        //     }
-        //     // if (hearts.length > 15) {
-        //     //     hearts.pop(heart);
-        //     // }
-        // }
-
-        // for (let i = 0; i < hearts.length; i++) {
-        //     let h = hearts[i];
-        //     h.update();
-        //     h.show();
-        //     h.behaviors();
-        //     // if (hearts.length > 15) {
-        //     //   hearts.shift();
-        //     // }
-        // }
-
         // Removes old thunder if open eyes
         thunders.shift();
 
@@ -162,46 +122,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         ellipse(leftEyeU.x + 18, leftEyeU.y - 44, dia - 10, dia - 10);
 
         new Wink(leftEyeU, rightEyeU, true);
-
-        // noFill();
-        // strokeWeight(5);
-        // stroke("black");
-        // curve(
-        //     rightEyeU.x + 15, rightEyeU.y + 80,
-        //     rightEyeU.x + 15, rightEyeU.y - 15,
-        //     rightEyeU.x - 35, rightEyeU.y - 25,
-        //     rightEyeU.x - 45, rightEyeU.y + 65
-        // );
-        
-        // // Pikachu Wink
-
-        // x = leftEyeU.x + 108;
-        // y = leftEyeU.y - 45;
-
-        // noStroke();
-        // heartpts = [{x, y}];
-
-        // for (let i = 0; i < heartpts.length; i++) {
-        //     let pts = heartpts[i];
-        //     let heart = new Heart(pts.x, pts.y);
-        //     hearts.push(heart);
-        //     if (hearts[0].opacity < 6) {
-        //         hearts.shift(heart);
-        //     }
-        //     // if (hearts.length > 15) {
-        //     //     hearts.pop(heart);
-        //     // }
-        // }
-
-        // for (let i = 0; i < hearts.length; i++) {
-        //     let h = hearts[i];
-        //     h.update();
-        //     h.show();
-        //     h.behaviors();
-        //     // if (hearts.length > 15) {
-        //     //   hearts.shift();
-        //     // }
-        // }
 
         // Removes old thunder if open eyes
         thunders.shift();
