@@ -1,9 +1,7 @@
 <h1>Welcome to FACE-MAN wiki!</h1>
 
+<img align="left" src="https://media.discordapp.net/attachments/597985513701376013/870506369223102514/FACE-MAN_Logo_1.png?width=670&height=670" width=100px>
 <img align="center" src="https://media.discordapp.net/attachments/597985513701376013/882378436868464710/FACE-MAN_Title.png" width=350px>
-<br/>
-
-<img align="left" src="https://media.discordapp.net/attachments/597985513701376013/870506369223102514/FACE-MAN_Logo_1.png?width=670&height=670" width=100px>  
 <br/>
 
 <h3>Background</h3>
