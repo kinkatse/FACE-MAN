@@ -22,16 +22,16 @@
  
 After granting access to your camera for this app to run, you can click on any filter button to start. You should position yourself further from the screen and keep your head straight for this app's filters and animations. Keep in mind that this app is programmed for only one person at a time. If any error pops up, it will tell you how to position yourself to fix it. Generally, you can test each filter out individually, where you can toggle it on (by clicking the filter button), and toggle it back off (by clicking the filter button again). You can see I do this with the "Toggle Hitbox" and "Scan Mask" filters.
 
-![Toggle Buttons](https://media.discordapp.net/attachments/597985513701376013/882387469671202917/Toggle_Buttons.gif)
+![Toggle Buttons](https://media.discordapp.net/attachments/597985513701376013/882385622071910491/Toggle_Buttons.gif)
  
 You can try to use one of the main three filters: Pacman, Kirby or Pikachu. These filters have animations attached to facial movements. For example, opening Kirby's mouth will display dust particles being inhaled by Kirby. Closing both eyes with Pacman will show the ghosts from Pacman (To test this, you can also squint your eyes to see closed eye animations). All three of these filters will have different animations for closing eyes and opening mouth. Try winking as well!
 
-![Toggle Buttons](https://media.discordapp.net/attachments/597985513701376013/882387193048481862/Pacman__Kirby.gif)
+![Toggle Buttons](https://media.discordapp.net/attachments/597985513701376013/882386821017894932/Pacman__Kirby.gif)
  
 The other three filters, Pretty, Mustache, Glasses are add ons to existing filters (or none). This means that you can use these filters on top of other filters and can be mixed and combined with other filters. You can see this by having a filter on and then clicking one of these. These (along with toggle hitbox) are the only ones that can mix and match so have fun with trying different combinations. They work standalone as well!
 
-![Toggle Buttons](https://media.discordapp.net/attachments/597985513701376013/882388353708884038/Add_On_Filters.gif)
+![Toggle Buttons](https://media.discordapp.net/attachments/597985513701376013/882390035356319915/Add_On_Filters.gif)
  
 The last button is just a simple clear for every single filter you have on at the moment!
 
-![Toggle Buttons](https://media.discordapp.net/attachments/597985513701376013/882389154447654922/Clear_Button.gif)
+![Toggle Buttons](https://media.discordapp.net/attachments/597985513701376013/882389665527771156/Clear_Button.gif)
