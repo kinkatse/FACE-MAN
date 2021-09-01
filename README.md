@@ -35,9 +35,11 @@ The last button is just a simple clear for every single filter you have on at th
 
 ## Code Snippets:
 
+The Tensorflow library allots 486 3D facial landmarks to capture the full geometry of a human face. To gather the information needed to detect mouth movement or eye movement, we had to refer to the object created, which we called "face". Inside the face object, there are different ways to utilize these landmarks including annotations, boundingbox, mesh, and scaledmesh. I used annotations for most facial actions but I did use boundingbox to indicate corners of the hitbox filter and scaledmesh for the nose
+
 <h4>Open Mouth Animation</h4>
 
-The Tensorflow library allots 486 3D facial landmarks to capture the full geometry of a human face. To gather the information needed to detect mouth movement or eye movement, we had to refer to the object created, which we called "face". Inside the face object, there are different ways to utilize these landmarks including annotations, boundingbox, mesh, and scaledmesh. For detecting an open mouth, I used the annotations which offered specific locations of the landmarks called "lipsLower" or "lipsUpper" and would have to scale the coordinates to an x and y. This allows us to make a conditional detecting if the lower lips landmark's distance from the upper lips landmark is large enough to play an animation.
+For detecting an open mouth, I used the annotations which offered specific locations of the landmarks called "lipsLower" or "lipsUpper" and would have to scale the coordinates to an x and y. This allows us to make a conditional detecting if the lower lips landmark's distance from the upper lips landmark is large enough to play an animation.
 
 ```
 // We originally accessed these landmarks through face and stored them in these variables.
@@ -65,11 +67,11 @@ if (lipsLower.y - lipsUpper.y > 30 ) {
       }
     }
     for (let i = 0; i < dusts.length; i++) {
-      let v = dusts[i];
+      let d = dusts[i];
       // This is where the dust animation gets updated and shown.
-      v.update();
-      v.show();
-      v.behaviors();
+      d.update();
+      d.show();
+      d.behaviors();
     }
  }
 ```
@@ -255,3 +257,7 @@ Zzz.prototype.arrive = function(target) {
   return steer;
 };
 ```
+
+## Future Plans:
+
+I originally intended this to be a game where your face has a hitbox (hence the toggle hitbox filter) and you dodge obstacles like the ghosts and eat certain food objects for points. I decided that it was for the best to focus on the integration of Tensorflow and get familiar with that first before moving on to game elements because I was aiming to finish this project in 1 week. Thus, the game parts is now a bonus which I plan to implement later on.
