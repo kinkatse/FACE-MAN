@@ -255,3 +255,8 @@ button:hover {
   background: linear-gradient(220deg, rgba(120, 120, 120, 1), rgba(200, 200, 200, 0.5) 80%);
   /* opacity: 65%; */
 }
+
+button:active {
+  background: rgb(180, 244, 255, 0.65);
+  /* background-color: rgb(180, 244, 255); */
+}

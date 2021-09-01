@@ -123,10 +123,10 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         }
 
         for (let i = 0; i < dusts.length; i++) {
-        let v = dusts[i];
-        v.update();
-        v.show();
-        v.behaviors();
+        let d = dusts[i];
+        d.update();
+        d.show();
+        d.behaviors();
         }
     }
 }
