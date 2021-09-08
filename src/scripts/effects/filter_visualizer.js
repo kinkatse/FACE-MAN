@@ -1,7 +1,8 @@
 let fv_x;
 let fv_dist;
 let fv_word;
-let fv_color = 'rgba(132, 255, 181, 0.3)';
+let fv_color1;
+let fv_color2;
 
 function filter_vis(filter) {
 
@@ -9,59 +10,63 @@ function filter_vis(filter) {
         fv_x = 50;
         fv_dist = 100;
         fv_word = "Scanmask";
-        fv_color = 'rgba(191, 225, 255, 0.3)';
+        fv_color1 = 'rgba(191, 225, 255, 0.3)';
     }
 
     if (filter === "pacman") {
         fv_x = 50;
         fv_dist = 100;
         fv_word = "Pacman";
-        fv_color = 'rgba(255, 245, 140, 0.3)';
+        fv_color1 = 'rgba(255, 245, 140, 0.3)';
     }
 
     if (filter === "kirby") {
         fv_x = 50;
         fv_dist = 100;
         fv_word = "Kirby";
-        fv_color = 'rgba(255, 186, 212, 0.3)';
+        fv_color1 = 'rgba(255, 186, 212, 0.3)';
     }
 
     if (filter === "pikachu") {
         fv_x = 50;
         fv_dist = 100;
         fv_word = "Pikachu";
-        fv_color = 'rgba(255, 228, 165, 0.3)';
+        fv_color1 = 'rgba(255, 228, 165, 0.3)';
     }
 
     if (filter === "hitbox") {
         fv_x = 50;
         fv_dist = 70;
         fv_word = "Hitbox";
+        fv_color1 = 'rgba(132, 255, 181, 0.3)';
     }
 
     if (filter === "pretty") {
         fv_x = 126;
         fv_dist = 100;
         fv_word = "Pretty";
+        fv_color1 = 'rgba(132, 255, 181, 0.3)';
     }
 
     if (filter === "mustache") {
         fv_x = 126;
         fv_dist = 100;
         fv_word = "Mustache";
+        fv_color1 = 'rgba(132, 255, 181, 0.3)';
     }
 
     if (filter === "glasses") {
         fv_x = 126;
         fv_dist = 100;
         fv_word = "Glasses";
+        fv_color1 = 'rgba(132, 255, 181, 0.3)';
     }
 
     // Filter is on visualizer
     push();
-    translate(fv_x, 15);
-    fill(fv_color);
-    stroke(153, 207, 255);
+    translate(fv_x, 17);
+    fill(fv_color1);
+    stroke(fv_color2);
     strokeWeight(2);
     rectMode(CENTER);
     rect(1, 1, fv_dist, 30, 5, 5, 5, 5);
