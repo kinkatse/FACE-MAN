@@ -33,6 +33,7 @@ let facedia;
 let topfacedia;
 let dia;
 let anyFilter = false;
+let filtercount = 0;
 let x = 0;
 let y = 650;
 // let speedx = 3;
@@ -80,25 +81,20 @@ function clearButton() {
   hitbox = false;
   faceMaskDots = false;
   anyFilter = false;
+  filtercount = 0;
 }
 
 function faceMaskDotsButton() {
   if (!faceMaskDots && !anyFilter) {
     faceMaskDots = true;
     anyFilter = true;
+    filtercount++;
   } else if (faceMaskDots && anyFilter) {
     faceMaskDots = false;
     anyFilter = false;
+    filtercount--;
   } else {
     anyFilter = true;
-  }
-}
-
-function hitboxButton() {
-  if (!hitbox) {
-    hitbox = true;
-  } else {
-    hitbox = false;
   }
 }
 
@@ -106,9 +102,11 @@ function pacmanButton() {
   if (!pacmanFilter && !anyFilter) {
     pacmanFilter = true;
     anyFilter = true;
+    filtercount++;
   } else if (pacmanFilter && anyFilter) {
     pacmanFilter = false;
     anyFilter = false;
+    filtercount--;
   } else {
     anyFilter = true;
   }
@@ -118,9 +116,11 @@ function kirbyButton() {
   if (!kirbyFilter && !anyFilter) {
     kirbyFilter = true;
     anyFilter = true;
+    filtercount++;
   } else if (kirbyFilter && anyFilter) {
-      kirbyFilter = false;
-      anyFilter = false;
+    kirbyFilter = false;
+    anyFilter = false;
+    filtercount--;
   } else {
     anyFilter = true;
   }
@@ -130,35 +130,53 @@ function pikachuButton() {
   if (!pikachuFilter && !anyFilter) {
     pikachuFilter = true;
     anyFilter = true;
+    filtercount++;
   } else if (pikachuFilter && anyFilter) {
-      pikachuFilter = false;
-      anyFilter = false;
+    pikachuFilter = false;
+    anyFilter = false;
+    filtercount--;
   } else {
     anyFilter = true;
+  }
+}
+
+function hitboxButton() {
+  if (!hitbox) {
+    hitbox = true;
+    filtercount++;
+  } else {
+    hitbox = false;
+    filtercount--;
   }
 }
 
 function prettyButton() {
   if (!prettyFilter) {
     prettyFilter = true;
+    filtercount++;
   } else {
     prettyFilter = false;
+    filtercount--;
   }
 }
 
 function mustacheButton() {
   if (!mustacheFilter) {
     mustacheFilter = true;
+    filtercount++;
   } else {
     mustacheFilter = false;
+    filtercount--;
   }
 }
 
 function glassesButton() {
   if (!glassesFilter) {
     glassesFilter = true;
+    filtercount++;
   } else {
     glassesFilter = false;
+    filtercount--;
   }
 }
 
@@ -314,26 +332,6 @@ function draw() {
       firstFace = false;
     }
 
-    if (faceMaskDots) {
-        fill("black");
-        noStroke();
-        for (let pt of face.scaledMesh) {
-        pt = scaleCoord(pt);
-        circle(pt.x, pt.y, 3);
-        }
-        
-        fill(0, 150, 255, 100);
-        noStroke();
-        beginShape();
-        for (pt of face.annotations.silhouette) {
-        pt = scaleCoord(pt);
-        vertex(pt.x, pt.y);
-        }
-        endShape(CLOSE);
-
-        new filter_vis("scanmask");
-    }
-
     let lipsUpper =  scaleCoord(face.annotations.lipsUpperOuter[5]);
     let lipsLower = scaleCoord(face.annotations.lipsLowerOuter[4]);
     
@@ -355,6 +353,26 @@ function draw() {
     topfacedia = w / 2;
     dia = w / 8;
     let nose = scaleCoord(face.scaledMesh[5]);
+
+    if (faceMaskDots) {
+      fill("black");
+      noStroke();
+      for (let pt of face.scaledMesh) {
+      pt = scaleCoord(pt);
+      circle(pt.x, pt.y, 3);
+      }
+      
+      fill(0, 150, 255, 100);
+      noStroke();
+      beginShape();
+      for (pt of face.annotations.silhouette) {
+      pt = scaleCoord(pt);
+      vertex(pt.x, pt.y);
+      }
+      endShape(CLOSE);
+
+      new filter_vis("scanmask");
+  }
 
     if (pacmanFilter) {
       new Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face)
