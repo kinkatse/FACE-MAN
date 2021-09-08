@@ -1,9 +1,9 @@
-let fv_x;
+let fv_y;
 let fv_dist;
 let fv_word;
 let fv_color1;
 let fv_color2;
-let filter_pos = [57, 172, 287, 402, 517]
+let filter_pos = [17, 52, 87, 122, 157]
 // let count = 0;
 
 function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
@@ -13,60 +13,60 @@ function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
             fv_word = "Scanmask";
             fv_color1 = 'rgba(191, 225, 255, 1)';
             fv_color2 = 'rgb(153, 207, 255)';
-            fv_x = filter_pos[i];
-            new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+            fv_y = filter_pos[i];
+            new Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word);
         } else if (positions[i] === "pacman") {
             fv_dist = 110;
             fv_word = "Pacman";
             fv_color1 = 'rgba(255, 245, 140, 1)';
             fv_color2 = 'rgb(229, 214, 75)';
-            fv_x = filter_pos[i];
-            new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+            fv_y = filter_pos[i];
+            new Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word);
         } else if (positions[i] === "kirby") {
             fv_dist = 110;
             fv_word = "Kirby";
             fv_color1 = 'rgba(255, 186, 212, 1)';
             fv_color2 = 'rgb(234, 140, 176)';
-            fv_x = filter_pos[i];
-            new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+            fv_y = filter_pos[i];
+            new Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word);
         } else if (positions[i] === "pikachu") {
             fv_dist = 110;
             fv_word = "Pikachu";
             fv_color1 = 'rgba(255, 228, 165, 1)';
             fv_color2 = 'rgb(219, 179, 87)';
-            fv_x = filter_pos[i];
-            new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+            fv_y = filter_pos[i];
+            new Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word);
         } else if (positions[i] === "hitbox") {
             fv_dist = 110;
             fv_word = "Hitbox";
             fv_color1 = 'rgba(132, 255, 181, 1)';
             fv_color2 = 'rgb(74, 206, 125)';
-            fv_x = filter_pos[i];
-            new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+            fv_y = filter_pos[i];
+            new Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word);
         } else if (positions[i] === "pretty") {
             fv_dist = 110;
             fv_word = "Pretty";
             fv_color1 = 'rgba(132, 255, 181, 1)';
             fv_color2 = 'rgb(74, 206, 125)';
-            fv_x = filter_pos[i];
-            new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+            fv_y = filter_pos[i];
+            new Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word);
         } else if (positions[i] === "mustache") {
             fv_dist = 110;
             fv_word = "Mustache";
             fv_color1 = 'rgba(132, 255, 181, 1)';
             fv_color2 = 'rgb(74, 206, 125)';
-            fv_x = filter_pos[i];
-            new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+            fv_y = filter_pos[i];
+            new Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word);
         } else if (positions[i] === "glasses") {
             fv_dist = 110;
             fv_word = "Glasses";
             fv_color1 = 'rgba(132, 255, 181, 1)';
             fv_color2 = 'rgb(74, 206, 125)';
-            fv_x = filter_pos[i];
-            new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+            fv_y = filter_pos[i];
+            new Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word);
         }
-        // fv_x = filter_pos[i];
-        // new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+        // fv_y = filter_pos[i];
+        // new Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word);
     }
 }
 
@@ -95,7 +95,7 @@ function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
 
     // if (filter === "scanmask") {
     //     // filter_count(positions);
-    //     // fv_x = 52;
+    //     // fv_y = 52;
     //     fv_dist = 110;
     //     fv_word = "Scanmask";
     //     fv_color1 = 'rgba(191, 225, 255, 1)';
@@ -104,7 +104,7 @@ function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
 
     // if (filter === "pacman") {
     //     // filter_count(positions);
-    //     // fv_x = 52;
+    //     // fv_y = 52;
     //     fv_dist = 110;
     //     fv_word = "Pacman";
     //     fv_color1 = 'rgba(255, 245, 140, 1)';
@@ -113,7 +113,7 @@ function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
 
     // if (filter === "kirby") {
     //     // filter_count(positions);
-    //     // fv_x = 52;
+    //     // fv_y = 52;
     //     fv_dist = 110;
     //     fv_word = "Kirby";
     //     fv_color1 = 'rgba(255, 186, 212, 1)';
@@ -122,7 +122,7 @@ function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
 
     // if (filter === "pikachu") {
     //     // filter_count(positions);
-    //     // fv_x = 52;
+    //     // fv_y = 52;
     //     fv_dist = 110;
     //     fv_word = "Pikachu";
     //     fv_color1 = 'rgba(255, 228, 165, 1)';
@@ -131,7 +131,7 @@ function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
 
     // if (filter === "hitbox") {
     //     // filter_count(positions);
-    //     // fv_x = 145;
+    //     // fv_y = 145;
     //     fv_dist = 110;
     //     fv_word = "Hitbox";
     //     fv_color1 = 'rgba(132, 255, 181, 1)';
@@ -140,7 +140,7 @@ function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
 
     // if (filter === "pretty") {
     //     // filter_count(positions);
-    //     // fv_x = 222;
+    //     // fv_y = 222;
     //     fv_dist = 110;
     //     fv_word = "Pretty";
     //     fv_color1 = 'rgba(132, 255, 181, 1)';
@@ -149,7 +149,7 @@ function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
 
     // if (filter === "mustache") {
     //     // filter_count(positions);
-    //     // fv_x = 314;
+    //     // fv_y = 314;
     //     fv_dist = 110;
     //     fv_word = "Mustache";
     //     fv_color1 = 'rgba(132, 255, 181, 1)';
@@ -158,7 +158,7 @@ function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
 
     // if (filter === "glasses") {
     //     // filter_count(positions);
-    //     // fv_x = 416;
+    //     // fv_y = 416;
     //     fv_dist = 110;
     //     fv_word = "Glasses";
     //     fv_color1 = 'rgba(132, 255, 181, 1)';
@@ -166,12 +166,12 @@ function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
     // }
 
     // filter_count(positions, fv_color1, fv_color2, fv_dist, fv_word);
-    // new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+    // new Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word);
 
     // Filter is on visualizer
     // push();
     // filter_count(positions);
-    // translate(fv_x, 17);
+    // translate(fv_y, 17);
     // fill(fv_color1);
     // stroke(fv_color2);
     // strokeWeight(2);

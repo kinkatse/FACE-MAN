@@ -1,8 +1,8 @@
     
-function Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word) {
+function Filter_pos(fv_y, fv_color1, fv_color2, fv_dist, fv_word) {
     
     push();
-    translate(fv_x, 17);
+    translate(57, fv_y);
     fill(fv_color1);
     stroke(fv_color2);
     strokeWeight(2);
