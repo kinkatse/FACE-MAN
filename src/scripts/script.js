@@ -321,6 +321,7 @@ function draw() {
         pt = scaleCoord(pt);
         circle(pt.x, pt.y, 3);
         }
+        
         fill(0, 150, 255, 100);
         noStroke();
         beginShape();
@@ -332,15 +333,19 @@ function draw() {
 
         // Filter is on visualizer
         push();
-        fill('rgba(191, 225, 255, 0.5)');
+        translate(106, 15);
+        fill('rgba(191, 225, 255, 0.3)');
         stroke(153, 207, 255);
         strokeWeight(2);
-        rect(91, 1, 90, 30, 5, 5, 5, 5);
+        rectMode(CENTER);
+        rect(1, 1, 70, 30, 5, 5, 5, 5);
         fill(255);
-        translate(95, -37);
+        textAlign(CENTER);
+        stroke('rgba(0, 0, 0, 0.4)');
+        strokeWeight(1.5);
         textSize(18);
         textFont('Helvetica');
-        text('Scanmask', 12, 60);
+        text('Scanmask', 0, 5);
         pop();
     }
 
@@ -402,15 +407,19 @@ function draw() {
         );
         // Filter is on visualizer
         push();
-        fill('rgba(191, 225, 255, 0.5)');
+        translate(35, 15);
+        fill('rgba(191, 225, 255, 0.3)');
         stroke(153, 207, 255);
         strokeWeight(2);
-        rect(1, 1, 90, 30, 5, 5, 5, 5);
+        rectMode(CENTER);
+        rect(1, 1, 70, 30, 5, 5, 5, 5);
         fill(255);
-        translate(0, -37);
+        textAlign(CENTER);
+        stroke('rgba(0, 0, 0, 0.4)');
+        strokeWeight(1.5);
         textSize(18);
         textFont('Helvetica');
-        text('Hitbox', 12, 60);
+        text('Hitbox', 0, 5);
         pop();
     }
 
