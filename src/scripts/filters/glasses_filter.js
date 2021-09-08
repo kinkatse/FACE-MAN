@@ -16,5 +16,5 @@ function Glasses(betweenEyes, filtercount) {
     image(glassesImg, betweenEyes.x, betweenEyes.y - g_dist, 250, 250);
     pop();
 
-    new filter_vis("glasses", filtercount);
+    new filter_vis(filtercount);
 }

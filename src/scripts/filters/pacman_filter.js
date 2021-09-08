@@ -256,6 +256,6 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         pellet_dist = 0;
     }
 
-    new filter_vis("pacman", filtercount);
+    new filter_vis(filtercount);
 
 }

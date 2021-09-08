@@ -83,7 +83,7 @@ function clearButton() {
   faceMaskDots = false;
   anyFilter = false;
   for (let i = 0; i < filtercount.length; i++) {
-    filtercountRemove();
+    filtercountRemove(filtercount[i]);
   }
   // filtercount = 0;
 }
@@ -103,8 +103,13 @@ function filtercountAdd(filter) {
   // }
 }
 
-function filtercountRemove() {
-  filtercount.pop();
+function filtercountRemove(filter) {
+  for (let i = 0; i < filtercount.length; i++) {
+    if (filtercount[i] === filter) {
+      filtercount.splice(i);
+    }
+  }
+  // filtercount.pop();
   // if (filtercount.length === 5) {
   //   filtercount.pop();
   // } else if (filtercount.length === 4) {
@@ -127,7 +132,7 @@ function faceMaskDotsButton() {
   } else if (faceMaskDots && anyFilter) {
     faceMaskDots = false;
     anyFilter = false;
-    filtercountRemove();
+    filtercountRemove("scanmask");
     // filtercount--;
   } else {
     anyFilter = true;
@@ -143,7 +148,7 @@ function pacmanButton() {
   } else if (pacmanFilter && anyFilter) {
     pacmanFilter = false;
     anyFilter = false;
-    filtercountRemove();
+    filtercountRemove("pacman");
     // filtercount--;
   } else {
     anyFilter = true;
@@ -159,7 +164,7 @@ function kirbyButton() {
   } else if (kirbyFilter && anyFilter) {
     kirbyFilter = false;
     anyFilter = false;
-    filtercountRemove();
+    filtercountRemove("kirby");
     // filtercount--;
   } else {
     anyFilter = true;
@@ -175,7 +180,7 @@ function pikachuButton() {
   } else if (pikachuFilter && anyFilter) {
     pikachuFilter = false;
     anyFilter = false;
-    filtercountRemove();
+    filtercountRemove("pikachu");
     // filtercount--;
   } else {
     anyFilter = true;
@@ -189,7 +194,7 @@ function hitboxButton() {
     // filtercount++;
   } else {
     hitbox = false;
-    filtercountRemove();
+    filtercountRemove("hitbox");
     // filtercount--;
   }
 }
@@ -201,7 +206,7 @@ function prettyButton() {
     // filtercount++;
   } else {
     prettyFilter = false;
-    filtercountRemove();
+    filtercountRemove("pretty");
     // filtercount--;
   }
 }
@@ -213,7 +218,7 @@ function mustacheButton() {
     // filtercount++;
   } else {
     mustacheFilter = false;
-    filtercountRemove();
+    filtercountRemove("mustache");
     // filtercount--;
   }
 }
@@ -225,7 +230,7 @@ function glassesButton() {
     // filtercount++;
   } else {
     glassesFilter = false;
-    filtercountRemove();
+    filtercountRemove("glasses");
     // filtercount--;
   }
 }
@@ -421,7 +426,7 @@ function draw() {
       }
       endShape(CLOSE);
 
-      new filter_vis("scanmask", filtercount);
+      new filter_vis(filtercount);
   }
 
     if (pacmanFilter) {
@@ -458,7 +463,7 @@ function draw() {
             face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] + 100,
             face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 100
         );
-        new filter_vis("hitbox", filtercount);
+        new filter_vis(filtercount);
     }
 
   }

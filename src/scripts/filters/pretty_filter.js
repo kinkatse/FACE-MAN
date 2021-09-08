@@ -35,6 +35,6 @@ function Pretty(leftCheek, rightCheek, face, filtercount) {
         circle(rightCheek.x - p_dist, rightCheek.y - p_dist, d);
     }
 
-    new filter_vis("pretty", filtercount);
+    new filter_vis(filtercount);
 
 }

@@ -130,6 +130,6 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         }
     }
 
-    new filter_vis("kirby", filtercount);
+    new filter_vis(filtercount);
 
 }

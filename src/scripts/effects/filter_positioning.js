@@ -2,7 +2,6 @@
 function Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word) {
     
     push();
-    // filter_count(positions);
     translate(fv_x, 17);
     fill(fv_color1);
     stroke(fv_color2);

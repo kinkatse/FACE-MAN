@@ -152,6 +152,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         }
     }
 
-    new filter_vis("pikachu", filtercount);
+    new filter_vis(filtercount);
 
 }

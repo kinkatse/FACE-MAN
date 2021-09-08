@@ -6,8 +6,7 @@ let fv_color2;
 let filter_pos = [0, 52, 157, 262, 367, 472]
 // let count = 0;
 
-function filter_count(positions, fv_color1, fv_color2, fv_dist, fv_word) {
-    // debugger
+function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
     for (let i = 0; i < positions.length; i++) {
         if (positions[i] === "scanmask") {
             fv_dist = 110;
@@ -88,7 +87,7 @@ function filter_count(positions, fv_color1, fv_color2, fv_dist, fv_word) {
     // }
 // }
 
-function filter_vis(filter, positions) {
+// function filter_vis(filter, positions) {
     
     // Looping through filters, 9 in total
     // for (let i = 0; i < 9, i++) {
@@ -166,7 +165,7 @@ function filter_vis(filter, positions) {
     //     fv_color2 = 'rgb(74, 206, 125)';
     // }
 
-    filter_count(positions, fv_color1, fv_color2, fv_dist, fv_word);
+    // filter_count(positions, fv_color1, fv_color2, fv_dist, fv_word);
     // new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
 
     // Filter is on visualizer
@@ -187,4 +186,4 @@ function filter_vis(filter, positions) {
     // text(fv_word, 0, 7);
     // pop();
 
-}
+// }
