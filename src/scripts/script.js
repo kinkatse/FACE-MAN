@@ -219,13 +219,13 @@ function setup() {
   video.hide();
   loadFaceModel();
 
-//   frameRate(2);
+  frameRate(120);
 }
 
 async function loadFaceModel() {
-    model = await faceLandmarksDetection.load(
-        faceLandmarksDetection.SupportedPackages.mediapipeFacemesh
-    );
+  model = await faceLandmarksDetection.load(
+    faceLandmarksDetection.SupportedPackages.mediapipeFacemesh
+  );
 }
 
 function scaleCoord(pt) {
@@ -284,7 +284,6 @@ async function getFace() {
 }
 
 function draw() {
-
   if (video.loadedmetadata && model !== undefined) {
     getFace();
   }
@@ -292,47 +291,46 @@ function draw() {
   if (face !== undefined) {
     image(video, 0, 0, width, height);
 
-      if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 < 100 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 < 175) {
-          push();
-          fill(255, 7, 69, 80);
-          noStroke();
-          rectMode(CENTER);
-          square(340, 325, 1500);
-          textStyle(BOLD);
-          textAlign(CENTER, CENTER);
-          let s = "Error: Bring your face closer and keep it straight";
-          translate(340, 325);
-          textSize(32);
-          fill(245);
-          text(s, 100, 160, 500, 630);
-          textSize(400);
-          fill("yellow");
-          text("!", 100, -50);
-          pop();
-          return;
-          // return console.log("Error: Bring your face closer and keep it straight");
-      }
-      if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 > 300 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 > 375) {
-          push();  
-          fill(255, 7, 69, 80);
-          noStroke();
-          rectMode(CENTER);
-          square(340, 325, 1500);
-          textStyle(BOLD);
-          textAlign(CENTER, CENTER);
-          let s = "Error: Back up a bit and keep your head straight";
-          translate(340, 325);
-          textSize(32);
-          fill(245);
-          text(s, 100, 160, 500, 630);
-          textSize(400);
-          fill("yellow");
-          text("!", 100, -50);
-          pop();
-          return;
-          // return console.log("Error: Back up a bit and keep your head straight");
-      }
-
+    if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 < 100 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 < 175) {
+        push();
+        fill(255, 7, 69, 80);
+        noStroke();
+        rectMode(CENTER);
+        square(340, 325, 1500);
+        textStyle(BOLD);
+        textAlign(CENTER, CENTER);
+        let s = "Error: Bring your face closer and keep it straight";
+        translate(340, 325);
+        textSize(32);
+        fill(245);
+        text(s, 100, 160, 500, 630);
+        textSize(400);
+        fill("yellow");
+        text("!", 100, -50);
+        pop();
+        return;
+        // return console.log("Error: Bring your face closer and keep it straight");
+    }
+    if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 > 300 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 > 375) {
+        push();  
+        fill(255, 7, 69, 80);
+        noStroke();
+        rectMode(CENTER);
+        square(340, 325, 1500);
+        textStyle(BOLD);
+        textAlign(CENTER, CENTER);
+        let s = "Error: Back up a bit and keep your head straight";
+        translate(340, 325);
+        textSize(32);
+        fill(245);
+        text(s, 100, 160, 500, 630);
+        textSize(400);
+        fill("yellow");
+        text("!", 100, -50);
+        pop();
+        return;
+        // return console.log("Error: Back up a bit and keep your head straight");
+    }
     if (firstFace) {
       firstFace = false;
     }
@@ -351,13 +349,14 @@ function draw() {
     let leftCheek = scaleCoord(face.annotations.leftCheek[0]);
     let rightCheek = scaleCoord(face.annotations.rightCheek[0]);
 
+    let nose = scaleCoord(face.scaledMesh[5]);
+
     topLeft = scaleCoord(face.boundingBox.topLeft);
     bottomRight = scaleCoord(face.boundingBox.bottomRight);
     w = bottomRight.x - topLeft.x;
     faceDia = w;
     topFaceDia = w / 2;
     dia = w / 8;
-    let nose = scaleCoord(face.scaledMesh[5]);
 
     if (faceMaskDots) {
       fill("black");
@@ -377,7 +376,7 @@ function draw() {
       endShape(CLOSE);
 
       new FilterVis(filterCount);
-  }
+    }
 
     if (pacmanFilter) {
       new Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, faceDia, face, filterCount)
