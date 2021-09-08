@@ -2,7 +2,7 @@ let fv_x;
 let fv_dist;
 let fv_word;
 let fv_color1;
-let fv_color2 = 'rgba(153, 207, 255)';
+let fv_color2;
 
 function filter_vis(filter) {
 
@@ -11,6 +11,7 @@ function filter_vis(filter) {
         fv_dist = 100;
         fv_word = "Scanmask";
         fv_color1 = 'rgba(191, 225, 255, 0.3)';
+        fv_color2 = 'rgb(153, 207, 255)';
     }
 
     if (filter === "pacman") {
@@ -18,6 +19,7 @@ function filter_vis(filter) {
         fv_dist = 100;
         fv_word = "Pacman";
         fv_color1 = 'rgba(255, 245, 140, 0.3)';
+        fv_color2 = 'rgb(229, 214, 75)';
     }
 
     if (filter === "kirby") {
@@ -25,6 +27,7 @@ function filter_vis(filter) {
         fv_dist = 100;
         fv_word = "Kirby";
         fv_color1 = 'rgba(255, 186, 212, 0.3)';
+        fv_color2 = 'rgb(234, 140, 176)';
     }
 
     if (filter === "pikachu") {
@@ -32,6 +35,7 @@ function filter_vis(filter) {
         fv_dist = 100;
         fv_word = "Pikachu";
         fv_color1 = 'rgba(255, 228, 165, 0.3)';
+        fv_color2 = 'rgb(219, 179, 87)';
     }
 
     if (filter === "hitbox") {
@@ -39,6 +43,7 @@ function filter_vis(filter) {
         fv_dist = 70;
         fv_word = "Hitbox";
         fv_color1 = 'rgba(132, 255, 181, 0.3)';
+        fv_color2 = 'rgb(74, 206, 125)';
     }
 
     if (filter === "pretty") {
@@ -46,6 +51,7 @@ function filter_vis(filter) {
         fv_dist = 70;
         fv_word = "Pretty";
         fv_color1 = 'rgba(132, 255, 181, 0.3)';
+        fv_color2 = 'rgb(74, 206, 125)';
     }
 
     if (filter === "mustache") {
@@ -53,6 +59,7 @@ function filter_vis(filter) {
         fv_dist = 100;
         fv_word = "Mustache";
         fv_color1 = 'rgba(132, 255, 181, 0.3)';
+        fv_color2 = 'rgb(74, 206, 125)';
     }
 
     if (filter === "glasses") {
@@ -60,6 +67,7 @@ function filter_vis(filter) {
         fv_dist = 90;
         fv_word = "Glasses";
         fv_color1 = 'rgba(132, 255, 181, 0.3)';
+        fv_color2 = 'rgb(74, 206, 125)';
     }
 
     // Filter is on visualizer
