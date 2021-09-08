@@ -6,39 +6,40 @@ let fv_color2;
 let filter_pos = [0, 52, 157, 262, 367, 472]
 // let count = 0;
 
-function filter_loop(filterpos) {
+function filter_count(positions, fv_color1, fv_color2, fv_dist, fv_word) {
     // debugger
-    for (let i = 0; i < filterpos; i++) {
+    for (let i = 0; i < positions; i++) {
         fv_x = filter_pos[i];
-        translate(fv_x, 17);
+        new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+        // translate(fv_x, 17);
     }
 }
 
-function filter_count(position) {
-    filter_loop(position);
-    // if (position === 0) {
-    //     filter_loop(position);
-    // } else if (position === 1) {
-    //     filter_loop(position);
-    // } else if (position === 2) {
-    //     filter_loop(position);
-    // } else if (position === 3) {
-    //     filter_loop(position);
-    // } else if (position === 4) {
-    //     filter_loop(position);
-    // } else if (position === 5) {
-    //     filter_loop(position);
+// function filter_count(positions) {
+//     filter_loop(positions);
+    // if (positions === 0) {
+    //     filter_loop(positions);
+    // } else if (positions === 1) {
+    //     filter_loop(positions);
+    // } else if (positions === 2) {
+    //     filter_loop(positions);
+    // } else if (positions === 3) {
+    //     filter_loop(positions);
+    // } else if (positions === 4) {
+    //     filter_loop(positions);
+    // } else if (positions === 5) {
+    //     filter_loop(positions);
     // }
-}
+// }
 
-function filter_vis(filter, position) {
+function filter_vis(filter, positions) {
     
     // Looping through filters, 9 in total
     // for (let i = 0; i < 9, i++) {
     // }
 
     if (filter === "scanmask") {
-        // filter_count(position);
+        // filter_count(positions);
         // fv_x = 52;
         fv_dist = 110;
         fv_word = "Scanmask";
@@ -47,7 +48,7 @@ function filter_vis(filter, position) {
     }
 
     if (filter === "pacman") {
-        // filter_count(position);
+        // filter_count(positions);
         // fv_x = 52;
         fv_dist = 110;
         fv_word = "Pacman";
@@ -56,7 +57,7 @@ function filter_vis(filter, position) {
     }
 
     if (filter === "kirby") {
-        // filter_count(position);
+        // filter_count(positions);
         // fv_x = 52;
         fv_dist = 110;
         fv_word = "Kirby";
@@ -65,7 +66,7 @@ function filter_vis(filter, position) {
     }
 
     if (filter === "pikachu") {
-        // filter_count(position);
+        // filter_count(positions);
         // fv_x = 52;
         fv_dist = 110;
         fv_word = "Pikachu";
@@ -74,7 +75,7 @@ function filter_vis(filter, position) {
     }
 
     if (filter === "hitbox") {
-        // filter_count(position);
+        // filter_count(positions);
         // fv_x = 145;
         fv_dist = 110;
         fv_word = "Hitbox";
@@ -83,7 +84,7 @@ function filter_vis(filter, position) {
     }
 
     if (filter === "pretty") {
-        // filter_count(position);
+        // filter_count(positions);
         // fv_x = 222;
         fv_dist = 110;
         fv_word = "Pretty";
@@ -92,7 +93,7 @@ function filter_vis(filter, position) {
     }
 
     if (filter === "mustache") {
-        // filter_count(position);
+        // filter_count(positions);
         // fv_x = 314;
         fv_dist = 110;
         fv_word = "Mustache";
@@ -101,7 +102,7 @@ function filter_vis(filter, position) {
     }
 
     if (filter === "glasses") {
-        // filter_count(position);
+        // filter_count(positions);
         // fv_x = 416;
         fv_dist = 110;
         fv_word = "Glasses";
@@ -109,22 +110,25 @@ function filter_vis(filter, position) {
         fv_color2 = 'rgb(74, 206, 125)';
     }
 
+    filter_count(positions, fv_color1, fv_color2, fv_dist, fv_word);
+    // new Filter_pos(fv_x, fv_color1, fv_color2, fv_dist, fv_word);
+
     // Filter is on visualizer
-    push();
-    filter_count(position);
+    // push();
+    // filter_count(positions);
     // translate(fv_x, 17);
-    fill(fv_color1);
-    stroke(fv_color2);
-    strokeWeight(2);
-    rectMode(CENTER);
-    rect(1, 1, fv_dist, 30, 5, 5, 5, 5);
-    fill(255);
-    textAlign(CENTER);
-    stroke('rgba(0, 0, 0, 0.4)');
-    strokeWeight(1.5);
-    textSize(18);
-    textFont('Helvetica');
-    text(fv_word, 0, 7);
-    pop();
+    // fill(fv_color1);
+    // stroke(fv_color2);
+    // strokeWeight(2);
+    // rectMode(CENTER);
+    // rect(1, 1, fv_dist, 30, 5, 5, 5, 5);
+    // fill(255);
+    // textAlign(CENTER);
+    // stroke('rgba(0, 0, 0, 0.4)');
+    // strokeWeight(1.5);
+    // textSize(18);
+    // textFont('Helvetica');
+    // text(fv_word, 0, 7);
+    // pop();
 
 }
