@@ -3,7 +3,7 @@ let fv_dist;
 let fv_word;
 let fv_color1;
 let fv_color2;
-let filter_pos = [0, 52, 157, 262, 367, 472]
+let filter_pos = [57, 172, 287, 402, 517]
 // let count = 0;
 
 function filter_vis(positions, fv_color1, fv_color2, fv_dist, fv_word) {
