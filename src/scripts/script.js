@@ -1,9 +1,6 @@
-// document.addEventListener("DOMContentLoaded", () => {
-
 let video;
 let model;
 let face;
-let firstFace = true;
 
 let pacmanFilter = false;
 let kirbyFilter = false;
@@ -36,8 +33,6 @@ let anyFilter = false;
 let filterCount = [];
 let x = 0;
 let y = 650;
-// let speedx = 3;
-// let speedy = 3;
 
 // Variables for filters
 
@@ -88,6 +83,8 @@ function clearButton() {
   }
 }
 
+// Keeping track of what order the filters were clicked in
+// using filterCount
 function filterCountAdd(filter) {
   filterCount.push(filter);
 }
@@ -100,6 +97,7 @@ function filterCountRemove(filter) {
   }
 }
 
+// These are the buttons to toggle a filter on or off
 function faceMaskDotsButton() {
   if (!faceMaskDots && !anyFilter) {
     faceMaskDots = true;
@@ -196,6 +194,7 @@ function glassesButton() {
   }
 }
 
+// This loads all the images used for filters
 function preload() {
   shadow = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534561879105546/Ghost_Shadow.png');
   bashful = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534557860966450/Ghost_Bashful.png');
@@ -210,6 +209,7 @@ function preload() {
   ketchup = loadImage('https://media.discordapp.net/attachments/597985513701376013/881575642716590161/Ketchup.png');
 }
 
+// This is the set up which prepares the canvas and video capture
 function setup() {
   createCanvas(860, 650);
   // drawingContext.shadowBlur = 3;
@@ -222,23 +222,30 @@ function setup() {
   frameRate(120);
 }
 
+// This allows for us to load the face landmarks from TensorFlow
 async function loadFaceModel() {
   model = await faceLandmarksDetection.load(
     faceLandmarksDetection.SupportedPackages.mediapipeFacemesh
   );
 }
 
+// This makes it more convenient for us to access the position
+// of a landmark
 function scaleCoord(pt) {
   let x = map(pt[0], 0,video.width, 0,width);
   let y = map(pt[1], 0,video.height, 0,height);
   return createVector(x, y);
 }
 
+// This function accesses the face data from estimating
+// from the video
 async function getFace() {
   const facePredictions = await model.estimateFaces({
     input: document.querySelector('video')
   }); 
   // console.log(facePredictions);
+
+  // Below are errors to restrict user
   if (facePredictions.length === 0) {
     face = undefined;
 
@@ -283,6 +290,11 @@ async function getFace() {
   }
 }
 
+// This is the draw function which p5 loops through
+// and captures frames of the video and creates a new
+// canvas and new image each time allowing us to
+// update the code as the video capturing our face
+// also updates itself
 function draw() {
   if (video.loadedmetadata && model !== undefined) {
     getFace();
@@ -291,6 +303,7 @@ function draw() {
   if (face !== undefined) {
     image(video, 0, 0, width, height);
 
+    // This is another error to restrict the user
     if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 < 100 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 < 175) {
         push();
         fill(255, 7, 69, 80);
@@ -311,6 +324,7 @@ function draw() {
         return;
         // return console.log("Error: Bring your face closer and keep it straight");
     }
+    // This is another error to restrict the user
     if (face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] - 40 > 300 || face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 110 > 375) {
         push();  
         fill(255, 7, 69, 80);
@@ -331,10 +345,11 @@ function draw() {
         return;
         // return console.log("Error: Back up a bit and keep your head straight");
     }
-    if (firstFace) {
-      firstFace = false;
-    }
 
+    // Initialization of the important facial points variables
+    // and using the scaleCoord function to allow for more
+    // convenient access to positions
+    
     let lipsUpper =  scaleCoord(face.annotations.lipsUpperOuter[5]);
     let lipsLower = scaleCoord(face.annotations.lipsLowerOuter[4]);
     
@@ -357,6 +372,8 @@ function draw() {
     faceDia = w;
     topFaceDia = w / 2;
     dia = w / 8;
+
+    // When filters are clicked, they are revealed here
 
     if (faceMaskDots) {
       fill("black");
