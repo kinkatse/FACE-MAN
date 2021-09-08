@@ -2,7 +2,7 @@ let p_w;
 let p_color;
 let p_dist;
 
-function Pretty(leftCheek, rightCheek, face) {
+function Pretty(leftCheek, rightCheek, face, filtercount) {
 
     if (pikachuFilter) {
         p_w = 6;
@@ -35,6 +35,6 @@ function Pretty(leftCheek, rightCheek, face) {
         circle(rightCheek.x - p_dist, rightCheek.y - p_dist, d);
     }
 
-    new filter_vis("pretty");
-    
+    new filter_vis("pretty", filtercount);
+
 }

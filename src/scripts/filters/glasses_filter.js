@@ -1,6 +1,6 @@
 let g_dist;
 
-function Glasses(betweenEyes) {
+function Glasses(betweenEyes, filtercount) {
     if (pikachuFilter) {
         g_dist = 30;
     } else if (kirbyFilter) {
@@ -16,5 +16,5 @@ function Glasses(betweenEyes) {
     image(glassesImg, betweenEyes.x, betweenEyes.y - g_dist, 250, 250);
     pop();
 
-    new filter_vis("glasses");
+    new filter_vis("glasses", filtercount);
 }

@@ -1,4 +1,4 @@
-function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face) {
+function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount) {
     fill(252, 197, 219);
     noStroke();
     ellipse(nose.x, nose.y - 20, facedia + 20, facedia + 30);
@@ -130,6 +130,6 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         }
     }
 
-    new filter_vis("kirby");
+    new filter_vis("kirby", filtercount);
 
 }

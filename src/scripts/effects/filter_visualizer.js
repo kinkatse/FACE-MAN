@@ -3,29 +3,42 @@ let fv_dist;
 let fv_word;
 let fv_color1;
 let fv_color2;
+let filter_pos = [0, 52, 157, 262, 367, 472]
 // let count = 0;
 
-function filter_vis(filter) {
+function filter_loop(filterpos) {
+    // debugger
+    for (let i = 0; i < filterpos; i++) {
+        fv_x = filter_pos[i];
+        translate(fv_x, 17);
+    }
+}
+
+function filter_count(position) {
+    filter_loop(position);
+    // if (position === 0) {
+    //     filter_loop(position);
+    // } else if (position === 1) {
+    //     filter_loop(position);
+    // } else if (position === 2) {
+    //     filter_loop(position);
+    // } else if (position === 3) {
+    //     filter_loop(position);
+    // } else if (position === 4) {
+    //     filter_loop(position);
+    // } else if (position === 5) {
+    //     filter_loop(position);
+    // }
+}
+
+function filter_vis(filter, position) {
     
     // Looping through filters, 9 in total
     // for (let i = 0; i < 9, i++) {
-
     // }
-    if (filtercount === 0) {
-        fv_x = 52;
-    } else if (filtercount === 1) {
-        fv_x = 157;
-    } else if (filtercount === 2) {
-        fv_x = 262;
-    } else if (filtercount === 3) {
-        fv_x = 367;
-    } else if (filtercount === 4) {
-        fv_x = 472;
-    } else if (filtercount === 5) {
-        fv_x = 577;
-    }
 
     if (filter === "scanmask") {
+        // filter_count(position);
         // fv_x = 52;
         fv_dist = 110;
         fv_word = "Scanmask";
@@ -34,6 +47,7 @@ function filter_vis(filter) {
     }
 
     if (filter === "pacman") {
+        // filter_count(position);
         // fv_x = 52;
         fv_dist = 110;
         fv_word = "Pacman";
@@ -42,6 +56,7 @@ function filter_vis(filter) {
     }
 
     if (filter === "kirby") {
+        // filter_count(position);
         // fv_x = 52;
         fv_dist = 110;
         fv_word = "Kirby";
@@ -50,6 +65,7 @@ function filter_vis(filter) {
     }
 
     if (filter === "pikachu") {
+        // filter_count(position);
         // fv_x = 52;
         fv_dist = 110;
         fv_word = "Pikachu";
@@ -58,6 +74,7 @@ function filter_vis(filter) {
     }
 
     if (filter === "hitbox") {
+        // filter_count(position);
         // fv_x = 145;
         fv_dist = 110;
         fv_word = "Hitbox";
@@ -66,6 +83,7 @@ function filter_vis(filter) {
     }
 
     if (filter === "pretty") {
+        // filter_count(position);
         // fv_x = 222;
         fv_dist = 110;
         fv_word = "Pretty";
@@ -74,6 +92,7 @@ function filter_vis(filter) {
     }
 
     if (filter === "mustache") {
+        // filter_count(position);
         // fv_x = 314;
         fv_dist = 110;
         fv_word = "Mustache";
@@ -82,6 +101,7 @@ function filter_vis(filter) {
     }
 
     if (filter === "glasses") {
+        // filter_count(position);
         // fv_x = 416;
         fv_dist = 110;
         fv_word = "Glasses";
@@ -91,7 +111,8 @@ function filter_vis(filter) {
 
     // Filter is on visualizer
     push();
-    translate(fv_x, 17);
+    filter_count(position);
+    // translate(fv_x, 17);
     fill(fv_color1);
     stroke(fv_color2);
     strokeWeight(2);

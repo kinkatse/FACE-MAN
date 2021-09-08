@@ -371,31 +371,31 @@ function draw() {
       }
       endShape(CLOSE);
 
-      new filter_vis("scanmask");
+      new filter_vis("scanmask", filtercount);
   }
 
     if (pacmanFilter) {
-      new Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face)
+      new Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount)
     }
 
     if (kirbyFilter) {
-      new Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face)
+      new Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount)
     }
 
     if (pikachuFilter) {
-      new Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face)
+      new Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount)
     }
 
     if (prettyFilter) {
-      new Pretty(leftCheek, rightCheek, face)
+      new Pretty(leftCheek, rightCheek, face, filtercount)
     }
 
     if (mustacheFilter) {
-      new Mustache(nose)
+      new Mustache(nose, filtercount)
     }
 
     if (glassesFilter) {
-      new Glasses(betweenEyes)
+      new Glasses(betweenEyes, filtercount)
     }
 
     if (hitbox) {
@@ -408,7 +408,7 @@ function draw() {
             face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] + 100,
             face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 100
         );
-        new filter_vis("hitbox");
+        new filter_vis("hitbox", filtercount);
     }
 
   }

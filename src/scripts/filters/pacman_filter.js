@@ -1,4 +1,4 @@
-function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face) {
+function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount) {
 
     fill("yellow");
     stroke("black");
@@ -256,6 +256,6 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         pellet_dist = 0;
     }
 
-    new filter_vis("pacman");
+    new filter_vis("pacman", filtercount);
 
 }

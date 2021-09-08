@@ -1,4 +1,4 @@
-function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face) {
+function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount) {
     push();
     imageMode(CENTER);
     image(pikarightear, rightEyeU.x - 60, rightEyeU.y - 125, facedia/2.5 + 15, facedia/2.5 + 50);
@@ -152,6 +152,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         }
     }
 
-    new filter_vis("pikachu");
+    new filter_vis("pikachu", filtercount);
 
 }
