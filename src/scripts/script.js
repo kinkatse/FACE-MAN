@@ -33,8 +33,8 @@ let facedia;
 let topfacedia;
 let dia;
 let anyFilter = false;
-// let filtercount = [];
-let filtercount = 0;
+let filtercount = [];
+// let filtercount = 0;
 let x = 0;
 let y = 650;
 // let speedx = 3;
@@ -82,51 +82,53 @@ function clearButton() {
   hitbox = false;
   faceMaskDots = false;
   anyFilter = false;
-  // for (let i = 0; i < filtercount.length; i++) {
-  //   filtercountRemove();
-  // }
-  filtercount = 0;
+  for (let i = 0; i < filtercount.length; i++) {
+    filtercountRemove();
+  }
+  // filtercount = 0;
 }
 
-function filtercountAdd() {
-  if (filtercount.length === 0) {
-    filtercount.push("first");
-  } else if (filtercount.length === 1) {
-    filtercount.push("second");
-  } else if (filtercount.length === 2) {
-    filtercount.push("third");
-  } else if (filtercount.length === 3) {
-    filtercount.push("fourth");
-  } else if (filtercount.length === 4) {
-    filtercount.push("fifth");
-  }
+function filtercountAdd(filter) {
+  filtercount.push(filter);
+  // if (filtercount.length === 0) {
+  //   filtercount.push("first");
+  // } else if (filtercount.length === 1) {
+  //   filtercount.push("second");
+  // } else if (filtercount.length === 2) {
+  //   filtercount.push("third");
+  // } else if (filtercount.length === 3) {
+  //   filtercount.push("fourth");
+  // } else if (filtercount.length === 4) {
+  //   filtercount.push("fifth");
+  // }
 }
 
 function filtercountRemove() {
-  if (filtercount.length === 5) {
-    filtercount.pop("fifth");
-  } else if (filtercount.length === 4) {
-    filtercount.pop("fourth");
-  } else if (filtercount.length === 3) {
-    filtercount.pop("third");
-  } else if (filtercount.length === 2) {
-    filtercount.pop("second");
-  } else if (filtercount.length === 1) {
-    filtercount.pop("first");
-  }
+  filtercount.pop();
+  // if (filtercount.length === 5) {
+  //   filtercount.pop();
+  // } else if (filtercount.length === 4) {
+  //   filtercount.pop();
+  // } else if (filtercount.length === 3) {
+  //   filtercount.pop();
+  // } else if (filtercount.length === 2) {
+  //   filtercount.pop();
+  // } else if (filtercount.length === 1) {
+  //   filtercount.pop();
+  // }
 }
 
 function faceMaskDotsButton() {
   if (!faceMaskDots && !anyFilter) {
     faceMaskDots = true;
     anyFilter = true;
-    // filtercountAdd();
-    filtercount++;
+    filtercountAdd("scanmask");
+    // filtercount++;
   } else if (faceMaskDots && anyFilter) {
     faceMaskDots = false;
     anyFilter = false;
-    // filtercountRemove();
-    filtercount--;
+    filtercountRemove();
+    // filtercount--;
   } else {
     anyFilter = true;
   }
@@ -136,13 +138,13 @@ function pacmanButton() {
   if (!pacmanFilter && !anyFilter) {
     pacmanFilter = true;
     anyFilter = true;
-    // filtercountAdd();
-    filtercount++;
+    filtercountAdd("pacman");
+    // filtercount++;
   } else if (pacmanFilter && anyFilter) {
     pacmanFilter = false;
     anyFilter = false;
-    // filtercountRemove();
-    filtercount--;
+    filtercountRemove();
+    // filtercount--;
   } else {
     anyFilter = true;
   }
@@ -152,13 +154,13 @@ function kirbyButton() {
   if (!kirbyFilter && !anyFilter) {
     kirbyFilter = true;
     anyFilter = true;
-    // filtercountAdd();
-    filtercount++;
+    filtercountAdd("kirby");
+    // filtercount++;
   } else if (kirbyFilter && anyFilter) {
     kirbyFilter = false;
     anyFilter = false;
-    // filtercountRemove();
-    filtercount--;
+    filtercountRemove();
+    // filtercount--;
   } else {
     anyFilter = true;
   }
@@ -168,13 +170,13 @@ function pikachuButton() {
   if (!pikachuFilter && !anyFilter) {
     pikachuFilter = true;
     anyFilter = true;
-    // filtercountAdd();
-    filtercount++;
+    filtercountAdd("pikachu");
+    // filtercount++;
   } else if (pikachuFilter && anyFilter) {
     pikachuFilter = false;
     anyFilter = false;
-    // filtercountRemove();
-    filtercount--;
+    filtercountRemove();
+    // filtercount--;
   } else {
     anyFilter = true;
   }
@@ -183,48 +185,48 @@ function pikachuButton() {
 function hitboxButton() {
   if (!hitbox) {
     hitbox = true;
-    // filtercountAdd();
-    filtercount++;
+    filtercountAdd("hitbox");
+    // filtercount++;
   } else {
     hitbox = false;
-    // filtercountRemove();
-    filtercount--;
+    filtercountRemove();
+    // filtercount--;
   }
 }
 
 function prettyButton() {
   if (!prettyFilter) {
     prettyFilter = true;
-    // filtercountAdd();
-    filtercount++;
+    filtercountAdd("pretty");
+    // filtercount++;
   } else {
     prettyFilter = false;
-    // filtercountRemove();
-    filtercount--;
+    filtercountRemove();
+    // filtercount--;
   }
 }
 
 function mustacheButton() {
   if (!mustacheFilter) {
     mustacheFilter = true;
-    // filtercountAdd();
-    filtercount++;
+    filtercountAdd("mustache");
+    // filtercount++;
   } else {
     mustacheFilter = false;
-    // filtercountRemove();
-    filtercount--;
+    filtercountRemove();
+    // filtercount--;
   }
 }
 
 function glassesButton() {
   if (!glassesFilter) {
     glassesFilter = true;
-    // filtercountAdd();
-    filtercount++;
+    filtercountAdd("glasses");
+    // filtercount++;
   } else {
     glassesFilter = false;
-    // filtercountRemove();
-    filtercount--;
+    filtercountRemove();
+    // filtercount--;
   }
 }
 
