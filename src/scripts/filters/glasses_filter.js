@@ -16,15 +16,14 @@ function Glasses(betweenEyes) {
     image(glassesImg, betweenEyes.x, betweenEyes.y - g_dist, 250, 250);
     pop();
 
+    // Filter is on visualizer
     push();
-    // translate(this.pos.x, this.pos.y);
     fill('rgba(191, 225, 255, 0.5)');
     stroke(153, 207, 255);
     strokeWeight(2);
-    // rectMode(CENTER);
-    rect(1, 1, 90, 30, 5, 5, 5, 5);
+    rect(700, 1, 90, 30, 5, 5, 5, 5);
     fill(255);
-    translate(0, -37);
+    translate(710, -37);
     textSize(18);
     textFont('Helvetica');
     text('Glasses', 12, 60);

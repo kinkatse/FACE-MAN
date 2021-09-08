@@ -321,8 +321,6 @@ function draw() {
         pt = scaleCoord(pt);
         circle(pt.x, pt.y, 3);
         }
-    }
-    if (faceMaskDots) {
         fill(0, 150, 255, 100);
         noStroke();
         beginShape();
@@ -331,6 +329,19 @@ function draw() {
         vertex(pt.x, pt.y);
         }
         endShape(CLOSE);
+
+        // Filter is on visualizer
+        push();
+        fill('rgba(191, 225, 255, 0.5)');
+        stroke(153, 207, 255);
+        strokeWeight(2);
+        rect(91, 1, 90, 30, 5, 5, 5, 5);
+        fill(255);
+        translate(95, -37);
+        textSize(18);
+        textFont('Helvetica');
+        text('Scanmask', 12, 60);
+        pop();
     }
 
     let lipsUpper =  scaleCoord(face.annotations.lipsUpperOuter[5]);
@@ -389,6 +400,18 @@ function draw() {
             face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] + 100,
             face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 100
         );
+        // Filter is on visualizer
+        push();
+        fill('rgba(191, 225, 255, 0.5)');
+        stroke(153, 207, 255);
+        strokeWeight(2);
+        rect(1, 1, 90, 30, 5, 5, 5, 5);
+        fill(255);
+        translate(0, -37);
+        textSize(18);
+        textFont('Helvetica');
+        text('Hitbox', 12, 60);
+        pop();
     }
 
   }
