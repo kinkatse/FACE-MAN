@@ -17,40 +17,40 @@ function filter_vis(filter) {
         fv_word = "Scanmask";
     }
 
-    if (filter === "pacmanFilter") {
+    if (filter === "pacman") {
         fv_x = 126;
         fv_dist = 100;
-        fv_word = "Scanmask";
+        fv_word = "Pacman";
     }
 
-    if (filter === "kirbyFilter") {
+    if (filter === "kirby") {
         fv_x = 126;
         fv_dist = 100;
-        fv_word = "Scanmask";
+        fv_word = "Kirby";
     }
 
-    if (filter === "pikachuFilter") {
+    if (filter === "pikachu") {
         fv_x = 126;
         fv_dist = 100;
-        fv_word = "Scanmask";
+        fv_word = "Pikachu";
     }
 
-    if (filter === "prettyFilter") {
+    if (filter === "pretty") {
         fv_x = 126;
         fv_dist = 100;
-        fv_word = "Scanmask";
+        fv_word = "Pretty";
     }
 
-    if (filter === "mustacheFilter") {
+    if (filter === "mustache") {
         fv_x = 126;
         fv_dist = 100;
-        fv_word = "Scanmask";
+        fv_word = "Mustache";
     }
 
-    if (filter === "glassesFilter") {
+    if (filter === "glasses") {
         fv_x = 126;
         fv_dist = 100;
-        fv_word = "Scanmask";
+        fv_word = "Glasses";
     }
 
     // Filter is on visualizer

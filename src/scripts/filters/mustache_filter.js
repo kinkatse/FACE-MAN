@@ -15,4 +15,7 @@ function Mustache(nose) {
     imageMode(CENTER);
     image(mustacheImg, nose.x, nose.y + m_dist, 150, 150);
     pop();
+
+    new filter_vis("mustache");
+
 }

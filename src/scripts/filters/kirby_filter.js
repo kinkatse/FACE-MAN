@@ -129,4 +129,7 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         d.behaviors();
         }
     }
+
+    new filter_vis("kirby");
+
 }

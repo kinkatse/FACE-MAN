@@ -177,7 +177,7 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         }
         
     } else if (leftEyeL.y - leftEyeU.y <= 5) {
-        
+
         fill(0);
         noStroke();
         ellipse(rightEyeU.x, rightEyeU.y - 40, dia, (dia*3));
@@ -255,5 +255,7 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         }
         pellet_dist = 0;
     }
+
+    new filter_vis("pacman");
 
 }

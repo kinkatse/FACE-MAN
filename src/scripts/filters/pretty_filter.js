@@ -34,4 +34,7 @@ function Pretty(leftCheek, rightCheek, face) {
         noStroke();
         circle(rightCheek.x - p_dist, rightCheek.y - p_dist, d);
     }
+
+    new filter_vis("pretty");
+    
 }

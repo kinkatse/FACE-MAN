@@ -151,4 +151,7 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
             k.show();
         }
     }
+
+    new filter_vis("pikachu");
+
 }
