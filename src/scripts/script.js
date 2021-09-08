@@ -20,56 +20,57 @@ let speedy;
 let pokey;
 let mustacheImg;
 let glassesImg;
-let pikaleftear;
-let pikarightear;
-let pikanose;
+let pikaLeftEar;
+let pikaRightEar;
+let pikaNose;
 let thunder;
 let ketchup;
 
 let topLeft;
 let bottomRight;
 let w;
-let facedia;
-let topfacedia;
+let faceDia;
+let topFaceDia;
 let dia;
 let anyFilter = false;
-let filtercount = [];
-// let filtercount = 0;
+let filterCount = [];
 let x = 0;
 let y = 650;
 // let speedx = 3;
 // let speedy = 3;
 
+// Variables for filters
+
 let winks = [];
 
-let dustpts = [];
+let dustPts = [];
 let dusts = [];
 
-let heartpts = [];
+let heartPts = [];
 let hearts = [];
 
-let zzzpts = [];
+let zzzPts = [];
 let zzzs = [];
 
-let pellet_dist = 0;
-let pelletpts = [];
+let pelletDist = 0;
+let pelletPts = [];
 let pellets = [];
 
 let thunders = [];
 
-let ketchuppts = [];
+let ketchupPts = [];
 let ketchups = [];
 
-let bashfulpts = [];
+let bashfulPts = [];
 let bashfuls = [];
 
-let pokeypts = [];
+let pokeyPts = [];
 let pokeys = [];
 
-let shadowpts = [];
+let shadowPts = [];
 let shadows = [];
 
-let speedypts = [];
+let speedyPts = [];
 let speedys = [];
 
 function clearButton() {
@@ -82,58 +83,32 @@ function clearButton() {
   hitbox = false;
   faceMaskDots = false;
   anyFilter = false;
-  for (let i = 0; i < filtercount.length; i++) {
-    filtercountRemove(filtercount[i]);
+  for (let i = 0; i < filterCount.length; i++) {
+    filterCountRemove(filterCount[i]);
   }
-  // filtercount = 0;
 }
 
-function filtercountAdd(filter) {
-  filtercount.push(filter);
-  // if (filtercount.length === 0) {
-  //   filtercount.push("first");
-  // } else if (filtercount.length === 1) {
-  //   filtercount.push("second");
-  // } else if (filtercount.length === 2) {
-  //   filtercount.push("third");
-  // } else if (filtercount.length === 3) {
-  //   filtercount.push("fourth");
-  // } else if (filtercount.length === 4) {
-  //   filtercount.push("fifth");
-  // }
+function filterCountAdd(filter) {
+  filterCount.push(filter);
 }
 
-function filtercountRemove(filter) {
-  for (let i = 0; i < filtercount.length; i++) {
-    if (filtercount[i] === filter) {
-      filtercount.splice(i);
+function filterCountRemove(filter) {
+  for (let i = 0; i < filterCount.length; i++) {
+    if (filterCount[i] === filter) {
+      filterCount.splice(i);
     }
   }
-  // filtercount.pop();
-  // if (filtercount.length === 5) {
-  //   filtercount.pop();
-  // } else if (filtercount.length === 4) {
-  //   filtercount.pop();
-  // } else if (filtercount.length === 3) {
-  //   filtercount.pop();
-  // } else if (filtercount.length === 2) {
-  //   filtercount.pop();
-  // } else if (filtercount.length === 1) {
-  //   filtercount.pop();
-  // }
 }
 
 function faceMaskDotsButton() {
   if (!faceMaskDots && !anyFilter) {
     faceMaskDots = true;
     anyFilter = true;
-    filtercountAdd("scanmask");
-    // filtercount++;
+    filterCountAdd("scanmask");
   } else if (faceMaskDots && anyFilter) {
     faceMaskDots = false;
     anyFilter = false;
-    filtercountRemove("scanmask");
-    // filtercount--;
+    filterCountRemove("scanmask");
   } else {
     anyFilter = true;
   }
@@ -143,13 +118,11 @@ function pacmanButton() {
   if (!pacmanFilter && !anyFilter) {
     pacmanFilter = true;
     anyFilter = true;
-    filtercountAdd("pacman");
-    // filtercount++;
+    filterCountAdd("pacman");
   } else if (pacmanFilter && anyFilter) {
     pacmanFilter = false;
     anyFilter = false;
-    filtercountRemove("pacman");
-    // filtercount--;
+    filterCountRemove("pacman");
   } else {
     anyFilter = true;
   }
@@ -159,13 +132,11 @@ function kirbyButton() {
   if (!kirbyFilter && !anyFilter) {
     kirbyFilter = true;
     anyFilter = true;
-    filtercountAdd("kirby");
-    // filtercount++;
+    filterCountAdd("kirby");
   } else if (kirbyFilter && anyFilter) {
     kirbyFilter = false;
     anyFilter = false;
-    filtercountRemove("kirby");
-    // filtercount--;
+    filterCountRemove("kirby");
   } else {
     anyFilter = true;
   }
@@ -175,13 +146,11 @@ function pikachuButton() {
   if (!pikachuFilter && !anyFilter) {
     pikachuFilter = true;
     anyFilter = true;
-    filtercountAdd("pikachu");
-    // filtercount++;
+    filterCountAdd("pikachu");
   } else if (pikachuFilter && anyFilter) {
     pikachuFilter = false;
     anyFilter = false;
-    filtercountRemove("pikachu");
-    // filtercount--;
+    filterCountRemove("pikachu");
   } else {
     anyFilter = true;
   }
@@ -190,48 +159,40 @@ function pikachuButton() {
 function hitboxButton() {
   if (!hitbox) {
     hitbox = true;
-    filtercountAdd("hitbox");
-    // filtercount++;
+    filterCountAdd("hitbox");
   } else {
     hitbox = false;
-    filtercountRemove("hitbox");
-    // filtercount--;
+    filterCountRemove("hitbox");
   }
 }
 
 function prettyButton() {
   if (!prettyFilter) {
     prettyFilter = true;
-    filtercountAdd("pretty");
-    // filtercount++;
+    filterCountAdd("pretty");
   } else {
     prettyFilter = false;
-    filtercountRemove("pretty");
-    // filtercount--;
+    filterCountRemove("pretty");
   }
 }
 
 function mustacheButton() {
   if (!mustacheFilter) {
     mustacheFilter = true;
-    filtercountAdd("mustache");
-    // filtercount++;
+    filterCountAdd("mustache");
   } else {
     mustacheFilter = false;
-    filtercountRemove("mustache");
-    // filtercount--;
+    filterCountRemove("mustache");
   }
 }
 
 function glassesButton() {
   if (!glassesFilter) {
     glassesFilter = true;
-    filtercountAdd("glasses");
-    // filtercount++;
+    filterCountAdd("glasses");
   } else {
     glassesFilter = false;
-    filtercountRemove("glasses");
-    // filtercount--;
+    filterCountRemove("glasses");
   }
 }
 
@@ -242,9 +203,9 @@ function preload() {
   pokey = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534561015095396/Ghost_Pokey.png');
   mustacheImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879841681552318524/Mustache_3.png?width=670&height=670');
   glassesImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879848065735999488/Glasses_4.png?width=670&height=670');
-  pikaleftear = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896831193149491/Pikachu_Right_Ear.png');
-  pikarightear = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896827556683826/Pikachu_Left_Ear.png');
-  pikanose = loadImage('https://media.discordapp.net/attachments/597985513701376013/879917035738529832/Pika_nose.png');
+  pikaLeftEar = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896831193149491/Pikachu_Right_Ear.png');
+  pikaRightEar = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896827556683826/Pikachu_Left_Ear.png');
+  pikaNose = loadImage('https://media.discordapp.net/attachments/597985513701376013/879917035738529832/Pika_nose.png');
   thunder = loadImage('https://media.discordapp.net/attachments/597985513701376013/881556169913663488/Thunder_Test_2.gif');
   ketchup = loadImage('https://media.discordapp.net/attachments/597985513701376013/881575642716590161/Ketchup.png');
 }
@@ -257,15 +218,6 @@ function setup() {
   video = createCapture(VIDEO);
   video.hide();
   loadFaceModel();
-
-  // noStroke();
-  // dustpts = [{x, y}, {x, y}];
-
-  // for (let i = 0; i < dustpts.length; i++) {
-  //   let pt = dustpts[i];
-  //   let dust = new Dust(pt.x, pt.y);
-  //   dusts.push(dust);
-  // }
 
 //   frameRate(2);
 }
@@ -382,8 +334,6 @@ function draw() {
       }
 
     if (firstFace) {
-      // debugger
-      // console.log(face);
       firstFace = false;
     }
 
@@ -404,8 +354,8 @@ function draw() {
     topLeft = scaleCoord(face.boundingBox.topLeft);
     bottomRight = scaleCoord(face.boundingBox.bottomRight);
     w = bottomRight.x - topLeft.x;
-    facedia = w;
-    topfacedia = w / 2;
+    faceDia = w;
+    topFaceDia = w / 2;
     dia = w / 8;
     let nose = scaleCoord(face.scaledMesh[5]);
 
@@ -426,31 +376,31 @@ function draw() {
       }
       endShape(CLOSE);
 
-      new filter_vis(filtercount);
+      new FilterVis(filterCount);
   }
 
     if (pacmanFilter) {
-      new Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount)
+      new Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, faceDia, face, filterCount)
     }
 
     if (kirbyFilter) {
-      new Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount)
+      new Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, faceDia, face, filterCount)
     }
 
     if (pikachuFilter) {
-      new Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount)
+      new Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, faceDia, face, filterCount)
     }
 
     if (prettyFilter) {
-      new Pretty(leftCheek, rightCheek, face, filtercount)
+      new Pretty(leftCheek, rightCheek, face, filterCount)
     }
 
     if (mustacheFilter) {
-      new Mustache(nose, filtercount)
+      new Mustache(nose, filterCount)
     }
 
     if (glassesFilter) {
-      new Glasses(betweenEyes, filtercount)
+      new Glasses(betweenEyes, filterCount)
     }
 
     if (hitbox) {
@@ -463,7 +413,7 @@ function draw() {
             face.boundingBox.bottomRight[0] - face.boundingBox.topLeft[0] + 100,
             face.boundingBox.bottomRight[1] - face.boundingBox.topLeft[1] + 100
         );
-        new filter_vis(filtercount);
+        new FilterVis(filterCount);
     }
 
   }

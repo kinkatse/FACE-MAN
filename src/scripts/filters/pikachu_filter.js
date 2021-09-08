@@ -1,18 +1,18 @@
-function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount) {
+function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, faceDia, face, filterCount) {
     push();
     imageMode(CENTER);
-    image(pikarightear, rightEyeU.x - 60, rightEyeU.y - 125, facedia/2.5 + 15, facedia/2.5 + 50);
+    image(pikaRightEar, rightEyeU.x - 60, rightEyeU.y - 125, faceDia/2.5 + 15, faceDia/2.5 + 50);
     pop();
 
     push();
     imageMode(CENTER);
-    image(pikaleftear, leftEyeU.x + 60, leftEyeU.y - 125, facedia/2.5 + 15, facedia/2.5 + 50);
+    image(pikaLeftEar, leftEyeU.x + 60, leftEyeU.y - 125, faceDia/2.5 + 15, faceDia/2.5 + 50);
     pop();
 
     push();
     fill(253, 220, 0);
     noStroke();
-    ellipse(nose.x, nose.y - 30, facedia + 15, facedia);
+    ellipse(nose.x, nose.y - 30, faceDia + 15, faceDia);
     pop();
 
     push();
@@ -24,7 +24,7 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
 
     push();
     imageMode(CENTER);
-    image(pikanose, nose.x, nose.y - 20, facedia/8, facedia/8);
+    image(pikaNose, nose.x, nose.y - 20, faceDia/8, faceDia/8);
     pop();
 
     let mouth = [];
@@ -42,8 +42,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
     fill(247,99,96);
     beginShape();
     for (let pt of mouth) {
-        // stroke("black");
-        // strokeWeight(2);
         noStroke();
         smooth();
         vertex(pt.x, pt.y);
@@ -60,16 +58,13 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         noStroke();
         ellipse(rightEyeU.x - 12, rightEyeU.y - 44, dia - 10, dia - 10);
         ellipse(leftEyeU.x + 18, leftEyeU.y - 44, dia - 10, dia - 10);
-        // circle(rightEyeU.x, rightEyeU.y, dia);
-        // circle(leftEyeU.x, leftEyeU.y, dia);
         stroke("black");
-        // curve(rightEyeU.x, rightEyeU.y, rightEyeU.x - 10, rightEyeU.y - 10, rightEyeU.x - 30, rightEyeU.y - 30, rightEyeU.x - 40, rightEyeU.y + 50);
         fill(252, 197, 219);
         noStroke();
 
         // Removes old thunder if open eyes
         thunders.shift();
-        } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
+    } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
         noFill();
         strokeWeight(5);
         stroke("black");
@@ -85,9 +80,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
             leftEyeU.x - 10, leftEyeU.y - 15,
             leftEyeU.x - 20, leftEyeU.y + 80
         );
-        // line(rightEyeU.x, rightEyeU.y - 35, rightEyeU.x + 5, rightEyeU.y - 65);
-        // curve(5, 26, 5, 50, 73, 24, 73, 61);
-        // curve(x1, y1, x2, y2, x3, y3, x4, y4);
         
         // Pikachu Thunder
 
@@ -98,7 +90,7 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         thunders[0].show();
 
 
-        } else if (leftEyeL.y - leftEyeU.y <= 5) {
+    } else if (leftEyeL.y - leftEyeU.y <= 5) {
 
         fill(0);
         noStroke();
@@ -112,7 +104,7 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         // Removes old thunder if open eyes
         thunders.shift();
 
-        } else if (rightEyeL.y - rightEyeU.y <= 5) {
+    } else if (rightEyeL.y - rightEyeU.y <= 5) {
         
         fill(0);
         noStroke();
@@ -125,7 +117,7 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
 
         // Removes old thunder if open eyes
         thunders.shift();
-        }
+    }
 
     if (lipsLower.y - lipsUpper.y > 30 ) {
         fill("white");
@@ -135,10 +127,10 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         y = lipsLower.y - 150;
 
         noStroke();
-        ketchuppts = [{x, y}];
+        ketchupPts = [{x, y}];
 
-        for (let i = 0; i < ketchuppts.length; i++) {
-            let pt = ketchuppts[i];
+        for (let i = 0; i < ketchupPts.length; i++) {
+            let pt = ketchupPts[i];
             let ketchup = new Ketchup(pt.x, pt.y);
             ketchups.push(ketchup);
             if (ketchups.length > 1) {
@@ -152,6 +144,6 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
         }
     }
 
-    new filter_vis(filtercount);
+    new FilterVis(filterCount);
 
 }

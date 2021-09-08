@@ -55,9 +55,9 @@ if (lipsLower.y - lipsUpper.y > 30 ) {
     y = lipsLower.y - 50;
     // This is the dust animation of the Kirby Filter
     noStroke();
-    dustpts = [{x, y}, {x, y}];
-    for (let i = 0; i < dustpts.length; i++) {
-      let pt = dustpts[i];
+    dustPts = [{x, y}, {x, y}];
+    for (let i = 0; i < dustPts.length; i++) {
+      let pt = dustPts[i];
       // This calls on the Dust.js script I wrote which has all the properties of
       // the dust animation.
       let dust = new Dust(pt.x, pt.y);

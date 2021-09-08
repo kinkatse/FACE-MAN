@@ -15,8 +15,8 @@
 //     let topLeft;
 //     let bottomRight;
 //     let w;
-//     let facedia;
-//     let topfacedia;
+//     let faceDia;
+//     let topFaceDia;
 //     let dia;
 //     let anyFilter = false;
 //     let x = 0;
@@ -27,10 +27,10 @@
 //     let points = [];
 //     let vehicles = [];
     
-//     let heartpts = [];
+//     let heartPts = [];
 //     let hearts = [];
     
-//     let zzzpts = [];
+//     let zzzPts = [];
 //     let zzzs = [];
     
 //     function clearButton() {
@@ -308,26 +308,26 @@
 //         topLeft = scaleCoord(face.boundingBox.topLeft);
 //         bottomRight = scaleCoord(face.boundingBox.bottomRight);
 //         w = bottomRight.x - topLeft.x;
-//         facedia = w;
-//         topfacedia = w / 2;
+//         faceDia = w;
+//         topFaceDia = w / 2;
 //         dia = w / 8;
     
 //         let nose = scaleCoord(face.scaledMesh[5]);
     
 //         // if (pacmanFilter) {
-//         //   let filter = new Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, face)
+//         //   let filter = new Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, faceDia, face)
 //         // }
     
 //         // if (kirbyFilter) {
-//         //   let filter = new Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, facedia, face)
+//         //   let filter = new Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, nose, dia, faceDia, face)
 //         // }
     
 //         if (pacmanFilter) {
 //             topLeft = scaleCoord(face.boundingBox.topLeft);
 //             bottomRight = scaleCoord(face.boundingBox.bottomRight);
 //             w = bottomRight.x - topLeft.x;
-//             facedia = w;
-//             topfacedia = w / 2;
+//             faceDia = w;
+//             topFaceDia = w / 2;
 //             dia = w / 8;
     
 //             let nose = scaleCoord(face.scaledMesh[5]);
@@ -354,7 +354,7 @@
     
 //             fill("yellow");
 //             noStroke();
-//             ellipse(nose.x, nose.y - 20, facedia + 20, facedia + 30);
+//             ellipse(nose.x, nose.y - 20, faceDia + 20, faceDia + 30);
     
 //             fill("yellow")
 //             stroke("black");
@@ -465,15 +465,15 @@
 //             // topLeft = scaleCoord(face.boundingBox.topLeft);
 //             // bottomRight = scaleCoord(face.boundingBox.bottomRight);
 //             // w = bottomRight.x - topLeft.x;
-//             // facedia = w;
-//             // topfacedia = w / 2;
+//             // faceDia = w;
+//             // topFaceDia = w / 2;
 //             // dia = w / 8;
     
 //             // let nose = scaleCoord(face.scaledMesh[5]);
     
 //             fill(252, 197, 219);
 //             noStroke();
-//             ellipse(nose.x, nose.y - 20, facedia + 20, facedia + 30);
+//             ellipse(nose.x, nose.y - 20, faceDia + 20, faceDia + 30);
     
 //             fill(249, 136, 189);
 //             noStroke();
@@ -545,10 +545,10 @@
 //                 y = 175;
     
 //                 noStroke();
-//                 zzzpts = [{x, y}];
+//                 zzzPts = [{x, y}];
     
-//                 for (let i = 0; i < zzzpts.length; i++) {
-//                   let pts = zzzpts[i];
+//                 for (let i = 0; i < zzzPts.length; i++) {
+//                   let pts = zzzPts[i];
 //                   let zzz = new Zzz(pts.x, pts.y);
 //                   zzzs.push(zzz);
 //                   // if (zzzs.length > 15) {
@@ -615,10 +615,10 @@
 //                 y = leftEyeU.y - 45;
     
 //                 noStroke();
-//                 heartpts = [{x, y}];
+//                 heartPts = [{x, y}];
     
-//                 for (let i = 0; i < heartpts.length; i++) {
-//                   let pts = heartpts[i];
+//                 for (let i = 0; i < heartPts.length; i++) {
+//                   let pts = heartPts[i];
 //                   let heart = new Heart(pts.x, pts.y);
 //                   hearts.push(heart);
 //                   // if (hearts.length > 15) {
@@ -685,10 +685,10 @@
 //                 y = leftEyeU.y - 45;
     
 //                 noStroke();
-//                 heartpts = [{x, y}];
+//                 heartPts = [{x, y}];
     
-//                 for (let i = 0; i < heartpts.length; i++) {
-//                   let pts = heartpts[i];
+//                 for (let i = 0; i < heartPts.length; i++) {
+//                   let pts = heartPts[i];
 //                   let heart = new Heart(pts.x, pts.y);
 //                   hearts.push(heart);
 //                   // if (hearts.length > 15) {

@@ -1,4 +1,4 @@
-function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount) {
+function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, faceDia, face, filterCount) {
 
     fill("yellow");
     stroke("black");
@@ -22,7 +22,7 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
 
     fill("yellow");
     noStroke();
-    ellipse(nose.x, nose.y - 20, facedia + 20, facedia + 30);
+    ellipse(nose.x, nose.y - 20, faceDia + 20, faceDia + 30);
 
     fill("yellow")
     stroke("black");
@@ -44,8 +44,6 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
     fill(80,0,0);
     beginShape();
     for (let pt of mouth) {
-        // stroke("black");
-        // strokeWeight(2);
         noStroke();
         smooth();
         vertex(pt.x, pt.y);
@@ -58,8 +56,6 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         noStroke();
         ellipse(rightEyeU.x, rightEyeU.y - 40, dia, (dia*3));
         ellipse(leftEyeU.x, leftEyeU.y - 40, dia, (dia*3));
-        // circle(rightEyeU.x, rightEyeU.y, dia);
-        // circle(leftEyeU.x, leftEyeU.y, dia);
 
         fill("yellow");
         noStroke();
@@ -92,10 +88,10 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         y = 100;
         
         noStroke();
-        bashfulpts = [{x, y}];
+        bashfulPts = [{x, y}];
 
-        for (let i = 0; i < bashfulpts.length; i++) {
-            let pts = bashfulpts[i];
+        for (let i = 0; i < bashfulPts.length; i++) {
+            let pts = bashfulPts[i];
             let bashful = new Bashful(pts.x, pts.y);
             bashfuls.push(bashful);
             if (bashfuls.length > 1) {
@@ -114,10 +110,10 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         y = 100;
         
         noStroke();
-        pokeypts = [{x, y}];
+        pokeyPts = [{x, y}];
 
-        for (let i = 0; i < pokeypts.length; i++) {
-            let pts = pokeypts[i];
+        for (let i = 0; i < pokeyPts.length; i++) {
+            let pts = pokeyPts[i];
             let pokey = new Pokey(pts.x, pts.y);
             pokeys.push(pokey);
             if (pokeys.length > 1) {
@@ -136,10 +132,10 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         y = 400;
         
         noStroke();
-        shadowpts = [{x, y}];
+        shadowPts = [{x, y}];
 
-        for (let i = 0; i < shadowpts.length; i++) {
-            let pts = shadowpts[i];
+        for (let i = 0; i < shadowPts.length; i++) {
+            let pts = shadowPts[i];
             let shadow = new Shadow(pts.x, pts.y);
             shadows.push(shadow);
             if (shadows.length > 1) {
@@ -158,10 +154,10 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
         y = 400;
         
         noStroke();
-        speedypts = [{x, y}];
+        speedyPts = [{x, y}];
 
-        for (let i = 0; i < speedypts.length; i++) {
-            let pts = speedypts[i];
+        for (let i = 0; i < speedyPts.length; i++) {
+            let pts = speedyPts[i];
             let speedy = new Speedy(pts.x, pts.y);
             speedys.push(speedy);
             if (speedys.length > 1) {
@@ -219,17 +215,14 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
 
         x = lipsLower.x;
         y = lipsLower.y - 50;
-        pelletpts = [{x, y}];
+        pelletPts = [{x, y}];
         
-        for (let i = 0; i < pelletpts.length; i++) {
-            let pt = pelletpts[i];
+        for (let i = 0; i < pelletPts.length; i++) {
+            let pt = pelletPts[i];
             let pellet = new Pellet(pt.x, pt.y);
             pellets.push(pellet);
-            // pellet_dist adds distance between each pellet
-            pellet_dist += 25;
-            // if (pellets[0].pos.x < pellets[0].target.x + 50) {
-            //     pellets.shift();
-            // }
+            // pelletDist adds distance between each pellet
+            pelletDist += 25;
             for (let j = 0; j < pellets.length; j++) {
                 // Needs to remove all pellets past the new target point,
                 // new being the latest added in the array
@@ -245,7 +238,7 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
             v.show();
         }
     } else {
-        // When program loops code again because of draw(), we need pellet_dist to keep
+        // When program loops code again because of draw(), we need pelletDist to keep
         // track of the distance in between pellets but also reset so that the
         // pellets don't disappear so we reset when mouth is closed
         for (let i = 0; i < pellets.length; i++) {
@@ -253,9 +246,9 @@ function Pacman(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, 
                 pellets.shift();
             }
         }
-        pellet_dist = 0;
+        pelletDist = 0;
     }
 
-    new filter_vis(filtercount);
+    new FilterVis(filterCount);
 
 }

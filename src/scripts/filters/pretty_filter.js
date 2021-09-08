@@ -1,40 +1,40 @@
-let p_w;
-let p_color;
-let p_dist;
+let prettyWidth;
+let prettyColor;
+let prettyDist;
 
-function Pretty(leftCheek, rightCheek, face, filtercount) {
+function Pretty(leftCheek, rightCheek, face, filterCount) {
 
     if (pikachuFilter) {
-        p_w = 6;
-        p_color = [4, 211, 255];
-        p_dist = 35;
+        prettyWidth = 6;
+        prettyColor = [4, 211, 255];
+        prettyDist = 35;
     } else if (kirbyFilter) {
-        p_w = 3;
-        p_color = [255, 99, 107];
-        p_dist = 25;
+        prettyWidth = 3;
+        prettyColor = [255, 99, 107];
+        prettyDist = 25;
     } else if (pacmanFilter) {
-        p_w = 4;
-        p_color = [255, 99, 107];
-        p_dist = 30;
+        prettyWidth = 4;
+        prettyColor = [255, 99, 107];
+        prettyDist = 30;
     } else {
-        p_w = 6;
-        p_color = [255, 99, 107];
-        p_dist = 15;
+        prettyWidth = 6;
+        prettyColor = [255, 99, 107];
+        prettyDist = 15;
     }
 
     // left cheek
-    for (let d = w/p_w; d >= 2; d -= 1) {
-        fill(p_color[0], p_color[1], p_color[2], map(d, w/p_w, 2, 0, 25));
+    for (let d = w/prettyWidth; d >= 2; d -= 1) {
+        fill(prettyColor[0], prettyColor[1], prettyColor[2], map(d, w/prettyWidth, 2, 0, 25));
         noStroke();
-        circle(leftCheek.x + p_dist, leftCheek.y - p_dist, d);
+        circle(leftCheek.x + prettyDist, leftCheek.y - prettyDist, d);
     }
     // right cheek
-    for (let d = w/p_w; d >= 2; d -= 1) {
-        fill(p_color[0], p_color[1], p_color[2], map(d, w/p_w, 2, 0, 25));
+    for (let d = w/prettyWidth; d >= 2; d -= 1) {
+        fill(prettyColor[0], prettyColor[1], prettyColor[2], map(d, w/prettyWidth, 2, 0, 25));
         noStroke();
-        circle(rightCheek.x - p_dist, rightCheek.y - p_dist, d);
+        circle(rightCheek.x - prettyDist, rightCheek.y - prettyDist, d);
     }
 
-    new filter_vis(filtercount);
+    new FilterVis(filterCount);
 
 }

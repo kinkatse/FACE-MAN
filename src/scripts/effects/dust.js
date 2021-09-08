@@ -1,4 +1,4 @@
-let angle = 0;
+let dustAngle = 0;
 
 function Dust(x,y) {
   this.pos = createVector(random(width), random(height));
@@ -22,10 +22,7 @@ Dust.prototype.update = function() {
 Dust.prototype.show = function() {
   push();
   translate(this.pos.x, this.pos.y);
-  // stroke(255);
-  // strokeWeight(4);
-  // line(this.pos.x, this.pos.y, this.pos.x + 5, this.pos.y + 5);
-  rotate(angle);
+  rotate(dustAngle);
   fill(255);
   noStroke();
   strokeWeight(2);
@@ -33,7 +30,7 @@ Dust.prototype.show = function() {
   square(0, 0, this.size);
   pop();
 
-  angle += radians(80)
+  dustAngle += radians(80)
 
   // Air Dust Trail
   // if (this.history.length > 1) {
@@ -41,7 +38,7 @@ Dust.prototype.show = function() {
   //         let position = this.history[i];
   //         push();
   //         translate(position.x, position.y);
-  //         rotate(angle);
+  //         rotate(dustAngle);
   //         fill(255);
   //         noStroke();
   //         strokeWeight(2);
@@ -49,7 +46,7 @@ Dust.prototype.show = function() {
   //         square(0, 0, this.size);
   //         pop();
 
-  //         angle += radians(10)
+  //         dustAngle += radians(10)
   //     }
   // }
 }

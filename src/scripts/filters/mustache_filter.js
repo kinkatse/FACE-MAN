@@ -1,21 +1,21 @@
-let m_dist;
+let mustacheDist;
 
-function Mustache(nose, filtercount) {
+function Mustache(nose, filterCount) {
     if (pikachuFilter) {
-        m_dist = 5;
+        mustacheDist = 5;
     } else if (kirbyFilter) {
-        m_dist = 15;
+        mustacheDist = 15;
     } else if (pacmanFilter) {
-        m_dist = 15;
+        mustacheDist = 15;
     } else {
-        m_dist = 35;
+        mustacheDist = 35;
     }
 
     push();
     imageMode(CENTER);
-    image(mustacheImg, nose.x, nose.y + m_dist, 150, 150);
+    image(mustacheImg, nose.x, nose.y + mustacheDist, 150, 150);
     pop();
 
-    new filter_vis(filtercount);
+    new FilterVis(filterCount);
 
 }

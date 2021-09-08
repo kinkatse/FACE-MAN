@@ -1,20 +1,20 @@
-let g_dist;
+let glassesDist;
 
-function Glasses(betweenEyes, filtercount) {
+function Glasses(betweenEyes, filterCount) {
     if (pikachuFilter) {
-        g_dist = 30;
+        glassesDist = 30;
     } else if (kirbyFilter) {
-        g_dist = 20;
+        glassesDist = 20;
     } else if (pacmanFilter) {
-        g_dist = 25;
+        glassesDist = 25;
     } else {
-        g_dist = 5;
+        glassesDist = 5;
     }
 
     push();
     imageMode(CENTER);
-    image(glassesImg, betweenEyes.x, betweenEyes.y - g_dist, 250, 250);
+    image(glassesImg, betweenEyes.x, betweenEyes.y - glassesDist, 250, 250);
     pop();
 
-    new filter_vis(filtercount);
+    new FilterVis(filterCount);
 }

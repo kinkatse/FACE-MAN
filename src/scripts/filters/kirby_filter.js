@@ -1,7 +1,7 @@
-function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, facedia, face, filtercount) {
+function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, faceDia, face, filterCount) {
     fill(252, 197, 219);
     noStroke();
-    ellipse(nose.x, nose.y - 20, facedia + 20, facedia + 30);
+    ellipse(nose.x, nose.y - 20, faceDia + 20, faceDia + 30);
 
     fill(249, 136, 189);
     noStroke();
@@ -23,8 +23,6 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
     fill(247,99,96);
     beginShape();
     for (let pt of mouth) {
-        // stroke("black");
-        // strokeWeight(2);
         noStroke();
         smooth();
         vertex(pt.x, pt.y);
@@ -41,13 +39,10 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         noStroke();
         ellipse(rightEyeU.x, rightEyeU.y - 45, dia/1.75, (dia));
         ellipse(leftEyeU.x, leftEyeU.y - 45, dia/1.75, (dia));
-        // circle(rightEyeU.x, rightEyeU.y, dia);
-        // circle(leftEyeU.x, leftEyeU.y, dia);
         stroke("black");
-        // curve(rightEyeU.x, rightEyeU.y, rightEyeU.x - 10, rightEyeU.y - 10, rightEyeU.x - 30, rightEyeU.y - 30, rightEyeU.x - 40, rightEyeU.y + 50);
         fill(252, 197, 219);
         noStroke();
-        } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
+    } else if (rightEyeL.y - rightEyeU.y <= 5 && leftEyeL.y - leftEyeU.y <= 5) {
         noFill();
         strokeWeight(5);
         stroke("black");
@@ -63,9 +58,6 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
             leftEyeU.x - 10, leftEyeU.y - 10,
             leftEyeU.x - 20, leftEyeU.y + 85
         );
-        // line(rightEyeU.x, rightEyeU.y - 35, rightEyeU.x + 5, rightEyeU.y - 65);
-        // curve(5, 26, 5, 50, 73, 24, 73, 61);
-        // curve(x1, y1, x2, y2, x3, y3, x4, y4);
         
         // Kirby Sleep
 
@@ -78,7 +70,7 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         zzzs[0].update();
         zzzs[0].behaviors();
 
-        } else if (leftEyeL.y - leftEyeU.y <= 5) {
+    } else if (leftEyeL.y - leftEyeU.y <= 5) {
 
         fill(0);
         noStroke();
@@ -89,7 +81,7 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
 
         new Wink(leftEyeU, rightEyeU, false);
 
-        } else if (rightEyeL.y - rightEyeU.y <= 5) {
+    } else if (rightEyeL.y - rightEyeU.y <= 5) {
 
         fill(0);
         noStroke();
@@ -105,21 +97,20 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
     if (lipsLower.y - lipsUpper.y > 30 ) {
         fill("white");
         noStroke();
-        // ellipse(x, y, 10, 10);
 
         x = lipsLower.x;
         y = lipsLower.y - 50;
 
         noStroke();
-        dustpts = [{x, y}, {x, y}];
+        dustPts = [{x, y}, {x, y}];
 
-        for (let i = 0; i < dustpts.length; i++) {
-        let pt = dustpts[i];
+        for (let i = 0; i < dustPts.length; i++) {
+        let pt = dustPts[i];
         let dust = new Dust(pt.x, pt.y);
         dusts.push(dust);
-        if (dusts[0].size < 1) {
-            dusts.shift(dust);
-        }
+            if (dusts[0].size < 1) {
+                dusts.shift(dust);
+            }
         }
 
         for (let i = 0; i < dusts.length; i++) {
@@ -130,6 +121,6 @@ function Kirby(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, n
         }
     }
 
-    new filter_vis(filtercount);
+    new FilterVis(filterCount);
 
 }

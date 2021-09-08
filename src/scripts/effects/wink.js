@@ -1,12 +1,12 @@
 let eye;
-let eye_dist1;
-let eye_dist2;
-let eye_dist3;
-let eye_dist4;
-let eye_dist5;
-let eye_dist6;
-let eye_dist7;
-let eye_dist8;
+let eyeDist1;
+let eyeDist2;
+let eyeDist3;
+let eyeDist4;
+let eyeDist5;
+let eyeDist6;
+let eyeDist7;
+let eyeDist8;
 
 // The eye is the closed eye by setting left to true or not
 // when calling this to indicate which eye is closed
@@ -15,86 +15,86 @@ function Wink(leftEyeU, rightEyeU, left) {
     if (pikachuFilter) {
         if (left) {
             eye = rightEyeU;
-            eye_dist1 = 15;
-            eye_dist2 = 80;
-            eye_dist3 = 15;
-            eye_dist4 = -15;
-            eye_dist5 = -35;
-            eye_dist6 = -25;
-            eye_dist7 = -45;
-            eye_dist8 = 65;
+            eyeDist1 = 15;
+            eyeDist2 = 80;
+            eyeDist3 = 15;
+            eyeDist4 = -15;
+            eyeDist5 = -35;
+            eyeDist6 = -25;
+            eyeDist7 = -45;
+            eyeDist8 = 65;
         } else if (!left) {
             eye = leftEyeU;
-            eye_dist1 = 40;
-            eye_dist2 = 65;
-            eye_dist3 = 40;
-            eye_dist4 = -25;
-            eye_dist5 = -10;
-            eye_dist6 = -15;
-            eye_dist7 = -20;
-            eye_dist8 = 80;
+            eyeDist1 = 40;
+            eyeDist2 = 65;
+            eyeDist3 = 40;
+            eyeDist4 = -25;
+            eyeDist5 = -10;
+            eyeDist6 = -15;
+            eyeDist7 = -20;
+            eyeDist8 = 80;
         }
     } else if (kirbyFilter) {
         if (left) {
             eye = rightEyeU;
-            eye_dist1 = 15;
-            eye_dist2 = 85;
-            eye_dist3 = 15;
-            eye_dist4 = -10;
-            eye_dist5 = -35;
-            eye_dist6 = -20;
-            eye_dist7 = -45;
-            eye_dist8 = 70;
+            eyeDist1 = 15;
+            eyeDist2 = 85;
+            eyeDist3 = 15;
+            eyeDist4 = -10;
+            eyeDist5 = -35;
+            eyeDist6 = -20;
+            eyeDist7 = -45;
+            eyeDist8 = 70;
         } else if (!left) {
             eye = leftEyeU;
-            eye_dist1 = 40;
-            eye_dist2 = 70;
-            eye_dist3 = 40;
-            eye_dist4 = -20;
-            eye_dist5 = -10;
-            eye_dist6 = -10;
-            eye_dist7 = -20;
-            eye_dist8 = 85;
+            eyeDist1 = 40;
+            eyeDist2 = 70;
+            eyeDist3 = 40;
+            eyeDist4 = -20;
+            eyeDist5 = -10;
+            eyeDist6 = -10;
+            eyeDist7 = -20;
+            eyeDist8 = 85;
         }
     } else if (pacmanFilter) {
         if (left) {
             eye = rightEyeU;
-            eye_dist1 = 5;
-            eye_dist2 = -65;
-            eye_dist3 = 15;
-            eye_dist4 = -10;
-            eye_dist5 = -15;
-            eye_dist6 = -20;
-            eye_dist7 = 15;
-            eye_dist8 = -10;
+            eyeDist1 = 5;
+            eyeDist2 = -65;
+            eyeDist3 = 15;
+            eyeDist4 = -10;
+            eyeDist5 = -15;
+            eyeDist6 = -20;
+            eyeDist7 = 15;
+            eyeDist8 = -10;
         } else if (!left) {
             eye = leftEyeU;
-            eye_dist1 = 5;
-            eye_dist2 = -65;
-            eye_dist3 = -15;
-            eye_dist4 = -10;
-            eye_dist5 = 15;
-            eye_dist6 = -20;
-            eye_dist7 = -15;
-            eye_dist8 = -10;
+            eyeDist1 = 5;
+            eyeDist2 = -65;
+            eyeDist3 = -15;
+            eyeDist4 = -10;
+            eyeDist5 = 15;
+            eyeDist6 = -20;
+            eyeDist7 = -15;
+            eyeDist8 = -10;
         }
     }
 
-    // Pacman hsa different winking eyes than others
+    // Pacman has different winking eyes than others
     push();
     if (pacmanFilter) {
         push();
         fill(0);
         strokeWeight(5);
         stroke("black");
-        line(eye.x + eye_dist1,
-            eye.y + eye_dist2,
-            eye.x + eye_dist3,
-            eye.y + eye_dist4);
-        line(eye.x + eye_dist5,
-             eye.y + eye_dist6,
-             eye.x + eye_dist7,
-             eye.y + eye_dist8);
+        line(eye.x + eyeDist1,
+            eye.y + eyeDist2,
+            eye.x + eyeDist3,
+            eye.y + eyeDist4);
+        line(eye.x + eyeDist5,
+             eye.y + eyeDist6,
+             eye.x + eyeDist7,
+             eye.y + eyeDist8);
         pop();
     } else {
         push();
@@ -102,14 +102,14 @@ function Wink(leftEyeU, rightEyeU, left) {
         strokeWeight(5);
         stroke("black");
         curve(
-            eye.x + eye_dist1,
-            eye.y + eye_dist2,
-            eye.x + eye_dist3,
-            eye.y + eye_dist4,
-            eye.x + eye_dist5,
-            eye.y + eye_dist6,
-            eye.x + eye_dist7,
-            eye.y + eye_dist8
+            eye.x + eyeDist1,
+            eye.y + eyeDist2,
+            eye.x + eyeDist3,
+            eye.y + eyeDist4,
+            eye.x + eyeDist5,
+            eye.y + eyeDist6,
+            eye.x + eyeDist7,
+            eye.y + eyeDist8
         );
         pop();
     }
@@ -120,18 +120,15 @@ function Wink(leftEyeU, rightEyeU, left) {
 
     // Hearts
     noStroke();
-    heartpts = [{x, y}];
+    heartPts = [{x, y}];
 
-    for (let i = 0; i < heartpts.length; i++) {
-        let pts = heartpts[i];
+    for (let i = 0; i < heartPts.length; i++) {
+        let pts = heartPts[i];
         let heart = new Heart(pts.x, pts.y);
         hearts.push(heart);
         if (hearts[0].opacity < 1) {
             hearts.shift(heart);
         }
-        // if (hearts.length > 15) {
-        //     hearts.pop(heart);
-        // }
     }
 
     for (let i = 0; i < hearts.length; i++) {
