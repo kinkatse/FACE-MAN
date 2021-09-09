@@ -78,8 +78,9 @@ function clearButton() {
   hitbox = false;
   faceMaskDots = false;
   anyFilter = false;
-  for (let i = 0; i < filterCount.length; i++) {
-    filterCountRemove(filterCount[i]);
+  // debugger
+  for (let i = 0; i < 5; i++) {
+    filterCount.pop();
   }
 }
 
