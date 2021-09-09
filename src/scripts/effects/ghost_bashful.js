@@ -17,13 +17,13 @@ Bashful.prototype.show = function() {
   if (this.vel.x >= 0) {
       push();
       imageMode(CENTER);
-      image(bashful, this.pos.x, this.pos.y, 140, 140)
+      image(bashfulImg, this.pos.x, this.pos.y, 140, 140)
       pop();
   } else if (this.vel.x < 0) {
       push();
       imageMode(CENTER);
       scale(-1, 1)
-      image(bashful, -this.pos.x, this.pos.y, 140, 140)
+      image(bashfulImg, -this.pos.x, this.pos.y, 140, 140)
       pop();
   }
 }

@@ -5,6 +5,6 @@ function Thunder() {
 Thunder.prototype.show = function() {
     push();
     imageMode(CENTER);
-    image(thunder, this.pos.x, this.pos.y, 522, 522)
+    image(thunderImg, this.pos.x, this.pos.y, 522, 522)
     pop();
 }

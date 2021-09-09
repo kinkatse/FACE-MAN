@@ -17,13 +17,13 @@ Speedy.prototype.show = function() {
   if (this.vel.x >= 0) {
     push();
     imageMode(CENTER);
-    image(speedy, this.pos.x, this.pos.y, 140, 140)
+    image(speedyImg, this.pos.x, this.pos.y, 140, 140)
     pop();
   } else if (this.vel.x < 0) {
       push();
       imageMode(CENTER);
       scale(-1, 1)
-      image(speedy, -this.pos.x, this.pos.y, 140, 140)
+      image(speedyImg, -this.pos.x, this.pos.y, 140, 140)
       pop();
   }
 }

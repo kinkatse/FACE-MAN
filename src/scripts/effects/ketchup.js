@@ -13,7 +13,7 @@ Ketchup.prototype.show = function() {
     // so it can rotate while moving
     rotate(PI / 180 * this.pos.x/2.5 + 90);
     imageMode(CENTER);
-    image(ketchup, 0, 0, 150, 250);
+    image(ketchupImg, 0, 0, 150, 250);
     pop();
 
     // Making ketchup rotate back and forth

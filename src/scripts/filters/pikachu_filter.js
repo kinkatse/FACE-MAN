@@ -1,12 +1,12 @@
 function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper, nose, dia, faceDia, face, filterCount) {
     push();
     imageMode(CENTER);
-    image(pikaRightEar, rightEyeU.x - 60, rightEyeU.y - 125, faceDia/2.5 + 15, faceDia/2.5 + 50);
+    image(pikaRightEarImg, rightEyeU.x - 60, rightEyeU.y - 125, faceDia/2.5 + 15, faceDia/2.5 + 50);
     pop();
 
     push();
     imageMode(CENTER);
-    image(pikaLeftEar, leftEyeU.x + 60, leftEyeU.y - 125, faceDia/2.5 + 15, faceDia/2.5 + 50);
+    image(pikaLeftEarImg, leftEyeU.x + 60, leftEyeU.y - 125, faceDia/2.5 + 15, faceDia/2.5 + 50);
     pop();
 
     push();
@@ -24,7 +24,7 @@ function Pikachu(rightEyeU, leftEyeU, rightEyeL, leftEyeL, lipsLower, lipsUpper,
 
     push();
     imageMode(CENTER);
-    image(pikaNose, nose.x, nose.y - 20, faceDia/8, faceDia/8);
+    image(pikaNoseImg, nose.x, nose.y - 20, faceDia/8, faceDia/8);
     pop();
 
     let mouth = [];

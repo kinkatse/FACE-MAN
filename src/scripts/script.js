@@ -24,17 +24,17 @@ let y = 650;
 
 // Image variables for filters
 
-let shadow;
-let bashful;
-let speedy;
-let pokey;
+let shadowImg;
+let bashfulImg;
+let speedyImg;
+let pokeyImg;
 let mustacheImg;
 let glassesImg;
-let pikaLeftEar;
-let pikaRightEar;
-let pikaNose;
-let thunder;
-let ketchup;
+let pikaLeftEarImg;
+let pikaRightEarImg;
+let pikaNoseImg;
+let thunderImg;
+let ketchupImg;
 
 let scanmaskIcon;
 let pacmanIcon;
@@ -208,17 +208,17 @@ function glassesButton() {
 
 // This loads all the images used for filters
 function preload() {
-  shadow = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534561879105546/Ghost_Shadow.png');
-  bashful = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534557860966450/Ghost_Bashful.png');
-  speedy = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534565360402462/Ghost_Speedy.png');
-  pokey = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534561015095396/Ghost_Pokey.png');
+  shadowImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534561879105546/Ghost_Shadow.png');
+  bashfulImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534557860966450/Ghost_Bashful.png');
+  speedyImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534565360402462/Ghost_Speedy.png');
+  pokeyImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/880534561015095396/Ghost_Pokey.png');
   mustacheImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879841681552318524/Mustache_3.png?width=670&height=670');
   glassesImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879848065735999488/Glasses_4.png?width=670&height=670');
-  pikaLeftEar = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896831193149491/Pikachu_Right_Ear.png');
-  pikaRightEar = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896827556683826/Pikachu_Left_Ear.png');
-  pikaNose = loadImage('https://media.discordapp.net/attachments/597985513701376013/879917035738529832/Pika_nose.png');
-  thunder = loadImage('https://media.discordapp.net/attachments/597985513701376013/881556169913663488/Thunder_Test_2.gif');
-  ketchup = loadImage('https://media.discordapp.net/attachments/597985513701376013/881575642716590161/Ketchup.png');
+  pikaLeftEarImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896831193149491/Pikachu_Right_Ear.png');
+  pikaRightEarImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879896827556683826/Pikachu_Left_Ear.png');
+  pikaNoseImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/879917035738529832/Pika_nose.png');
+  thunderImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/881556169913663488/Thunder_Test_2.gif');
+  ketchupImg = loadImage('https://media.discordapp.net/attachments/597985513701376013/881575642716590161/Ketchup.png');
   scanmaskIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885550609326047232/Scanmask_2.png');
   pacmanIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885547912749281350/Pacman.png');
   kirbyIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885547888963375124/Kirby.png');

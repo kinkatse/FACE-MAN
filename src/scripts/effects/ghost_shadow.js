@@ -17,13 +17,13 @@ Shadow.prototype.show = function() {
   if (this.vel.x >= 0) {
       push();
       imageMode(CENTER);
-      image(shadow, this.pos.x, this.pos.y, 140, 140)
+      image(shadowImg, this.pos.x, this.pos.y, 140, 140)
       pop();
   } else if (this.vel.x < 0) {
       push();
       imageMode(CENTER);
       scale(-1, 1)
-      image(shadow, -this.pos.x, this.pos.y, 140, 140)
+      image(shadowImg, -this.pos.x, this.pos.y, 140, 140)
       pop();
   }
 }
