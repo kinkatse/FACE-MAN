@@ -92,7 +92,7 @@ function filterCountAdd(filter) {
 function filterCountRemove(filter) {
   for (let i = 0; i < filterCount.length; i++) {
     if (filterCount[i] === filter) {
-      filterCount.splice(i);
+      filterCount.splice(i, 1);
     }
   }
 }
