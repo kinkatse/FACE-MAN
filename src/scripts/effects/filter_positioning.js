@@ -1,19 +1,15 @@
-function FilterPos(fvY, fvColor1, fvColor2, fvDist, fvWord) {
+function FilterPos(fvY, fvColor1, fvColor2, fvDist, fvImg) {
     
     push();
-    translate(57, fvY);
+    translate(23, fvY);
     fill(fvColor1);
     stroke(fvColor2);
     strokeWeight(2);
     rectMode(CENTER);
     rect(1, 1, fvDist, 30, 5, 5, 5, 5);
     fill(255);
-    textAlign(CENTER);
-    stroke('rgba(0, 0, 0, 0.5)');
-    strokeWeight(2);
-    textSize(18);
-    textFont('Helvetica');
-    text(fvWord, 0, 7);
+    imageMode(CENTER);
+    image(fvImg, 0, 0, 30, 30);
     pop();
 
 }

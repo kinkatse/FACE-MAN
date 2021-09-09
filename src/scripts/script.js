@@ -11,6 +11,19 @@ let glassesFilter = false;
 let hitbox = false;
 let faceMaskDots = false;
 
+let topLeft;
+let bottomRight;
+let w;
+let faceDia;
+let topFaceDia;
+let dia;
+let anyFilter = false;
+let filterCount = [];
+let x = 0;
+let y = 650;
+
+// Image variables for filters
+
 let shadow;
 let bashful;
 let speedy;
@@ -23,16 +36,14 @@ let pikaNose;
 let thunder;
 let ketchup;
 
-let topLeft;
-let bottomRight;
-let w;
-let faceDia;
-let topFaceDia;
-let dia;
-let anyFilter = false;
-let filterCount = [];
-let x = 0;
-let y = 650;
+let scanmaskIcon;
+let pacmanIcon;
+let kirbyIcon;
+let pikachuIcon;
+let hitboxIcon;
+let prettyIcon;
+let mustacheIcon;
+let glassesIcon;
 
 // Variables for filters
 
@@ -208,6 +219,14 @@ function preload() {
   pikaNose = loadImage('https://media.discordapp.net/attachments/597985513701376013/879917035738529832/Pika_nose.png');
   thunder = loadImage('https://media.discordapp.net/attachments/597985513701376013/881556169913663488/Thunder_Test_2.gif');
   ketchup = loadImage('https://media.discordapp.net/attachments/597985513701376013/881575642716590161/Ketchup.png');
+  scanmaskIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885550609326047232/Scanmask_2.png');
+  pacmanIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885547912749281350/Pacman.png');
+  kirbyIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885547888963375124/Kirby.png');
+  pikachuIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885547920240300042/Pikachu.png');
+  hitboxIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885550623125307422/Hitbox_2.png');
+  prettyIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885547946471460905/Pretty_2.png');
+  mustacheIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885547932718346300/Mustache_2.png?width=670&height=670');
+  glassesIcon = loadImage('https://media.discordapp.net/attachments/597985513701376013/885547861918507038/Glasses_2.png?width=670&height=670');
 }
 
 // This is the set up which prepares the canvas and video capture

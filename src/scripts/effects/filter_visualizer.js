@@ -1,6 +1,6 @@
 let fvY;
-let fvDist = 110;
-let fvWord;
+let fvDist = 40;
+let fvImg;
 let fvColor1;
 let fvColor2;
 let filterPos = [17, 52, 87, 122, 157]
@@ -8,53 +8,53 @@ let filterPos = [17, 52, 87, 122, 157]
 function FilterVis(positions) {
     for (let i = 0; i < positions.length; i++) {
         if (positions[i] === "scanmask") {
-            fvWord = "Scanmask";
+            fvImg = scanmaskIcon;
             fvColor1 = 'rgba(191, 225, 255, 1)';
             fvColor2 = 'rgb(153, 207, 255)';
             fvY = filterPos[i];
-            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvWord);
+            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvImg);
         } else if (positions[i] === "pacman") {
-            fvWord = "Pacman";
+            fvImg = pacmanIcon;
             fvColor1 = 'rgba(255, 245, 140, 1)';
             fvColor2 = 'rgb(229, 214, 75)';
             fvY = filterPos[i];
-            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvWord);
+            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvImg);
         } else if (positions[i] === "kirby") {
-            fvWord = "Kirby";
+            fvImg = kirbyIcon;
             fvColor1 = 'rgba(255, 186, 212, 1)';
             fvColor2 = 'rgb(234, 140, 176)';
             fvY = filterPos[i];
-            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvWord);
+            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvImg);
         } else if (positions[i] === "pikachu") {
-            fvWord = "Pikachu";
+            fvImg = pikachuIcon;
             fvColor1 = 'rgba(255, 228, 165, 1)';
             fvColor2 = 'rgb(219, 179, 87)';
             fvY = filterPos[i];
-            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvWord);
+            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvImg);
         } else if (positions[i] === "hitbox") {
-            fvWord = "Hitbox";
+            fvImg = hitboxIcon;
             fvColor1 = 'rgba(132, 255, 181, 1)';
             fvColor2 = 'rgb(74, 206, 125)';
             fvY = filterPos[i];
-            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvWord);
+            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvImg);
         } else if (positions[i] === "pretty") {
-            fvWord = "Pretty";
+            fvImg = prettyIcon;
             fvColor1 = 'rgba(132, 255, 181, 1)';
             fvColor2 = 'rgb(74, 206, 125)';
             fvY = filterPos[i];
-            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvWord);
+            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvImg);
         } else if (positions[i] === "mustache") {
-            fvWord = "Mustache";
+            fvImg = mustacheIcon;
             fvColor1 = 'rgba(132, 255, 181, 1)';
             fvColor2 = 'rgb(74, 206, 125)';
             fvY = filterPos[i];
-            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvWord);
+            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvImg);
         } else if (positions[i] === "glasses") {
-            fvWord = "Glasses";
+            fvImg = glassesIcon;
             fvColor1 = 'rgba(132, 255, 181, 1)';
             fvColor2 = 'rgb(74, 206, 125)';
             fvY = filterPos[i];
-            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvWord);
+            new FilterPos(fvY, fvColor1, fvColor2, fvDist, fvImg);
         }
     }
 }
