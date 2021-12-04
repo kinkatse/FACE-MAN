@@ -101,6 +101,7 @@ function filterCountAdd(filter) {
   filterCount.push(filter);
 }
 
+// Using .splice to remove 1 from the position given
 function filterCountRemove(filter) {
   for (let i = 0; i < filterCount.length; i++) {
     if (filterCount[i] === filter) {
@@ -252,8 +253,10 @@ async function loadFaceModel() {
 // This makes it more convenient for us to access the position
 // of a landmark
 function scaleCoord(pt) {
+  // debugger
   let x = map(pt[0], 0,video.width, 0,width);
   let y = map(pt[1], 0,video.height, 0,height);
+  // debugger
   return createVector(x, y);
 }
 
@@ -399,16 +402,16 @@ function draw() {
       fill("black");
       noStroke();
       for (let pt of face.scaledMesh) {
-      pt = scaleCoord(pt);
-      circle(pt.x, pt.y, 3);
+        pt = scaleCoord(pt);
+        circle(pt.x, pt.y, 3);
       }
       
       fill(0, 150, 255, 100);
       noStroke();
       beginShape();
       for (pt of face.annotations.silhouette) {
-      pt = scaleCoord(pt);
-      vertex(pt.x, pt.y);
+        pt = scaleCoord(pt);
+        vertex(pt.x, pt.y);
       }
       endShape(CLOSE);
 
